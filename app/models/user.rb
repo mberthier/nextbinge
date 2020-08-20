@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :surveys
   has_many :media_users
-  validates :first_name, :last_name, :netflix, :amazon, :disney, presence: true
+  validates :first_name, :last_name, presence: true
 end
