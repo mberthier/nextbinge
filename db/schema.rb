@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_20_202004) do
+ActiveRecord::Schema.define(version: 2020_08_22_101009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 2020_08_20_202004) do
     t.string "streaming_service"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "media_users", force: :cascade do |t|
+    t.bigint "media_id", null: false
+    t.bigint "user_id", null: false
+    t.boolean "bookmarked", default: false
+    t.boolean "excluded", default: false
+    t.boolean "watched", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["media_id"], name: "index_media_users_on_media_id"
+    t.index ["user_id"], name: "index_media_users_on_user_id"
   end
 
   create_table "surveys", force: :cascade do |t|
@@ -57,5 +69,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_202004) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "media_users", "media", column: "media_id"
+  add_foreign_key "media_users", "users"
   add_foreign_key "surveys", "users"
 end
