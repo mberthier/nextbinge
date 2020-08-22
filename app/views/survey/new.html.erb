@@ -1,0 +1,21 @@
+<div class="container margin-top">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="container">
+
+
+      <%= simple_form_for @survey, url: :root do |f| %>
+        <%= f.input :genre, as: :radio_buttons %>
+        <%= f.input :mood, as: :radio_buttons %>
+        <%= f.input :ratings %>
+        <%= f.input :media_type,  as: :radio_buttons %>
+        <%= f.input :release_year, as: :radio_buttons  %>
+        <%= f.button :submit %>
+
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
