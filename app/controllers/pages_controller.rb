@@ -12,7 +12,6 @@ class PagesController < ApplicationController
 
   def result
     @survey = current_user.surveys.last
-    @media = @survey.media_type
     services = ["netflix", "amazon", "disney"]
     reco_movies = services.map do |service|
       scrape_by_service(service)
@@ -25,6 +24,7 @@ class PagesController < ApplicationController
   private
 
   def scrape(streaming_service)
+    @survey = current_user.surveys.last
     @platform = streaming_service
     genre = {
       "Action & Adventure": 5,
@@ -51,6 +51,7 @@ class PagesController < ApplicationController
       "Thriller": 32
     }
     @genre = genre[@survey.genre]
+    @media = @survey.media_type
     @rating = @survey.ratings
     @year = @survey.release_year
     url = "https://reelgood.com/uk/#{@media}/source/#{@platform}?filter-genre=#{@genre}&filter-imdb_start=#{@rating}&filter-year_start=#{@year}"
@@ -60,7 +61,7 @@ class PagesController < ApplicationController
     html_file = open(url).read
     html_doc = Nokogiri::HTML(html_file)
     html_doc.search('tr a').each do |element|
-      movies << Media.new( title: element.inner_text, streaming_service: streaming_service)
+      movies << Media.new( title: element.inner_text, streaming_service: streaming_service, media_type: @media)
     end
 
     movies = movies.drop(1).reject(&:empty?)
