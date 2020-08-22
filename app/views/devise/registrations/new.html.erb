@@ -15,6 +15,11 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+      <div class="streaming-services d-flex">
+        <%= f.input :netflix, as: :radio_buttons %>
+        <%= f.input :amazon, as: :radio_buttons %>
+        <%= f.input :disney, as: :radio_buttons %>
+      </div>
   </div>
 
   <div class="form-actions">
