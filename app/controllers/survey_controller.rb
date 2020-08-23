@@ -20,11 +20,9 @@ class SurveyController < ApplicationController
     @survey.user = @user
     if @survey.save
       @survey.save!
-
-    redirect_to root_path
-
-     else
-    render :new
+      redirect_to root_path
+    else
+      render :new
     end
   end
 
@@ -37,5 +35,4 @@ class SurveyController < ApplicationController
   def survey_params
     params.require(:survey).permit(:genre, :mood, :media_type, :ratings, :release_year)
   end
-
 end
