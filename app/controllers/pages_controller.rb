@@ -52,10 +52,10 @@ class PagesController < ApplicationController
     }
 
     @genre = genre[@survey.genre]
-    @title = @survey.media_type.downcase
+    @media_type = @survey.media_type.downcase
     @rating = @survey.ratings.gsub(">", "")
     @year = @survey.release_year.gsub(/[All]/, '')
-    url = "https://reelgood.com/uk/#{@title}/source/#{@platform}?filter-genre=#{@genre}&filter-imdb_start=#{@rating}&filter-year_start=#{@year}"
+    url = "https://reelgood.com/uk/#{@media_type}/source/#{@platform}?filter-genre=#{@genre}&filter-imdb_start=#{@rating}&filter-year_start=#{@year}"
 
     movies = []
 
@@ -66,7 +66,7 @@ class PagesController < ApplicationController
         imdb(media.title) unless media.title.empty?
         media.title = element.inner_text
         media.streaming_service = streaming_service
-        media.media_type = @media
+        media.media_type = @media_type
         media.genre = @survey.genre
       end
       movies << @media
