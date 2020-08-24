@@ -12,10 +12,12 @@ class PagesController < ApplicationController
 
   def result
     @survey = current_user.surveys.last
-    services = ["netflix", "amazon", "disney"]
+    services = ["netflix", "amazon", "disney_plus"]
+
     reco_movies = services.map do |service|
       scrape_by_service(service)
     end
+
     @reco_movies = reco_movies.flatten
 
     # iterate other the @reco_movies  and run the IMDB API
@@ -51,8 +53,8 @@ class PagesController < ApplicationController
       "Thriller": 32
     }
     @genre = genre[@survey.genre]
-    @media = @survey.media_type
-    @rating = @survey.ratings
+    @media = @survey.media_type.downcase
+    @rating = @survey.ratings.gsub(">", "").to_i
     @year = @survey.release_year
     url = "https://reelgood.com/uk/#{@media}/source/#{@platform}?filter-genre=#{@genre}&filter-imdb_start=#{@rating}&filter-year_start=#{@year}"
 
