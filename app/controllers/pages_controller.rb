@@ -29,33 +29,33 @@ class PagesController < ApplicationController
     @survey = current_user.surveys.last
     @platform = streaming_service
     genre = {
-      "Action & Adventure": 5,
-      "Animatio": 6,
-      "Anim": 39,
-      "Biograph": 7,
-      "Children": 8,
-      "Comedy": 9,
-      "Crime": 10,
-      "Cult": 41,
-      "Documentary": 11,
-      "Drama": 3,
-      "Family": 12,
-      "Fantasy": 13,
-      "History": 17,
-      "Horor": 19,
-      "Independent": 43,
-      "Musical": 22,
-      "Mystery": 23,
-      "Romance": 4,
-      "Sci-Fi": 26,
-      "Sport": 29,
-      "Standup & Talk": 45,
-      "Thriller": 32
+      "Action & Adventure" => 5,
+      "Animation" => 6,
+      "Anime" => 39,
+      "Biography" => 7,
+      "Children" => 8,
+      "Comedy" => 9,
+      "Crime" => 10,
+      "Cult" => 41,
+      "Documentary" => 11,
+      "Drama" => 3,
+      "Family" => 12,
+      "Fantasy" => 13,
+      "History" => 17,
+      "Horor" => 19,
+      "Independent" => 43,
+      "Musical" => 22,
+      "Mystery" => 23,
+      "Romance" => 4,
+      "Sci-Fi" => 26,
+      "Sport" => 29,
+      "Standup & Talk" => 45,
+      "Thriller" => 32
     }
     @genre = genre[@survey.genre]
     @media = @survey.media_type.downcase
-    @rating = @survey.ratings.gsub(">", "").to_i
-    @year = @survey.release_year
+    @rating = @survey.ratings.gsub(">", "")
+    @year = @survey.release_year.gsub(/[All]/, '')
     url = "https://reelgood.com/uk/#{@media}/source/#{@platform}?filter-genre=#{@genre}&filter-imdb_start=#{@rating}&filter-year_start=#{@year}"
 
     movies = []
