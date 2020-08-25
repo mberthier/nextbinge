@@ -1,17 +1,18 @@
 <div class="container margin-top">
   <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="container">
+    <div class="col-md-12">
+      <div class="form-check form-check-inline">
 
 
       <%= simple_form_for @survey, url: :root do |f| %>
-        <%= f.input :genre, as: :radio_buttons %>
-        <%= f.input :mood, as: :radio_buttons %>
-        <%= f.input :ratings %>
-        <%= f.input :media_type,  as: :radio_buttons %>
-        <%= f.input :release_year, as: :radio_buttons  %>
-        <%= f.button :submit %>
-
+        <%= f.input :genre, wrapper_html: { class:'category-choices  form-control-plaintext ' },  as: :check_boxes, collection: [:" Action & Adventure ", :" Animation", :"Anime", :"Biography", :"Children", :"Comedy",
+    :"Crime", :"Cult", :"Documentary", :"Drama", :"Family", :"Fantasy", :"History", :"Horror", :"Independant", :"Musical",
+    :"Mystery", :"Romance", :"Sci-Fi", :"Sport", :"Standup & Talk", :"Thriller"] %>
+        <%= f.input :mood, wrapper_html: { class:'category-choices' },  as: :check_boxes, collection: [:"Sad", :"Neutral", :"Happy", :"Sick", :"Angry", :"Tired"] %>
+        <%= f.input :media_type, wrapper_html: { class:'category-choices' },   as: :check_boxes, collection: [:"Movies", :"TV", :"Don’t Care" ]%>
+        <%= f.input :ratings, wrapper_html: { class:'category-choices' }, as: :check_boxes, collection: [:">5/10", :">7.5", :"All"] %>
+        <%= f.input :release_year, wrapper_html: { class:'category-choices form-control-plaintext ' }, as: :check_boxes, collection: [:Oldies, :"80s - 90s", :"90 - 00s", :"00s - 10s", :"10s - Now", :"All"] %>
+        <%= f.button :submit,  class: 'btn btn-primary  text-center buttonsubmit' %>
 
         </div>
       <% end %>
