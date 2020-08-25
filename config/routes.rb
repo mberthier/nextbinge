@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     end
   end
   resources :media, only: :create
+  get "result", to: "pages#result"
 end

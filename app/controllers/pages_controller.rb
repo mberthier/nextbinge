@@ -1,6 +1,112 @@
+require 'open-uri'
+require 'nokogiri'
+require 'net/http'
+require 'openssl'
+require 'json'
+
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
+  end
+
+  def result
+    @survey = current_user.surveys.last
+    services = ["netflix", "amazon", "disney_plus"]
+
+    reco_movies = services.map do |service|
+      scrape_by_service(service)
+    end
+
+    @reco_movies = reco_movies.flatten
+  end
+
+  private
+
+  def scrape(streaming_service)
+    @survey = current_user.surveys.last
+    @platform = streaming_service
+    genre = {
+      "Action & Adventure" => 5,
+      "Animation" => 6,
+      "Anime" => 39,
+      "Biography" => 7,
+      "Children" => 8,
+      "Comedy" => 9,
+      "Crime" => 10,
+      "Cult" => 41,
+      "Documentary" => 11,
+      "Drama" => 3,
+      "Family" => 12,
+      "Fantasy" => 13,
+      "History" => 17,
+      "Horor" => 19,
+      "Independent" => 43,
+      "Musical" => 22,
+      "Mystery" => 23,
+      "Romance" => 4,
+      "Sci-Fi" => 26,
+      "Sport" => 29,
+      "Standup & Talk" => 45,
+      "Thriller" => 32
+    }
+
+    @genre = genre[@survey.genre]
+    @media_type = @survey.media_type.downcase
+    @rating = @survey.ratings.gsub(">", "")
+    @year = @survey.release_year.gsub(/[All]/, '')
+    url = "https://reelgood.com/uk/#{@media_type}/source/#{@platform}?filter-genre=#{@genre}&filter-imdb_start=#{@rating}&filter-year_start=#{@year}"
+
+    movies = []
+
+    html_file = open(url).read
+    html_doc = Nokogiri::HTML(html_file)
+    html_doc.search('tr a').drop(1).each do |element|
+      @media = Media.where(title: element.inner_text).first_or_create do |media|
+        imdb(media.title) unless media.title.empty?
+        media.title = element.inner_text
+        media.streaming_service = streaming_service
+        media.media_type = @media_type
+        media.genre = @survey.genre
+      end
+      movies << @media
+    end
+    movies = movies.sample(3)
+  end
+
+  def scrape_by_service(service)
+    scrape(service) unless !@survey[service]
+  end
+
+  def imdb(movie)
+    @movie = movie
+    base_url = URI('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/').freeze
+    url = base_url + @movie.split.join.downcase.gsub(/[^a-zA-Z0-9\-]/,"")
+    @response = api_response(url)
+    @data = set_movie_data
+    Media.new(release_year: @data.year, poster: @data.poster, pot: @data.plot, ratings: @data.rating)
+  end
+
+  def api_response(url)
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    request = Net::HTTP::Get.new(url)
+    request['x-rapidapi-host'] = 'imdb-internet-movie-database-unofficial.p.rapidapi.com'
+    request['x-rapidapi-key'] = 'dkFMjOW36JmshaQjczgek92fjz4jp15oZXcjsn2N2fvhWKjgC7'
+    response = http.request(request)
+    JSON.parse(response.read_body)
+  end
+
+  def set_movie_data
+    movie_data = Struct.new(:title, :poster, :year, :plot, :rating)
+
+    movie_data.new(
+      @response['title'],
+      @response['poster'],
+      @response['year'],
+      @response['plot'],
+      @response['rating']
+    )
   end
 end
