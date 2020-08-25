@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% require 'time' %>
+
+<% a = Time.now %>
+<% b = Time.parse('2020-09-26 12:00:00 +0100') %>
+<% c = (a - b) / 3600 %>
+<% d = c / 24 %>
+<div style="font-size: 50px; font-family: Arial; text-align: center;">
+  <strong>Days to Demo Day:</strong> <%= (d*-1).to_f.ceil %>
+</div>
