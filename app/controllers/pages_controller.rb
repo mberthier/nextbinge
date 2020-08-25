@@ -11,7 +11,6 @@ class PagesController < ApplicationController
   end
 
   def result
-    @survey = current_user.surveys.last
     services = ["netflix", "amazon", "disney_plus"]
 
     reco_movies = services.map do |service|
@@ -23,10 +22,10 @@ class PagesController < ApplicationController
 
   private
 
-  def scrape(streaming_service)
-    @survey = current_user.surveys.last
-    @platform = streaming_service
-    genre = {
+  def scrape(streaming_service, survey)
+    survey = current_user.surveys.last
+    platform = streaming_service
+    genres = {
       "Action & Adventure" => 5,
       "Animation" => 6,
       "Anime" => 39,
@@ -51,11 +50,11 @@ class PagesController < ApplicationController
       "Thriller" => 32
     }
 
-    @genre = genre[@survey.genre]
-    @media_type = @survey.media_type.downcase
-    @rating = @survey.ratings.gsub(">", "")
-    @year = @survey.release_year.gsub(/[All]/, '')
-    url = "https://reelgood.com/uk/#{@media_type}/source/#{@platform}?filter-genre=#{@genre}&filter-imdb_start=#{@rating}&filter-year_start=#{@year}"
+    genre = genres[survey.genre]
+    media_type = survey.media_type.downcase
+    rating = survey.ratings.gsub("<", "")
+    year = survey.release_year.gsub(/[All]/, '')
+    url = "https://reelgood.com/uk/#{media_type}/source/#{platform}?filter-genre=#{genre}&filter-imdb_start=#{rating}&filter-year_start=#{year}"
 
     movies = []
 
@@ -66,8 +65,8 @@ class PagesController < ApplicationController
         imdb(media.title) unless media.title.empty?
         media.title = element.inner_text
         media.streaming_service = streaming_service
-        media.media_type = @media_type
-        media.genre = @survey.genre
+        media.media_type = media_type
+        media.genre = survey.genre
       end
       movies << @media
     end
@@ -75,7 +74,7 @@ class PagesController < ApplicationController
   end
 
   def scrape_by_service(service)
-    scrape(service) unless !@survey[service]
+    scrape(service) unless !current_user[service]
   end
 
   def imdb(movie)
@@ -84,7 +83,7 @@ class PagesController < ApplicationController
     url = base_url + @movie.split.join.downcase.gsub(/[^a-zA-Z0-9\-]/,"")
     @response = api_response(url)
     @data = set_movie_data
-    Media.new(release_year: @data.year, poster: @data.poster, pot: @data.plot, ratings: @data.rating)
+    Media.new(release_year: @data.year, poster: @data.poster, plot: @data.plot, ratings: @data.rating)
   end
 
   def api_response(url)
