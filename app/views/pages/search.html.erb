@@ -1,0 +1,75 @@
+<ul>
+  <% @searchresults["results"].each do |item| %>
+  <li>
+    <ul>
+      <li>
+        <%= item["name"] %>
+      </li>
+      <li>
+        <img src="<%= item["picture"] %>" width="50px" height="50px">
+      </li>
+      <li>
+        <% item["locations"].each do |location| %>
+          <li>
+            <%= location["display_name"] %> - 
+            <%= location["url"] %>
+          </li>
+        <% end %>
+      </li>
+    </ul>
+    <br>
+  </li>
+  <% end %>
+</ul>
+
+<%# 
+{"results"=>
+  [
+    {
+      "id"=>"5d914028302b840050acbe62",
+      "picture"=>"https://utellyassets9-1.imgix.net/api/Images/4e4d50a0040fd4500193202edbafce6a/Redirect",
+      "name"=>"BoJack Horseman",
+      "locations"=>
+        [
+          {
+            "icon"=>"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/NetflixIVAGB.png?w=92&auto=compress&app_version=8bc263d1-dd7b-40c0-98cd-f677eb14d81e_e12122020-08-25",
+            "display_name"=>"Netflix",
+            "name"=>"NetflixIVAGB",
+            "id"=>"5d84d6e2d95dc7385f6a442d",
+            "url"=>"https://www.netflix.com/title/70298933"
+          }
+        ], 
+        "provider"=>"iva",
+        "weight"=>5662, 
+        "external_ids"=>
+          {
+            "iva_rating"=>nil,
+            "imdb"=>
+              {
+                "url"=>"https://www.imdb.com/title/tt3398228",
+                "id"=>"tt3398228"},
+                "tmdb"=>
+                  {
+                    "url"=>"https://www.themoviedb.org/tv/61222",
+                    "id"=>"61222"
+                  },
+                  "wiki_data"=>
+                    {
+                      "url"=>"https://www.wikidata.org/wiki/Q17733404",
+                      "id"=>"Q17733404"
+                    },
+                  "iva"=>
+                    {
+                      "id"=>"783721"
+                    }
+                  "gracenote"=>nil,
+                  "rotten_tomatoes"=>nil,
+                  "facebook"=>nil
+          }
+    }
+  ],
+                  "updated"=>"2020-08-25T05:19:20+0100",
+                  "term"=>"bojack",
+                  "status_code"=>200,
+                  "variant"=>"ivafull"
+} %>
