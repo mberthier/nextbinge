@@ -17,14 +17,18 @@ class PagesController < ApplicationController
       scrape_by_service(service)
     end
 
-    @reco_movies = reco_movies.flatten
+    @reco_movies = reco_movies.flatten.compact
   end
 
   private
 
-  def scrape(streaming_service, survey)
-    survey = current_user.surveys.last
-    platform = streaming_service
+  def scrape_by_service(service)
+    scrape(service) unless !User.last[service]
+  end
+
+  def scrape(streaming_service)
+    @survey = Survey.last
+    @platform = streaming_service
     genres = {
       "Action & Adventure" => 5,
       "Animation" => 6,
@@ -50,40 +54,47 @@ class PagesController < ApplicationController
       "Thriller" => 32
     }
 
-    genre = genres[survey.genre]
-    media_type = survey.media_type.downcase
-    rating = survey.ratings.gsub("<", "")
-    year = survey.release_year.gsub(/[All]/, '')
-    url = "https://reelgood.com/uk/#{media_type}/source/#{platform}?filter-genre=#{genre}&filter-imdb_start=#{rating}&filter-year_start=#{year}"
+    @genre = genres[@survey.genre]
+    @media_type = @survey.media_type.downcase
+    @rating = @survey.ratings.gsub(">", "")
+    @year = @survey.release_year.gsub(/[All]/, '')
+    url = "https://reelgood.com/uk/#{@media_type}/source/#{@platform}?filter-genre=#{@genre}&filter-imdb_start=#{@rating}&filter-year_start=#{@year}"
 
-    movies = []
+    @movies = []
 
     html_file = open(url).read
     html_doc = Nokogiri::HTML(html_file)
     html_doc.search('tr a').drop(1).each do |element|
-      @media = Media.where(title: element.inner_text).first_or_create do |media|
-        imdb(media.title) unless media.title.empty?
-        media.title = element.inner_text
-        media.streaming_service = streaming_service
-        media.media_type = media_type
-        media.genre = survey.genre
-      end
-      movies << @media
+      @movies << element.inner_text
+      @movies = @movies.reject(&:empty?)
     end
-    movies = movies.sample(3)
+    @movies = @movies.sample(3)
+    find_or_create
   end
 
-  def scrape_by_service(service)
-    scrape(service) unless !current_user[service]
+  def find_or_create
+    streaming_reco = @movies.map do |movie|
+      Media.where(title: movie).first_or_create do |media|
+        imdb(media.title)
+        media.streaming_service = @platform
+        media.media_type = @media_type.gsub(/[s]/, '').capitalize
+        media.genre = @survey.genre
+        media.release_year = @data.year
+        media.poster = @data.poster
+        media.plot = @data.plot
+        media.ratings = @data.rating
+        media.save
+      end
+    end
+    streaming_reco
   end
 
   def imdb(movie)
     @movie = movie
     base_url = URI('https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/').freeze
-    url = base_url + @movie.split.join.downcase.gsub(/[^a-zA-Z0-9\-]/,"")
+    url = base_url + @movie.split.join.downcase.gsub(/[^a-zA-Z0-9\-]/, "")
     @response = api_response(url)
     @data = set_movie_data
-    Media.new(release_year: @data.year, poster: @data.poster, plot: @data.plot, ratings: @data.rating)
   end
 
   def api_response(url)
