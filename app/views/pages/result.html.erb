@@ -1,0 +1,22 @@
+<div class= "container">
+  <div class= 'm-3'>
+    <h3 style= "text-align: center">Here is our special recommendation just for you:</h3>
+    <% @reco_movies.each do |media| %>
+    <ul class= "m-4">
+      <div class= "d-flex justify-content-between">
+        <div class= "description">
+          <li><span style= "font-weight: bold"><%= media.title %></span> </li>
+          <li><%= media.plot %></li>
+          <li>Genre: <%= media.genre %></li>
+          <li>Year: <%= media.release_year %></li>
+          <li>IMDB rating: <%= media.ratings %>/10</li>
+          <li>Watch on <%= media.streaming_service %></li>
+        </div>
+        <img src="<%= media.poster %>" alt="" style= "width: 200px">
+      </div>
+      <hr>
+    </ul>
+    <% end %>
+  </div>
+
+</div>
