@@ -1,75 +1,28 @@
-<ul>
-  <% @searchresults["results"].each do |item| %>
-  <li>
-    <ul>
-      <li>
-        <%= item["name"] %>
-      </li>
-      <li>
-        <img src="<%= item["picture"] %>" width="50px" height="50px">
-      </li>
-      <li>
-        <% item["locations"].each do |location| %>
-          <li>
-            <%= location["display_name"] %> - 
-            <%= location["url"] %>
+<div class="container">
+  <div class='m-3'>
+    <h3 style="text-align: center">Your search returned the following results:</h3>
+    <div class="search-again" style="text-align: center;">
+      <%= link_to "Search again", root_path %>
+    </div>
+    <% @searchresults["results"].each do |item| %>
+    <ul class="m-4">
+      <div class="d-flex justify-content-between">
+        <div class="description">
+          <li style="list-style: none;"><span style= "font-weight: bold"><%= item["name"] %></span></li>
+          <li style="list-style: none;">
+          <div>
+            <ul style="list-style: none;" class="streaming-services">
+              <% item["locations"].each do |location| %>
+                <li class="streaming-services"><a href="<%= location["url"] %>"><%= location["display_name"] %></a></li>
+              <% end %>
+            </ul>
+          </div>
           </li>
-        <% end %>
-      </li>
+        </div>
+        <img src="<%= item["picture"] %>" width="200px">
+      </div>
+      <hr>
     </ul>
-    <br>
-  </li>
-  <% end %>
-</ul>
-
-<%# 
-{"results"=>
-  [
-    {
-      "id"=>"5d914028302b840050acbe62",
-      "picture"=>"https://utellyassets9-1.imgix.net/api/Images/4e4d50a0040fd4500193202edbafce6a/Redirect",
-      "name"=>"BoJack Horseman",
-      "locations"=>
-        [
-          {
-            "icon"=>"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/NetflixIVAGB.png?w=92&auto=compress&app_version=8bc263d1-dd7b-40c0-98cd-f677eb14d81e_e12122020-08-25",
-            "display_name"=>"Netflix",
-            "name"=>"NetflixIVAGB",
-            "id"=>"5d84d6e2d95dc7385f6a442d",
-            "url"=>"https://www.netflix.com/title/70298933"
-          }
-        ], 
-        "provider"=>"iva",
-        "weight"=>5662, 
-        "external_ids"=>
-          {
-            "iva_rating"=>nil,
-            "imdb"=>
-              {
-                "url"=>"https://www.imdb.com/title/tt3398228",
-                "id"=>"tt3398228"},
-                "tmdb"=>
-                  {
-                    "url"=>"https://www.themoviedb.org/tv/61222",
-                    "id"=>"61222"
-                  },
-                  "wiki_data"=>
-                    {
-                      "url"=>"https://www.wikidata.org/wiki/Q17733404",
-                      "id"=>"Q17733404"
-                    },
-                  "iva"=>
-                    {
-                      "id"=>"783721"
-                    }
-                  "gracenote"=>nil,
-                  "rotten_tomatoes"=>nil,
-                  "facebook"=>nil
-          }
-    }
-  ],
-                  "updated"=>"2020-08-25T05:19:20+0100",
-                  "term"=>"bojack",
-                  "status_code"=>200,
-                  "variant"=>"ivafull"
-} %>
+    <% end %>
+  </div>
+</div>

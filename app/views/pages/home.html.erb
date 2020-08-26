@@ -10,3 +10,15 @@
 
 
 <%= link_to "Test Reco Engine", result_path %>
+<br>
+<br>
+<br>
+<br>
+<%# <div class="search-bar" style="text-align: center;">
+  <input type="search" name="search-bar" id="search-bar" placeholder="Search here.." style="width: 300px;">
+  <input type="submit" value="Go">
+</div> %>
+<%= form_with url: search_page_get_path, local: true, method: :post do %>
+  Search <%= text_field_tag :search_term %>
+  <%= submit_tag 'Go' %>
+<% end %>

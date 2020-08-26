@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   end
   resources :media, only: :create
   get "result", to: "pages#result"
-  get '/search', to: 'pages#search', :as => 'search_page'
+  get '/search', to: 'pages#search', :as => 'search_page_get'
+  post '/search', to: 'pages#search', :as => 'search_page_post'
 end
