@@ -19,7 +19,8 @@
           </div>
           </li>
         </div>
-        <img src="<%= item["picture"] %>" width="200px">
+        <img src="<%= item["picture"] %>" width="200px" id="<%= item["external_ids"]["imdb"]["id"] %>">
+        <%# image src would be the a place holder image (spinny loader thing) %>
       </div>
       <hr>
     </ul>
