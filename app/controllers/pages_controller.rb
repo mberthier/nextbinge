@@ -89,7 +89,7 @@ class PagesController < ApplicationController
       @movies << element.inner_text
       @movies = @movies.reject(&:empty?)
     end
-    @movies = @movies.sample(10)
+    @movies = @movies.sample(3)
     find_or_create
   end
 
