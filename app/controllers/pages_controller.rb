@@ -27,7 +27,6 @@ class PagesController < ApplicationController
     @searchresults = JSON.parse(response.read_body)
   end
 
-
   def result
     services = ["netflix", "amazon", "disney_plus"]
 
@@ -35,7 +34,7 @@ class PagesController < ApplicationController
       scrape_by_service(service)
     end
 
-    @reco_movies = reco_movies.flatten.compact.shuffle.sample(3)
+    @reco_movies = reco_movies.flatten.compact.shuffle
   end
 
   private
@@ -78,7 +77,7 @@ class PagesController < ApplicationController
 
     @genre = genres[@survey.genre]
     @media_type = @survey.media_type.downcase
-    @rating = @survey.ratings.gsub(">", "")
+    @rating = @survey.ratings.gsub(/[All>]/, "")
     @year = @survey.release_year.gsub(/[All]/, '')
     url = "https://reelgood.com/uk/#{@media_type}/source/#{@platform}?filter-genre=#{@genre}&filter-imdb_start=#{@rating}&filter-year_start=#{@year}"
 
@@ -105,10 +104,9 @@ class PagesController < ApplicationController
         media.poster = @data.poster
         media.plot = @data.plot
         media.ratings = @data.rating
-        media.save
       end
     end
-    streaming_reco
+    streaming_reco.select(&:persisted?)
   end
 
   def imdb(movie)
@@ -141,6 +139,5 @@ class PagesController < ApplicationController
       @response['rating']
     )
   end
-
 
 end

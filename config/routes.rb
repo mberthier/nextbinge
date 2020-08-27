@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :user, only: :show do
-    resources :survey, only: [:show, :index, :new, :create]
+    resources :surveys, only: [:show, :index, :new, :create]
     resources :media_user, only: [:index, :create, :update, :destroy] do
       collection do
         get :bookmarked_index

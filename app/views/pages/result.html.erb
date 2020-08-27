@@ -16,7 +16,7 @@
     </p>
     <% @reco_movies.each do |media| %>
     <ul class= "m-4" style="list-style: none">
-      <div class= "d-flex justify-content-between">
+      <div class= "d-flex justify-content-between p-3" style="background-color: white; border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
         <div class= "description">
           <li><span style= "font-weight: bold"><%= media.title %></span> </li>
           <li class= "mb-4 mt-4" style= "max-width: 75%;"><%= media.plot %></li>
@@ -38,7 +38,6 @@
         </div>
         <img src="<%= media.poster %>" alt="" style= "width: 200px">
       </div>
-      <hr>
     </ul>
     <% end %>
   </div>
