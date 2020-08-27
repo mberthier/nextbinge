@@ -13,10 +13,6 @@ class PagesController < ApplicationController
 
   def search
     query = params[:search_term]
-  
-
-
-    # search the utelly api
 
     url = URI("https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=#{query}&country=uk")
     
@@ -30,22 +26,6 @@ class PagesController < ApplicationController
     
     response = http.request(request)
     @searchresults = JSON.parse(response.read_body)
-
-    # search the imdb unoffical api
-
-    url = URI("https://imdb-internet-movie-database-unofficial.p.rapidapi.com/search/titanic")
-
-    http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-    request = Net::HTTP::Get.new(url)
-    request["x-rapidapi-host"] = 'imdb-internet-movie-database-unofficial.p.rapidapi.com'
-    request["x-rapidapi-key"] = '8ca5dbf3afmsh60ff48690b836fdp169452jsnc257978cfbd8'
-
-    response = http.request(request)
-    @imdbresults = JSON.parse(response.read_body)
-
   end
   
   
