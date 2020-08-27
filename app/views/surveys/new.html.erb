@@ -2,18 +2,16 @@
   <div class="row justify-content-center">
     <div class="col-md-12">
       <div class="form-check form-check-inline">
-
-
-      <%= simple_form_for [current_user, @survey] do |f| %>
-        <%= f.input :genre, wrapper_html: { class:'category-choices  form-control-plaintext ' },  as: :radio_buttons, collection: ["Action & Adventure", " Animation", "Anime", "Biography", "Children", "Comedy",
-    "Crime", "Cult", "Documentary", "Drama", "Family", "Fantasy", "History", "Horror", "Independant", "Musical",
-    "Mystery", "Romance", "Sci-Fi", "Sport", "Standup & Talk", "Thriller"] %>
-        <%= f.input :mood, wrapper_html: { class:'category-choices' },  as: :radio_buttons, collection: ["Sad", "Neutral", "Happy", "Sick", "Angry", "Tired"] %>
-        <%= f.input :media_type, wrapper_html: { class:'category-choices' },   as: :radio_buttons, collection: ["Movies", "TV", "Don’t Care" ]%>
-        <%= f.input :ratings, wrapper_html: { class:'category-choices' }, as: :radio_buttons, collection: [">5/10", ">7.5", "All"] %>
-        <%= f.input :release_year, wrapper_html: { class:'category-choices form-control-plaintext ' }, as: :radio_buttons, collection: ["oldies", "80s - 90s", "90 - 00s", "00s - 10s", :"10s - Now", :"All"] %>
-        <%= f.button :submit,  class: 'btn btn-primary  text-center buttonsubmit' %>
-      <% end %>
+        <%= simple_form_for [current_user, @survey] do |f| %>
+          <%= f.input :genre, wrapper_html: { class:'category-choices  form-control-plaintext ' },  as: :radio_buttons, collection: ["Action & Adventure", " Animation", "Anime", "Biography", "Children", "Comedy",
+      "Crime", "Cult", "Documentary", "Drama", "Family", "Fantasy", "History", "Horror", "Independant", "Musical",
+      "Mystery", "Romance", "Sci-Fi", "Sport", "Standup & Talk", "Thriller"] %>
+          <%= f.input :mood, wrapper_html: { class:'category-choices' },  as: :radio_buttons, collection: ["Sad", "Neutral", "Happy", "Sick", "Angry", "Tired"] %>
+          <%= f.input :media_type, wrapper_html: { class:'category-choices' },   as: :radio_buttons, collection: ["Movies", "TV", "Don’t Care" ]%>
+          <%= f.input :ratings, wrapper_html: { class:'category-choices' }, as: :radio_buttons, collection: [">5/10", ">7.5", "All"] %>
+          <%= f.input :release_year, wrapper_html: { class:'category-choices form-control-plaintext ' }, as: :radio_buttons, collection: ["oldies", "80s - 90s", "90 - 00s", "00s - 10s", :"10s - Now", :"All"] %>
+          <%= f.button :submit,  class: 'btn btn-primary  text-center buttonsubmit' %>
+        <% end %>
       </div>
     </div>
   </div>
