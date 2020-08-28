@@ -7,8 +7,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports
-import hello from "../../assets/javascript/imdbApiCall.js";
-import getImdbPoster from "../../assets/javascript/imdbApiCall.js";
+import getImdbPoster from "../../assets/javascript/imdbApiCall";
 
 document.addEventListener('turbolinks:load', () => {
   getImdbPoster();
