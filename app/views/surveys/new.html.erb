@@ -6,7 +6,38 @@
           <%= f.input :genre, wrapper_html: { class:'category-choices  form-control-plaintext ' },  as: :radio_buttons, collection: ["Action & Adventure", " Animation", "Anime", "Biography", "Children", "Comedy",
       "Crime", "Cult", "Documentary", "Drama", "Family", "Fantasy", "History", "Horror", "Independant", "Musical",
       "Mystery", "Romance", "Sci-Fi", "Sport", "Standup & Talk", "Thriller"] %>
-          <%= f.input :mood, wrapper_html: { class:'category-choices' },  as: :radio_buttons, collection: ["Sad", "Neutral", "Happy", "Sick", "Angry", "Tired"] %>
+        <fieldset class="form-group radio_buttons required survey_mood">
+          <legend class="col-form-label pt-0">
+            Mood <abbr title="required">*</abbr>
+          </legend>
+          <input type="hidden" name="survey[mood]" value="">
+          <div class="category-choices">
+            <div class="category-choice">
+              <input type="radio" value="Sad" name="survey[mood]" id="survey_mood_sad">
+              <label class="form-check-label collection_radio_buttons" for="survey_mood_sad">Sad</label>
+            </div>
+            <div class="category-choice">
+              <input type="radio" value="Neutral" name="survey[mood]" id="survey_mood_neutral">
+              <label class="form-check-label collection_radio_buttons" for="survey_mood_neutral">Neutral</label>
+            </div>
+            <div class="category-choice">
+              <input type="radio" value="Happy" name="survey[mood]" id="survey_mood_happy">
+              <label class="form-check-label collection_radio_buttons" for="survey_mood_happy">Happy</label>
+            </div>
+            <div class="category-choice">
+              <input type="radio" value="Sick" name="survey[mood]" id="survey_mood_sick">
+              <label class="form-check-label collection_radio_buttons" for="survey_mood_sick">Sick</label>
+            </div>
+            <div class="category-choice">
+              <input type="radio" value="Angry" name="survey[mood]" id="survey_mood_angry">
+              <label class="form-check-label collection_radio_buttons" for="survey_mood_angry">Angry</label>
+            </div>
+            <div class="category-choice">
+              <input type="radio" value="Tired" name="survey[mood]" id="survey_mood_tired">
+              <label class="form-check-label collection_radio_buttons" for="survey_mood_tired">Tired</label>
+            </div>
+          </div>
+        </fieldset>
           <%= f.input :media_type, wrapper_html: { class:'category-choices' },   as: :radio_buttons, collection: ["Movies", "TV", "Don’t Care" ]%>
           <%= f.input :ratings, wrapper_html: { class:'category-choices' }, as: :radio_buttons, collection: [">5/10", ">7.5", "All"] %>
           <%= f.input :release_year, wrapper_html: { class:'category-choices form-control-plaintext ' }, as: :radio_buttons, collection: ["oldies", "80s - 90s", "90 - 00s", "00s - 10s", :"10s - Now", :"All"] %>
@@ -16,4 +47,7 @@
     </div>
   </div>
 </div>
+
+
+
 
