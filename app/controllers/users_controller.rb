@@ -1,9 +1,5 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @users = User.all
-  end
 
   def show
   end
@@ -12,11 +8,11 @@ class UserController < ApplicationController
   end
 
   def update
-      if @user.update(user_params)
-        redirect_to users_path
-      else
-        render action: :edit
-      end
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -25,11 +21,13 @@ class UserController < ApplicationController
     redirect_to root_path
   end
 
-  end
-
   private
 
+  def find_user
+    @user = User.find(params[:id])
+  end
 
-
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :netflix?, :amazon?, :disney_plus?)
+  end
 end
-

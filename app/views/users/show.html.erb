@@ -1,3 +1,22 @@
-<%= @user.name %>
+<div class="container">
+  <div class="user-details">
+    <div class="user-name">
+      First name: <%= @user.first_name %>
+      <br>
+      Last name: <%= @user.last_name %>
+    </div>
+    <div class="user-email">
+     Email: <%= @user.email %>
+    </div>
+  </div>
+    <br>
+  <div class="user-streaming-services">
+    Netflix: <%= @user.netflix? %>
+    <br>
+    Amazon: <%= @user.amazon? %>
+    <br>
+    Disney Plus: <%= @user.disney_plus? %>
+  </div>
+</div>
 
-<%= @user.survey %>
+<%= link_to "Edit details", edit_user_path(current_user) %>
