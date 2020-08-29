@@ -1,20 +1,43 @@
 <div class= "container">
   <div class= 'm-3'>
-    <h3 style= "text-align: center">Here is our special recommendation just for you:</h3>
+    <h3 class= 'mb-3 mt-5'>Here is are selection for you</h3>
+    <p class= 'mb-5'>
+      You want to watch <span style= "font-weight: bold;"><%= @survey.genre %> <%= @survey.media_type %></span> that are available on
+      <% if User.last.netflix%>
+        <span style= "font-weight: bold;">Netflix</span>
+      <% end %>
+      <% if User.last.amazon%>
+        <span style= "font-weight: bold;">Amazon Prime</span>
+      <% end %>
+      <% if User.last.disney_plus %>
+        <span style= "font-weight: bold;">Disney +</span>
+      <% end %>
+      with <span style= "font-weight: bold;"><%= @survey.ratings %></span> rating and doesn’t have to be recent.
+    </p>
     <% @reco_movies.each do |media| %>
-    <ul class= "m-4">
-      <div class= "d-flex justify-content-between">
+    <ul class= "m-4" style="list-style: none">
+      <div class= "d-flex justify-content-between p-3" style="background-color: white; border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
         <div class= "description">
           <li><span style= "font-weight: bold"><%= media.title %></span> </li>
-          <li><%= media.plot %></li>
+          <li class= "mb-4 mt-4" style= "max-width: 75%;"><%= media.plot %></li>
           <li>Genre: <%= media.genre %></li>
           <li>Year: <%= media.release_year %></li>
           <li>IMDB rating: <%= media.ratings %>/10</li>
-          <li>Watch on <%= media.streaming_service %></li>
+          <% if  %>
+            <% media.streaming_service == "netflix" %>
+            <%= image_tag("netflix_logo.png", {:style => "width: 100px; border-radius: 10px; margin-top: 20px;"}) %>
+          <% end %>
+          <% if  %>
+            <% media.streaming_service == "amazon" %>
+            <%= image_tag("amazon_logo.png", {:style => "width: 100px; border-radius: 10px; margin-top: 20px;"}) %>
+          <% end %>
+          <% if  %>
+            <% media.streaming_service == "disney_plus" %>
+            <%= image_tag("disney_logo.jpg", {:style => "width: 100px; border-radius: 10px; margin-top: 20px;"}) %>
+          <% end %>
         </div>
         <img src="<%= media.poster %>" alt="" style= "width: 200px">
       </div>
-      <hr>
     </ul>
     <% end %>
   </div>

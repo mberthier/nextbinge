@@ -26,8 +26,8 @@ class PagesController < ApplicationController
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
     request["x-rapidapi-key"] = '8ca5dbf3afmsh60ff48690b836fdp169452jsnc257978cfbd8'
-
     @searchresults = JSON.parse(http.request(request).read_body)
+
   end
 
   def result
@@ -37,7 +37,7 @@ class PagesController < ApplicationController
       scrape_by_service(service)
     end
 
-    @reco_movies = reco_movies.flatten.compact
+    @reco_movies = reco_movies.flatten.compact.shuffle
   end
 
   private
@@ -80,7 +80,7 @@ class PagesController < ApplicationController
 
     @genre = genres[@survey.genre]
     @media_type = @survey.media_type.downcase
-    @rating = @survey.ratings.gsub(">", "")
+    @rating = @survey.ratings.gsub(/[All>]/, "")
     @year = @survey.release_year.gsub(/[All]/, '')
     url = "https://reelgood.com/uk/#{@media_type}/source/#{@platform}?filter-genre=#{@genre}&filter-imdb_start=#{@rating}&filter-year_start=#{@year}"
 
@@ -107,10 +107,9 @@ class PagesController < ApplicationController
         media.poster = @data.poster
         media.plot = @data.plot
         media.ratings = @data.rating
-        media.save
       end
     end
-    streaming_reco
+    streaming_reco.select(&:persisted?)
   end
 
   def imdb(movie)

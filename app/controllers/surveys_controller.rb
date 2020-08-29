@@ -1,5 +1,5 @@
-class SurveyController < ApplicationController
-  before_action :find_user, only: [:new]
+class SurveysController < ApplicationController
+  # before_action :find_user, only: [:new]
 
   def index
     @survey = Survey.all
@@ -10,17 +10,15 @@ class SurveyController < ApplicationController
   end
 
   def new
-    @user = current_user
     @survey = Survey.new
   end
 
   def create
-    @user = current_user
     @survey = Survey.new(survey_params)
-    @survey.user = @user
+    @survey.user = current_user
     if @survey.save
       @survey.save!
-      redirect_to root_path
+      redirect_to result_path
     else
       render :new
     end
