@@ -5,8 +5,8 @@
       <%= link_to "Search again", root_path %>
     </div>
     <% @searchresults["results"].each do |item| %>
-      <% if item["locations"].each do |location| %>
-        <%= puts location["display_name"] %>
+      <% item["locations"].each do |location| %>
+        <% if location["display_name"].include?(@netflix || @amazon || @disney || "Amazon Instant Video") %>
           <ul class="m-4">
             <div class="d-flex justify-content-between">
               <div class="description">
@@ -15,7 +15,9 @@
                   <div>
                     <ul style="list-style: none;" class="streaming-services">
                       <% item["locations"].each do |location| %>
-                        <li class="streaming-services"><a href="<%= location["url"] %>"><%= location["display_name"] %></a></li>
+                        <li class="streaming-services">
+                          <a href="<%= location["url"] %>"><%= location["display_name"] %></a>
+                        </li>
                       <% end %>
                     </ul>
                   </div>
