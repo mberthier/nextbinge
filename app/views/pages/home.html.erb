@@ -14,11 +14,15 @@
 <br>
 <br>
 <br>
-<%# <div class="search-bar" style="text-align: center;">
-  <input type="search" name="search-bar" id="search-bar" placeholder="Search here.." style="width: 300px;">
-  <input type="submit" value="Go">
-</div> %>
 <%= form_with url: search_page_get_path, local: true, method: :post do %>
   Search <%= text_field_tag :search_term %>
+  <br>
+  <%= check_box_tag(:netflix, "Netflix") %>
+  <label for="netflix">Netflix</label>
+  <%= check_box_tag(:amazon, "Amazon Prime Video") %>
+  <label for="amazon">Amazon</label>
+  <%= check_box_tag(:disney_plus, "Disney+") %>
+  <label for="disney_plus">Disney Plus</label>
+  <br>
   <%= submit_tag 'Go' %>
 <% end %>

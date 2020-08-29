@@ -13,22 +13,23 @@ class PagesController < ApplicationController
 
   def search
     query = params[:search_term]
+    @netflix = params[:netflix]
+    @amazon = params[:amazon]
+    @disney = params[:disney_plus]
 
     url = URI("https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=#{query}&country=uk")
-    
+
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-    
+
     request = Net::HTTP::Get.new(url)
     request["x-rapidapi-host"] = 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
     request["x-rapidapi-key"] = '8ca5dbf3afmsh60ff48690b836fdp169452jsnc257978cfbd8'
-    
-    response = http.request(request)
-    @searchresults = JSON.parse(response.read_body)
+
+    @searchresults = JSON.parse(http.request(request).read_body)
   end
-  
-  
+
   def result
     services = ["netflix", "amazon", "disney_plus"]
 
@@ -142,6 +143,4 @@ class PagesController < ApplicationController
       @response['rating']
     )
   end
-
-
 end
