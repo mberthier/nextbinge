@@ -5,24 +5,30 @@
       <%= link_to "Search again", root_path %>
     </div>
     <% @searchresults["results"].each do |item| %>
-    <ul class="m-4">
-      <div class="d-flex justify-content-between">
-        <div class="description">
-          <li style="list-style: none;"><span style= "font-weight: bold"><%= item["name"] %></span></li>
-          <li style="list-style: none;">
-          <div>
-            <ul style="list-style: none;" class="streaming-services">
-              <% item["locations"].each do |location| %>
-                <li class="streaming-services"><a href="<%= location["url"] %>"><%= location["display_name"] %></a></li>
-              <% end %>
-            </ul>
-          </div>
-          </li>
-        </div>
-        <img src="<%= item["picture"] %>" width="200px">
-      </div>
-      <hr>
-    </ul>
+      <% item["locations"].each do |location| %>
+        <% if location["display_name"].include?(@netflix || @amazon || @disney || "Amazon Instant Video") %>
+          <ul class="m-4">
+            <div class="d-flex justify-content-between">
+              <div class="description">
+                <li style="list-style: none;"><span style= "font-weight: bold"><%= item["name"] %></span></li>
+                <li style="list-style: none;">
+                  <div>
+                    <ul style="list-style: none;" class="streaming-services">
+                      <% item["locations"].each do |location| %>
+                        <li class="streaming-services">
+                          <a href="<%= location["url"] %>"><%= location["display_name"] %></a>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </li>
+              </div>
+              <img src="https://media.giphy.com/media/21TyGiKxxSpT6fpHIv/giphy.gif" width="200px" class="imdb-poster" id="<%= item["external_ids"]["imdb"]["id"] %>">
+            </div>
+            <hr>
+          </ul>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
