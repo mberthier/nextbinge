@@ -1,47 +1,194 @@
 <div class="container margin-top">
   <div class="row justify-content-center">
     <div class="col-md-12">
-      <div class="form-check form-check-inline">
+      <div class="form-check form-check-inline survey-container">
         <%= simple_form_for [current_user, @survey] do |f| %>
-          <%= f.input :genre, wrapper_html: { class:'category-choices  form-control-plaintext ' },  as: :radio_buttons, collection: ["Action & Adventure", " Animation", "Anime", "Biography", "Children", "Comedy",
-      "Crime", "Cult", "Documentary", "Drama", "Family", "Fantasy", "History", "Horror", "Independant", "Musical",
-      "Mystery", "Romance", "Sci-Fi", "Sport", "Standup & Talk", "Thriller"] %>
-        <fieldset class="form-group radio_buttons required survey_mood">
-          <legend class="col-form-label pt-0">
-            Mood <abbr title="required">*</abbr>
-          </legend>
-          <input type="hidden" name="survey[mood]" value="">
-          <div class="category-choices">
-            <div class="category-choice">
-              <input type="radio" value="Sad" name="survey[mood]" id="survey_mood_sad">
-              <label class="form-check-label collection_radio_buttons" for="survey_mood_sad">Sad</label>
+          <fieldset class="form-group radio_buttons required survey_genre category-choices form-control-plaintext">
+            <legend class="col-form-label pt-0">Genre <abbr title="required">*</abbr></legend>
+            <div class="category-choices">
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Action &amp; Adventure" name="survey[genre]" id="survey_genre_action__adventure">
+                <label class="radio__label" for="survey_genre_action__adventure">Action &amp; Adventure</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value=" Animation" name="survey[genre]" id="survey_genre__animation">
+                <label class="radio__label" for="survey_genre__animation"> Animation</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Anime" name="survey[genre]" id="survey_genre_anime">
+                <label class="radio__label" for="survey_genre_anime">Anime</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Biography" name="survey[genre]" id="survey_genre_biography">
+                <label class="radio__label" for="survey_genre_biography">Biography</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Children" name="survey[genre]" id="survey_genre_children">
+                <label class="radio__label" for="survey_genre_children">Children</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Comedy" name="survey[genre]" id="survey_genre_comedy">
+                <label class="radio__label" for="survey_genre_comedy">Comedy</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Crime" name="survey[genre]" id="survey_genre_crime">
+                <label class="radio__label" for="survey_genre_crime">Crime</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Cult" name="survey[genre]" id="survey_genre_cult">
+                <label class="radio__label" for="survey_genre_cult">Cult</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Documentary" name="survey[genre]" id="survey_genre_documentary">
+                <label class="radio__label" for="survey_genre_documentary">Documentary</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Drama" name="survey[genre]" id="survey_genre_drama">
+                <label class="radio__label" for="survey_genre_drama">Drama</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Family" name="survey[genre]" id="survey_genre_family">
+                <label class="radio__label" for="survey_genre_family">Family</label>
+              </div>
+                <div class="category-choice">
+                <input class="radio__input" type="radio" value="Fantasy" name="survey[genre]" id="survey_genre_fantasy">
+                <label class="radio__label" for="survey_genre_fantasy">Fantasy</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="History" name="survey[genre]" id="survey_genre_history">
+                <label class="radio__label" for="survey_genre_history">History</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Horror" name="survey[genre]" id="survey_genre_horror">
+                <label class="radio__label" for="survey_genre_horror">Horror</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Independant" name="survey[genre]" id="survey_genre_independant">
+                <label class="radio__label" for="survey_genre_independant">Independant</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Musical" name="survey[genre]" id="survey_genre_musical">
+                <label class="radio__label" for="survey_genre_musical">Musical</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Mystery" name="survey[genre]" id="survey_genre_mystery">
+                <label class="radio__label" for="survey_genre_mystery">Mystery</label>
+              </div><div class="category-choice">
+                <input class="radio__input" type="radio" value="Romance" name="survey[genre]" id="survey_genre_romance">
+                <label class="radio__label" for="survey_genre_romance">Romance</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Sci-Fi" name="survey[genre]" id="survey_genre_sci-fi">
+                <label class="radio__label" for="survey_genre_sci-fi">Sci-Fi</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Sport" name="survey[genre]" id="survey_genre_sport">
+                <label class="radio__label" for="survey_genre_sport">Sport</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Standup &amp; Talk" name="survey[genre]" id="survey_genre_standup__talk">
+                <label class="radio__label" for="survey_genre_standup__talk">Standup &amp; Talk</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Thriller" name="survey[genre]" id="survey_genre_thriller">
+                <label class="radio__label" for="survey_genre_thriller">Thriller</label>
+              </div>
             </div>
-            <div class="category-choice">
-              <input type="radio" value="Neutral" name="survey[mood]" id="survey_mood_neutral">
-              <label class="form-check-label collection_radio_buttons" for="survey_mood_neutral">Neutral</label>
+          </fieldset>
+          <fieldset class="form-group radio_buttons required survey_mood">
+            <legend class="col-form-label pt-0">Mood <abbr title="required">*</abbr></legend>
+            <div class="category-choices">
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Sad" name="survey[mood]" id="survey_mood_sad">
+                <label class="radio__label" for="survey_mood_sad">Sad</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Neutral" name="survey[mood]" id="survey_mood_neutral">
+                <label class="radio__label" for="survey_mood_neutral">Neutral</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Happy" name="survey[mood]" id="survey_mood_happy">
+                <label class="radio__label" for="survey_mood_happy">Happy</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Sick" name="survey[mood]" id="survey_mood_sick">
+                <label class="radio__label" for="survey_mood_sick">Sick</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Angry" name="survey[mood]" id="survey_mood_angry">
+                <label class="radio__label" for="survey_mood_angry">Angry</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Tired" name="survey[mood]" id="survey_mood_tired">
+                <label class="radio__label" for="survey_mood_tired">Tired</label>
+              </div>
             </div>
-            <div class="category-choice">
-              <input type="radio" value="Happy" name="survey[mood]" id="survey_mood_happy">
-              <label class="form-check-label collection_radio_buttons" for="survey_mood_happy">Happy</label>
+          </fieldset>
+          <fieldset class="form-group radio_buttons required survey_media_type category-choices">
+            <legend class="col-form-label pt-0">Media type <abbr title="required">*</abbr></legend>
+            <div class="category-choices">
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Movies" name="survey[media_type]" id="survey_media_type_movies">
+                <label class="radio__label" for="survey_media_type_movies">Movies</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="TV" name="survey[media_type]" id="survey_media_type_tv">
+                <label class="radio__label" for="survey_media_type_tv">TV</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="Don’t Care" name="survey[media_type]" id="survey_media_type_dont_care">
+                <label class="radio__label" for="survey_media_type_dont_care">Don’t Care</label>
+              </div>
             </div>
-            <div class="category-choice">
-              <input type="radio" value="Sick" name="survey[mood]" id="survey_mood_sick">
-              <label class="form-check-label collection_radio_buttons" for="survey_mood_sick">Sick</label>
             </div>
-            <div class="category-choice">
-              <input type="radio" value="Angry" name="survey[mood]" id="survey_mood_angry">
-              <label class="form-check-label collection_radio_buttons" for="survey_mood_angry">Angry</label>
+          </fieldset>
+          <fieldset class="form-group radio_buttons required survey_ratings category-choices">
+            <legend class="col-form-label pt-0">Ratings <abbr title="required">*</abbr></legend>
+            <div class="category-choices">
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value=">5/10" name="survey[ratings]" id="survey_ratings_510">
+                <label class="radio__label" for="survey_ratings_510">&gt;5/10</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value=">7.5" name="survey[ratings]" id="survey_ratings_7_5">
+                <label class="radio__label" for="survey_ratings_7_5">&gt;7.5</label>
+              </div>
+              <div class="category-choice">
+                <input class="radio__input" type="radio" value="All" name="survey[ratings]" id="survey_ratings_all">
+                <label class="radio__label" for="survey_ratings_all">All</label>
+              </div>
             </div>
-            <div class="category-choice">
-              <input type="radio" value="Tired" name="survey[mood]" id="survey_mood_tired">
-              <label class="form-check-label collection_radio_buttons" for="survey_mood_tired">Tired</label>
+          </fieldset>
+          <fieldset class="form-group radio_buttons required survey_release_year category-choices form-control-plaintext">
+            <legend class="col-form-label pt-0">Release year <abbr title="required">*</abbr></legend>
+            <div class="category-choices">
+              <div class="category-choice">
+              <input class="radio__input" type="radio" value="oldies" name="survey[release_year]" id="survey_release_year_oldies">
+              <label class="radio__label" for="survey_release_year_oldies">oldies</label>
+              </div>
+              <div class="category-choice">
+              <input class="radio__input" type="radio" value="80s - 90s" name="survey[release_year]" id="survey_release_year_80s_-_90s">
+              <label class="radio__label" for="survey_release_year_80s_-_90s">80s - 90s</label>
+              </div>
+              <div class="category-choice">
+              <input class="radio__input" type="radio" value="90 - 00s" name="survey[release_year]" id="survey_release_year_90_-_00s">
+              <label class="radio__label" for="survey_release_year_90_-_00s">90 - 00s</label>
+              </div>
+              <div class="category-choice">
+              <input class="radio__input" type="radio" value="00s - 10s" name="survey[release_year]" id="survey_release_year_00s_-_10s">
+              <label class="radio__label" for="survey_release_year_00s_-_10s">00s - 10s</label>
+              </div>
+              <div class="category-choice">
+              <input class="radio__input" type="radio" value="10s - Now" name="survey[release_year]" id="survey_release_year_10s_-_now">
+              <label class="radio__label" for="survey_release_year_10s_-_now">10s - Now</label>
+              </div>
+              <div class="category-choice">
+              <input class="radio__input" type="radio" value="All" name="survey[release_year]" id="survey_release_year_all">
+              <label class="radio__label" for="survey_release_year_all">All</label>
+              </div>
             </div>
-          </div>
-        </fieldset>
-          <%= f.input :media_type, wrapper_html: { class:'category-choices' },   as: :radio_buttons, collection: ["Movies", "TV", "Don’t Care" ]%>
-          <%= f.input :ratings, wrapper_html: { class:'category-choices' }, as: :radio_buttons, collection: [">5/10", ">7.5", "All"] %>
-          <%= f.input :release_year, wrapper_html: { class:'category-choices form-control-plaintext ' }, as: :radio_buttons, collection: ["oldies", "80s - 90s", "90 - 00s", "00s - 10s", :"10s - Now", :"All"] %>
-          <%= f.button :submit,  class: 'btn btn-primary  text-center buttonsubmit' %>
+          </fieldset>
+          <%= f.button :submit, "Give me recommendations!", class: 'btn btn-info text-center buttonsubmit' %>
         <% end %>
       </div>
     </div>
