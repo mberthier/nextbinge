@@ -2,6 +2,8 @@
   display: inline-flex;
   flex-flow: wrap;
   border-radius: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 .category-choice {
@@ -28,6 +30,9 @@
 
 .radio__input:checked + .radio__label {
   background: #FCBF1E;
+  border: 1px solid #FCBF1E;
+  color: black;
+  font-weight: normal;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   opacity: 1;
 }
