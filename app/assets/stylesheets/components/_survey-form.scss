@@ -13,19 +13,13 @@
 }
 
 .radio__label {
-  padding: 9px 0px;
-  font-weight: bold;
-  text-align: center;
-  margin: 9px 1px;
-  font-size: 12px;
-  font-family: sans-serif;
-  color: white;
-  background-color: #009578;
-  cursor: pointer;
-  transition: 0.1s;
-  width: 143px;
-  height: 36px;
-  border-radius: 15px;
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 .radio__label:not(last-of-type) {
@@ -33,5 +27,7 @@
 }
 
 .radio__input:checked + .radio__label {
-  background: #006B56;
+  background: #FCBF1E;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  opacity: 1;
 }

@@ -1,28 +1,67 @@
-<% require 'time' %>
+<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1493804714600-6edb1cd93080?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);">
+  <div class="container">
+    <h1>The search is over...<br> Nextbinge reinvent the way you stream. </h1>
+    <p>Discover the best shows from your video streaming libraries. Spend less time searching and more time watching! </p>
+    <a class="btn btn-flat" href="#">Start</a>
+  </div>
+</div>
 
-<% a = Time.now %>
-<% b = Time.parse('2020-09-26 12:00:00 +0100') %>
-<% c = (a - b) / 3600 %>
-<% d = c / 24 %>
-<div style="font-size: 50px; font-family: Arial; text-align: center;">
-  <strong>Days to Demo Day:</strong> <%= (d*-1).to_f.ceil %>
+<div class= "container process">
+  <% require 'time' %>
+  <% a = Time.now %>
+  <% b = Time.parse('2020-09-26 12:00:00 +0100') %>
+  <% c = (a - b) / 3600 %>
+  <% d = c / 24 %>
+<!--   <div  class= "mt-4" style="font-size: 50px; font-family: Arial; text-align: center;">
+    <strong>Days to Demo Day:</strong> <%= (d*-1).to_f.ceil %>
+  </div> -->
+  <h2>Get relevant recomendations effortlessly</h2>
+  <div class= "d-flex justify-content-around align-items-center m-5 flex-wrap">
+    <div class="d-flex flex-column align-items-center justify-content-around">
+      <div class="gold-circle">
+      <h3>1</h3>
+      </div>
+      <p>Indicate your current subscriptions</p>
+    </div>
+    <div class="d-flex flex-column align-items-center justify-content-around">
+      <div class="gold-circle">
+      <h3>2</h3>
+      </div>
+      <p>Tell us a bit about your tastes</p>
+    </div>
+    <div class="d-flex flex-column align-items-center justify-content-around">
+      <div class="gold-circle">
+      <h3>3</h3>
+      </div>
+      <p>Get personnalized recommendations</p>
+    </div>
+  </div>
+</div>
+
+<div class= "search">
+  <div class="container">
+    <h2>Find your favorites in no time</h2>
+    <%= form_with url: search_page_get_path, local: true, method: :post do %>
+    <div class= "d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
+      <div class= "d-flex">
+        <%= text_field_tag :search_term %>
+        <%= submit_tag 'Watch', class: "btn"  %>
+      </div>
+      <div>
+        <%= check_box_tag(:netflix, "Netflix") %>
+        <label for="netflix">Netflix</label>
+        <%= check_box_tag(:amazon, "Amazon Prime Video") %>
+        <label for="amazon">Amazon</label>
+        <%= check_box_tag(:disney_plus, "Disney+") %>
+        <label for="disney_plus">Disney Plus</label>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
+
+<div class= "container platforms">
 </div>
 
 
-<%= link_to "Test Reco Engine", result_path %>
-<br>
-<br>
-<br>
-<br>
-<%= form_with url: search_page_get_path, local: true, method: :post do %>
-  Search <%= text_field_tag :search_term %>
-  <br>
-  <%= check_box_tag(:netflix, "Netflix") %>
-  <label for="netflix">Netflix</label>
-  <%= check_box_tag(:amazon, "Amazon Prime Video") %>
-  <label for="amazon">Amazon</label>
-  <%= check_box_tag(:disney_plus, "Disney+") %>
-  <label for="disney_plus">Disney Plus</label>
-  <br>
-  <%= submit_tag 'Go' %>
-<% end %>

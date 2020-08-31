@@ -1,2 +1,87 @@
-// Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: right bottom;
+  padding: 200px 20px;
+  height: 100vh;
+  width: 100%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
+.container {
+  padding: 0px;
+}
+
+.banner h1 {
+  margin: 0;
+  padding-right: 50%;
+  color: black;
+  font-size: 40px;
+  line-height: 47px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+}
+
+.banner p {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 20px;
+  padding-right: 45%;
+  color: black;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-flat {
+  color: white;
+  background-color: black;
+  padding: 16px 50px;
+  border-radius: 4px;
+  font-weight: bold;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #FCBF1E;
+  color: black;
+}
+
+.process {
+  h2 {
+    text-align: center;
+    margin-top: 48px;
+  }
+  .gold-circle {
+    background-color: #FCBF1E;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gold-circle h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 32px;
+  }
+  p {
+    margin: 16px;
+    text-align: center;
+  }
+
+}
+
+.search {
+  background-color: white;
+  height: 300px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.platforms {
+  height: 500px;
+}

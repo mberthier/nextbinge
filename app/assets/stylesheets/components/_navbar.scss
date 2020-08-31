@@ -1,6 +1,6 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
-  background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,18 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 200px;
+}
+
+.gold {
+  background-color: #FCBF1E;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0px 24px;
+  text-align: center;
+  margin: 0 16px;
+  color: black;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
