@@ -1,2 +1,130 @@
-// Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: right bottom;
+  padding: 200px 0px;
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1493804714600-6edb1cd93080?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  @media (min-width:0px) and (max-width:374px) {
+    background-image: none;
+    background-color: #7ab3d0;
+    padding: 100px 24px 100px 24px;
+    height: 125vh;
+    }
+  @media (min-width:375px) and (max-width:640px) {
+    background-image: none;
+    background-color: #7ab3d0;
+    padding: 100px 24px 100px 24px;
+    }
+  @media (min-width:641px) and (max-width:1300px) {
+    background-image: none;
+    background-color: #7ab3d0;
+    padding: 175px 48px 100px 48px;
+    }
+}
+
+
+.container {
+  padding: 0px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: black;
+  font-size: 40px;
+  line-height: 47px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+}
+
+.banner p {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 20px;
+  color: black;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-flat {
+  color: white;
+  background-color: black;
+  border: none;
+  padding: 16px 50px;
+  border-radius: 4px;
+  font-weight: bold;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-flat:hover {
+  background: #FCBF1E;
+  border: none;
+  color: black;
+  text-decoration: none;
+}
+
+.process {
+  h2 {
+    text-align: center;
+    margin-top: 48px;
+  }
+  .gold-circle {
+    background-color: #FCBF1E;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gold-circle h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 32px;
+  }
+  p {
+    margin: 16px;
+    text-align: center;
+  }
+}
+
+.search {
+  background-color: white;
+  height: 300px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  h2 {
+    @media (max-width: 480px) {
+      text-align: center;
+      margin-top: 48px;
+      padding: 0 24px;
+    }
+  }
+
+}
+
+.platforms {
+  h2 {
+    margin-top: 48px;
+    @media (min-width:0px) and (max-width:640px) {
+      text-align: center;
+    }
+  }
+}
+
+.streaming-container {
+  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 48px;
+}
+
+
 
