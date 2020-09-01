@@ -1,0 +1,23 @@
+<div class="cover-media"></div>
+<div class="container">
+  <div class= "description">
+    <li><span style= "font-weight: bold"><%= @media.title %></span> </li>
+    <li class= "mb-4 mt-4" style= "max-width: 75%;"><%= @media.plot %></li>
+    <li>Genre: <%= @media.genre %></li>
+    <li>Year: <%= @media.release_year %></li>
+    <li>IMDB rating: <%= @media.ratings %>/10</li>
+    <% if  %>
+      <% @media.streaming_service == "netflix" %>
+      <%= image_tag("netflix_logo.png", {:style => "width: 100px; border-radius: 10px; margin-top: 20px;"}) %>
+    <% end %>
+    <% if  %>
+      <% @media.streaming_service == "amazon" %>
+      <%= image_tag("amazon_logo.png", {:style => "width: 100px; border-radius: 10px; margin-top: 20px;"}) %>
+    <% end %>
+    <% if  %>
+      <% @media.streaming_service == "disney_plus" %>
+      <%= image_tag("disney_logo.jpg", {:style => "width: 100px; border-radius: 10px; margin-top: 20px;"}) %>
+    <% end %>
+  </div>
+</div>
+

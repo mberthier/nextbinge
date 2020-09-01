@@ -39,7 +39,9 @@
             <%= image_tag("disney_logo.jpg", {:style => "width: 100px; border-radius: 10px; margin-top: 20px;"}) %>
           <% end %>
         </div>
-        <img src="<%= media.poster %>" alt="" style= "width: 200px">
+        <%= link_to media_path(media) do %>
+          <img src="<%= media.poster %>" alt="" style= "width: 200px">
+        <% end %>
       </div>
     </ul>
     <% end %>
