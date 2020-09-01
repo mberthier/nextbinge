@@ -1,5 +1,4 @@
-<div class= "container">
-  <div class= 'm-3'>
+<div class="cover-result d-flex flex-column align-items-center justify-content-center">
     <h3 class= 'mb-3 mt-5'>Here is are selection for you</h3>
     <p class= 'mb-5'>
       You want to watch <span style= "font-weight: bold;"><%= @survey.genre %> <%= @survey.media_type %></span> that are available on
@@ -14,6 +13,10 @@
       <% end %>
       with <span style= "font-weight: bold;"><%= @survey.ratings %></span> rating and doesn’t have to be recent.
     </p>
+</div>
+<div class= "container">
+  <div class= 'm-3'>
+
     <% @reco_movies.each do |media| %>
     <ul class= "m-4" style="list-style: none">
       <div class= "d-flex justify-content-between p-3" style="background-color: white; border-radius: 5px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">

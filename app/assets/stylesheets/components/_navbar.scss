@@ -1,4 +1,7 @@
 .navbar-lewagon {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
 }
@@ -13,7 +16,8 @@
 
 .gold {
   background-color: #FCBF1E;
-  border-radius: 10px;
+  border-color: #FCBF1E;
+  border-radius: 5px;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;

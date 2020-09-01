@@ -1,6 +1,9 @@
-<div class="container mt-5 ">
+<div class="cover-survey d-flex align-items-center justify-content-center">
+  <h1>Find a movie to watch in less than a minute!</h1>
+</div>
+<div class="container pt-5 ">
   <div class="row m-0">
-    <div class="col-md-6 offset-md-3 col-sm-12">
+    <div class="survey col-md-8 offset-md-2 col-sm-12">
       <div>
         <%= simple_form_for [current_user, @survey] do |f| %>
           <fieldset class="form-group radio_buttons required survey_genre category-choices form-control-plaintext">
@@ -188,7 +191,7 @@
               </div>
             </div>
           </fieldset>
-          <%= f.button :submit, "Give me recommendations!", class: 'btn btn-block buttonsubmit mb-5' %>
+          <%= f.button :submit, "Give me recommendations!", class: 'btn btn-block buttonsubmit mb-5 mt-5' %>
         <% end %>
       </div>
     </div>

@@ -1,11 +1,28 @@
 .banner {
   background-size: cover;
   background-position: right bottom;
-  padding: 200px 20px;
+  padding: 200px 0px;
   height: 100vh;
-  width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1493804714600-6edb1cd93080?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  @media (min-width:0px) and (max-width:374px) {
+    background-image: none;
+    background-color: #7ab3d0;
+    padding: 100px 24px 100px 24px;
+    height: 125vh;
+    }
+  @media (min-width:375px) and (max-width:640px) {
+    background-image: none;
+    background-color: #7ab3d0;
+    padding: 100px 24px 100px 24px;
+    }
+  @media (min-width:641px) and (max-width:1300px) {
+    background-image: none;
+    background-color: #7ab3d0;
+    padding: 175px 48px 100px 48px;
+    }
 }
+
 
 .container {
   padding: 0px;
@@ -13,7 +30,6 @@
 
 .banner h1 {
   margin: 0;
-  padding-right: 50%;
   color: black;
   font-size: 40px;
   line-height: 47px;
@@ -25,7 +41,6 @@
   margin-top: 20px;
   margin-bottom: 40px;
   font-size: 20px;
-  padding-right: 45%;
   color: black;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -34,16 +49,20 @@
 .btn-flat {
   color: white;
   background-color: black;
+  border: none;
   padding: 16px 50px;
   border-radius: 4px;
   font-weight: bold;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   transition: background 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-flat:hover {
   background: #FCBF1E;
+  border: none;
   color: black;
+  text-decoration: none;
 }
 
 .process {
@@ -70,7 +89,6 @@
     margin: 16px;
     text-align: center;
   }
-
 }
 
 .search {
@@ -80,8 +98,33 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  h2 {
+    @media (max-width: 480px) {
+      text-align: center;
+      margin-top: 48px;
+      padding: 0 24px;
+    }
+  }
+
 }
 
 .platforms {
-  height: 500px;
+  h2 {
+    margin-top: 48px;
+    @media (min-width:0px) and (max-width:640px) {
+      text-align: center;
+    }
+  }
 }
+
+.streaming-container {
+  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 48px;
+}
+
+
+

@@ -1,9 +1,12 @@
+<div class="cover-search d-flex flex-column align-items-center justify-content-center">
+  <h3 style="text-align: center">Your search returned the following results:</h3>
+  <div class="search-again" style="text-align: center;">
+    <%= link_to "Search again", root_path %>
+  </div>
+</div>
 <div class="container">
   <div class='m-3'>
-    <h3 style="text-align: center">Your search returned the following results:</h3>
-    <div class="search-again" style="text-align: center;">
-      <%= link_to "Search again", root_path %>
-    </div>
+
     <% @searchresults["results"].each do |item| %>
       <% item["locations"].each do |location| %>
         <% if location["display_name"].include?(@netflix || @amazon || @disney || "Amazon Instant Video") %>
