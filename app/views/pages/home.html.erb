@@ -2,7 +2,11 @@
   <div class="container">
     <h1>The search is over...<br> Reinvent the way you stream </h1>
     <p> Spend more time watching and less time searching <br> All while discovering the best shows from your streaming libraries</p>
-    <a class="btn btn-flat" href="users/sign_up">Start</a>
+    <% if user_signed_in?%>
+      <a class="btn btn-flat" href="/users/<%= current_user.id %>/surveys/new">Start</a>
+    <% else %>
+      <a class="btn btn-flat" href="users/sign_up">Start</a>
+    <% end %>
   </div>
 </div>
 
@@ -73,7 +77,11 @@
     <div><%= image_tag("netflix_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
     <div><%= image_tag("netflix_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
   </div>
-  <div class="m-5 d-flex justify-content-center"><a class="btn-flat" href="users/sign_up">Start</a></div>
+  <% if user_signed_in?%>
+    <div class="m-5 d-flex justify-content-center"><a class="btn-flat" href="/users/<%= current_user.id %>/surveys/new">Start</a></div>
+  <% else %>
+    <div class="m-5 d-flex justify-content-center"><a class="btn-flat" href="users/sign_up">Start</a></div>
+  <% end %>
 </div>
 
 
