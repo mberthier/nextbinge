@@ -1,4 +1,62 @@
 .cover-media {
-    height: 250px;
+  height: 150px;
   background-color: #7ab3d0;
 }
+
+li {
+  list-style: none;
+}
+
+.media-card {
+ display: flex;
+ width: 100%;
+ justify-content: center;
+ margin-top: 48px;
+ border-radius: 10px;
+ background-color: white;
+ box-shadow: 0 0 15px rgba(0,0,0,0.2);
+ height: 66vh;
+ @media (min-width:0px) and (max-width:415px) {
+    height: 80vh;
+    margin-top: -60px;
+  }
+
+}
+
+.poster {
+  margin: 0px 40px 0px 0px;
+  width: 30%;
+  flex: none;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  @media (min-width:0px) and (max-width:380px) {
+    display: none;    }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h1 {
+    margin-top: 1rem;
+  }
+  a {
+    color: black;
+  }
+  li {
+   @media (min-width:0px) and (max-width:380px) {
+    padding-left: 16px;
+    }
+  }
+}
+
+.btn-gold {
+  color: black;
+  background-color: #FCBF1E;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+

@@ -1,23 +1,44 @@
 <div class="cover-media"></div>
-<div class="container">
-  <div class= "description">
-    <li><span style= "font-weight: bold"><%= @media.title %></span> </li>
-    <li class= "mb-4 mt-4" style= "max-width: 75%;"><%= @media.plot %></li>
-    <li>Genre: <%= @media.genre %></li>
-    <li>Year: <%= @media.release_year %></li>
-    <li>IMDB rating: <%= @media.ratings %>/10</li>
-    <% if  %>
-      <% @media.streaming_service == "netflix" %>
-      <%= image_tag("netflix_logo.png", {:style => "width: 100px; border-radius: 10px; margin-top: 20px;"}) %>
-    <% end %>
-    <% if  %>
-      <% @media.streaming_service == "amazon" %>
-      <%= image_tag("amazon_logo.png", {:style => "width: 100px; border-radius: 10px; margin-top: 20px;"}) %>
-    <% end %>
-    <% if  %>
-      <% @media.streaming_service == "disney_plus" %>
-      <%= image_tag("disney_logo.jpg", {:style => "width: 100px; border-radius: 10px; margin-top: 20px;"}) %>
-    <% end %>
+<div class="container d-flex">
+  <div class="media-card">
+<!--  <div>
+        <i class="far fa-bookmark"></i>
+        <i class="fas fa-check"></i>
+        <i class="fas fa-ban"></i>
+      </div> -->
+    <div class="poster" style="background-image: url(<%= @media.poster %>);">
+        <div>
+          <% if  %>
+            <% @media.streaming_service == "netflix" %>
+            <%= image_tag("netflix_logo.png", {:style => "width: 75px; border-radius: 5px;"}) %>
+          <% end %>
+          <% if  %>
+            <% @media.streaming_service == "amazon" %>
+            <%= image_tag("amazon_logo.png", {:style => "width: 75px; border-radius: 5px;"}) %>
+          <% end %>
+          <% if  %>
+            <% @media.streaming_service == "disney_plus" %>
+            <%= image_tag("disney_logo.jpg", {:style => "width: 75px; border-radius: 5px;"}) %>
+          <% end %>
+        </div>
+    </div>
+    <div class= "description">
+      <div class="d-flex align-items-center justify-content-between">
+        <li><h1><%= @media.title %></h1></li>
+      <%= link_to :back do %>
+        <i class="far fa-times-circle" style="color: black; font-size: 40px; margin-top: -20px;"></i>
+      <% end %>
+      </div>
+      <div>
+        <li class= "mb-4" style="max-width: 75%;"><%= @media.plot %></li>
+        <li>Genre: <%= @media.genre %></li>
+        <li>Year: <%= @media.release_year %></li>
+        <li>IMDB rating: <%= @media.ratings %>/10</li>
+      </div>
+
+      <button class="btn-gold btn-block"><a href="#">Watch</a></button>
+    </div>
   </div>
+
 </div>
 
