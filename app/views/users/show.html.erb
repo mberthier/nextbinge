@@ -11,9 +11,6 @@
 </div>
 <div class="container">
   <div class="user-info">
-    <div class="user-email">
-      Email: <%= @user.email %>
-    </div>
     <div class="user-streaming-services">
       Netflix: <%= @user.netflix? %>
       <br>
@@ -23,29 +20,47 @@
     </div>
   </div>
 </div>
+
+
 <div class="container">
-  <div class="bookmarked-list">
-    <h2>Your bookmarked list</h2>
-    <%= render "media_user/bookmarked_index" %>
+  <input type="radio" name="tabs" id="tab1" checked />
+  <label for="tab1">Bookmarked</label>
+  <input type="radio" name="tabs" id="tab2" />
+  <label for="tab2">Watched</label>
+  <input type="radio" name="tabs" id="tab3" />
+  <label for="tab3">Excluded</label>
+  <div class="tab content1">
+    <div class="container">
+      <div class="bookmarked-list">
+        <h2>Your bookmarked list</h2>
+        <%= render "media_user/bookmarked_index" %>
+      </div>
+    </div>
+  </div>
+  <div class="tab content2">
+    <div class="container">
+      <div class="watched-list">
+        <h2>Your watch list</h2>
+        <%= render "media_user/watched_index" %>
+      </div>
+    </div>
+  </div>
+  <div class="tab content3">
+    <div class="container">
+      <div class="excluded-list">
+        <h2>Your excluded list</h2>
+        <%= render "media_user/excluded_index" %>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="previous-recommendations">
+      <h2>Your previous recommendations</h2>
+    </div>
   </div>
 </div>
-<div class="container">
-  <div class="watched-list">
-    <h2>Your watch list</h2>
-    <%= render "media_user/watched_index" %>
-  </div>
-</div>
-<div class="container">
-  <div class="excluded-list">
-    <h2>Your excluded list</h2>
-    <%= render "media_user/excluded_index" %>
-  </div>
-</div>
-<div class="container">
-  <div class="previous-recommendations">
-    <h2>Your previous recommendations</h2>
-  </div>
-</div>
+
+
 <div class="edit-user-link">
   <%= link_to "Edit details", edit_user_path(current_user), class: "btn" %>
 </div>
