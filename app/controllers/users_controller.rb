@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def show
+    @media = Media.all
+    @bookmarked_index = MediaUser.where(user_id: @user.id)
+    @watched_index = MediaUser.where(user_id: @user.id, watched: true)
+    @excluded_index = MediaUser.where(user_id: @user.id, excluded: true)
   end
 
   def edit
