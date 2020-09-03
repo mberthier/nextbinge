@@ -1,20 +1,12 @@
 <div class="container">
-  <% @bookmarked_index.each do |item| %>
-    <% media = @media.where(id: item.media_id) %>
-    <% media.each do |e| %>
-    <div class="media-info-container">
-      <div class="media-title" style="background-image: url(<%= e.poster %>);">
-        <%= e.title %>
+  <div class="bookmarked-carousel">
+    <% @bookmarked_index.each do |item| %>
+      <% media = @media.where(id: item.media_id) %>
+      <div class="media-info-container">
+        <% media.each do |e| %>
+          <div class="card-category-home" style="background-image: url(<%= e.poster %>)"></div>
       </div>
-      <div class="media-info">
-        <%= e.plot %>
-        <%= e.release_year %>
-        <%= e.ratings %>
-        <%= e.genre %>
-        <%= e.media_type %>
-        <%= e.streaming_service %>  
-      </div>
-    </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
