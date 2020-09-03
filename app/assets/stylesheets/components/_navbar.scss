@@ -4,11 +4,17 @@
   z-index: 1000;
   display: flex;
   justify-content: space-between;
+  @media (min-width:0px) and (max-width:415px) {
+    ul {
+     background-color: white;
+     }
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
+
 
 .navbar-lewagon .navbar-brand img {
   width: 200px;

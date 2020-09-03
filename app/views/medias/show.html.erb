@@ -1,0 +1,50 @@
+<div class="cover-media"></div>
+<div class="container d-flex">
+  <div class="media-card">
+<!--  <div>
+        <i class="far fa-bookmark"></i>
+        <i class="fas fa-check"></i>
+        <i class="fas fa-ban"></i>
+      </div> -->
+    <div class="poster" style="background-image: url(<%= @media.poster %>);">
+
+    </div>
+    <div class= "description">
+      <div class="d-flex align-items-center justify-content-between">
+        <li><h1><%= @media.title %></h1></li>
+      <%= link_to :back do %>
+        <i class="far fa-times-circle" style="color: black; font-size: 40px; margin-top: -20px;"></i>
+      <% end %>
+      </div>
+      <div>
+        <li id="plot" class="mb-4"><%= @media.plot %></li>
+        <div class="d-flex justify-content-between align-items-center" style="max-width: 75%;">
+          <div>
+            <li>Genre: <%= @media.genre %></li>
+            <li>Year: <%= @media.release_year %></li>
+            <li>IMDB rating: <%= @media.ratings %>/10</li>
+          </div>
+          <div>
+            <% if  %>
+              <% @media.streaming_service == "netflix" %>
+<!--               <p>Available on</p> -->
+              <%= image_tag("netflix_logo.png", {:style => "width: 95px; border-radius: 5px;"}) %>
+            <% end %>
+            <% if  %>
+              <% @media.streaming_service == "amazon" %>
+<!--               <p>Available on</p> -->
+              <%= image_tag("amazon_logo.png", {:style => "width: 95px; border-radius: 5px; border: 1px solid black;"}) %>
+            <% end %>
+            <% if  %>
+              <% @media.streaming_service == "disney_plus" %>
+<!--               <p>Available on</p> -->
+              <%= image_tag("disney_logo.jpg", {:style => "width: 95px; border-radius: 5px;"}) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <button class="btn-gold btn-block"><a href="#">Watch</a></button>
+    </div>
+  </div>
+</div>
+

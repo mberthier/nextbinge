@@ -27,7 +27,6 @@ class PagesController < ApplicationController
     request["x-rapidapi-host"] = 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
     request["x-rapidapi-key"] = '8ca5dbf3afmsh60ff48690b836fdp169452jsnc257978cfbd8'
     @searchresults = JSON.parse(http.request(request).read_body)
-
   end
 
   def result
@@ -37,7 +36,7 @@ class PagesController < ApplicationController
       scrape_by_service(service)
     end
 
-    @reco_movies = reco_movies.flatten.compact.shuffle
+    @reco_movies = reco_movies.flatten.compact.sample(3)
   end
 
   private
@@ -47,11 +46,11 @@ class PagesController < ApplicationController
   end
 
   def scrape_by_service(service)
-    scrape(service) unless !User.last[service]
+    scrape(service) unless !current_user[service]
   end
 
   def scrape(streaming_service)
-    @survey = Survey.last
+    @survey = current_user.surveys.last
     @platform = streaming_service
     genres = {
       "Action & Adventure" => 5,

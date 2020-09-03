@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :media, only: :create
+  resources :medias, only: [:create, :show]
   get "result", to: "pages#result"
   get '/search', to: 'pages#search', :as => 'search_page_get'
   post '/search', to: 'pages#search', :as => 'search_page_post'
