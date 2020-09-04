@@ -19,11 +19,7 @@
     <% @reco_movies.each do |media| %>
       <%= link_to media_path(media) do %>
         <div class="card-category-home" style="background-image: url(<%= media.poster %>)">
-          <div>
-            <a href="#"><i id="bookmark" class="fas fa-bookmark"></i></a>
-<!--        <i class="fas fa-check"></i>
-            <i class="fas fa-ban"></i> -->
-          </div>
+          <i id="bookmark" class="fas fa-bookmark"></i>
         </div>
       <% end  %>
     <% end %>
