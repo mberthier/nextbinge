@@ -9,6 +9,19 @@
   }
 }
 
+#bookmark {
+  transition: 0.3s;
+  font-size: 40px;
+  color: #E5E5E5;
+  &:hover {
+    transform: scale(1.05);
+    color: #FCBF1E;
+  }
+  &:click {
+    color: #FCBF1E;
+  }
+}
+
 .card-category-home {
   background-size: cover;
   background-position: center;
