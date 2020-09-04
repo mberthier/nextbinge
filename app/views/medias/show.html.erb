@@ -12,9 +12,7 @@
     <div class= "description">
       <div id="title">
         <h1><%= @media.title %></h1>
-        <%= link_to :back do %>
-          <i id="close-btn" class="far fa-times-circle" style="color: black; font-size: 32px;"></i>
-        <% end %>
+        <i id="close-btn" class="far fa-times-circle" onclick="history.go(-1)" style="color: black; font-size: 32px;"></i>
       </div>
       <div>
         <li id="plot" class="mb-4"><%= @media.plot %></li>
@@ -22,7 +20,11 @@
           <div>
             <li>Genre: <%= @media.genre %></li>
             <li>Year: <%= @media.release_year %></li>
-            <li>IMDB rating: <%= @media.ratings %>/10</li>
+            <div class="d-flex align-items-center justify-content-start">
+              <i id="imdb" class="fab fa-imdb"></i>
+              <p><%= @media.ratings %>/10</p>
+            </div>
+
           </div>
           <div class="streaming">
             <% if  %>
