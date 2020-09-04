@@ -17,11 +17,15 @@
 <div id="medias-gallery" class="desktop container">
   <div class="d-flex justify-content-around align-items-center flex-wrap">
     <% @reco_movies.each do |media| %>
-      <%= link_to media_path(media) do %>
-        <div class="card-category-home" style="background-image: url(<%= media.poster %>)">
-          <i id="bookmark" class="fas fa-bookmark"></i>
-        </div>
-      <% end  %>
+      <div class="d-flex align-items-start">
+        <%= link_to root_path do %>
+          <i id="bookmark" class="fas fa-bookmark" style="position: relative; position: relative; left: 30px; top: 8px; z-index: 1000"></i>
+        <% end %>
+        <%= link_to media_path(media) do %>
+          <div class="card-category-home" style="background-image: url(<%= media.poster %>)">
+          </div>
+        <% end  %>
+      </div>
     <% end %>
   </div>
 </div>

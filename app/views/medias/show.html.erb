@@ -2,11 +2,11 @@
 <div class="container d-flex">
   <div class="media-card">
     <div class="poster" style="background-image: url(<%= @media.poster %>);">
-      <div>
-        <a href="#"><i id="bookmark" class="fas fa-bookmark"></i></a>
-<!--    <i class="fas fa-check"></i>
+      <%= link_to root_path do %>
+        <i id="bookmark" class="fas fa-bookmark" style="position: relative; position: relative; left: 0px; bottom: 8px; z-index: 1000"></i>
+      <% end %>
+      <!--    <i class="fas fa-check"></i>
         <i class="fas fa-ban"></i> -->
-      </div>
     </div>
     <div class= "description">
       <div id="title">

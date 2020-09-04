@@ -48,5 +48,5 @@ class MediaUserController < ApplicationController
 
   def media_user_params
     params.require(:media_user).permit(:media_id, :user_id, :bookmarked, :excluded, :watched)
-  end 
+  end
 end
