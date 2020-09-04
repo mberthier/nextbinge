@@ -42,22 +42,22 @@
   </div>
 </div>
 
-<div class= "search">
+<div class="search">
   <div class="container">
     <h2>Find your favorites in no time</h2>
     <%= form_with url: search_page_get_path, local: true, method: :post do %>
-    <div class= "d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
-      <div class= "search-field d-flex">
+    <div class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
+      <div class="search-field d-flex">
         <div><%= text_field_tag :search_term %></div>
         <div><%= submit_tag 'Watch', class: "btn-default"  %></div>
       </div>
-      <div>
+      <div class="streaming-services">
         <%= check_box_tag(:netflix, "Netflix") %>
-        <label for="netflix">Netflix</label>
+        <label for="netflix" id="netflix">Netflix</label>
         <%= check_box_tag(:amazon, "Amazon Prime Video") %>
-        <label for="amazon">Amazon</label>
+        <label for="amazon" id="amazon">Amazon</label>
         <%= check_box_tag(:disney_plus, "Disney+") %>
-        <label for="disney_plus">Disney Plus</label>
+        <label for="disney_plus" id="disney_plus">Disney Plus</label>
       </div>
     </div>
     <% end %>

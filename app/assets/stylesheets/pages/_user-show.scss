@@ -30,15 +30,19 @@
   margin: 10px;
 }
 
-input {
+input#tab1,
+input#tab2,
+input#tab3 {
   display: none;
 }
 
-input+label {
+input#tab1+label#tab1, input#tab2+label#tab2, input#tab3+label#tab3 {
   display: inline-block
 }
 
-input~.tab {
+input#tab1~.tab,
+input#tab2~.tab,
+input#tab3~.tab {
   display: none
 }
 
@@ -50,7 +54,9 @@ input~.tab {
   display: block;
 }
 
-input+label {
+input#tab1+label#tab1,
+input#tab2+label#tab2,
+input#tab3+label#tab3 {
   border: 1px solid #999;
   background: #EEE;
   padding: 4px 12px;
@@ -59,16 +65,22 @@ input+label {
   top: 1px;
 }
 
-input+label:hover {
+input#tab1+label#tab1:hover,
+input#tab2+label#tab2:hover,
+input#tab3+label#tab3:hover {
   cursor: pointer;
 }
 
-input:checked+label {
+input#tab1:checked+label#tab1,
+input#tab2:checked+label#tab2,
+input#tab3:checked+label#tab3 {
   background: #FCBF1E;
   border-bottom: 1px solid transparent;
 }
 
-input~.tab {
+input#tab1,
+input#tab2,
+input#tab3~.tab {
   border-top: 1px solid #999;
   padding: 12px;
 }

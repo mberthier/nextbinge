@@ -1,10 +1,7 @@
-li.streaming-services {
+.streaming-services {
   display: flex;
-  border: 1px solid #000000;
   padding: 10px;
-  margin: 53px 56px 0px -40px;
 }
-
 
 .cover-search {
   height: 250px;
@@ -15,4 +12,49 @@ li.streaming-services {
   p {
     text-align: center;
   }
+}
+
+input#netflix,
+input#amazon,
+input#disney_plus {
+  display: none;
+}
+
+label#netflix,
+label#amazon,
+label#disney_plus {
+  margin: 0px 10px;
+}
+
+input#netflix+label#netflix,
+input#amazon+label#amazon,
+input#disney_plus+label#disney_plus {
+  border: 1px solid #999;
+  background: #EEE;
+  padding: 4px 12px;
+  border-radius: 4px 4px 4px 4px;
+  position: relative;
+  top: 1px;
+  width: 116px;
+  text-align: center;
+}
+
+input#netflix+label#netflix:hover,
+input#amazon+label#amazon:hover,
+input#disney_plus+label#disney_plus:hover {
+  cursor: pointer;
+}
+
+input#netflix:checked+label#netflix,
+input#amazon:checked+label#amazon,
+input#disney_plus:checked+label#disney_plus {
+  background: #FCBF1E;
+  border-bottom: 1px solid transparent;
+}
+
+input#netflix~.tab,
+input#amazon~.tab,
+input#disney_plus~.tab {
+  border-top: 1px solid #999;
+  padding: 12px;
 }
