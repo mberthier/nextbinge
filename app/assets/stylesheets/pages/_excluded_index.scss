@@ -1,0 +1,36 @@
+.excluded-carousel {
+  display: flex;
+}
+
+.card-category-home {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 16px 0px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+}
+
+#medias-gallery {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+.mobile {
+  @media (min-width:416px) {
+    display: none;
+  }
+}
+
+.desktop {
+  @media (min-width:0px) and (max-width:415px) {
+    display: none;
+  }
+}

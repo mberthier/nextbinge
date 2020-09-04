@@ -1,22 +1,66 @@
-<div class="container">
+<div class="user-cover"></div>
+<div class="user-banner" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
   <div class="user-details">
-    <div class="user-name">
-      First name: <%= @user.first_name %>
-      <br>
-      Last name: <%= @user.last_name %>
-    </div>
-    <div class="user-email">
-     Email: <%= @user.email %>
+    <div class="user-account-info">
+    <h1>Welcome back</h1>
+      <div class="user-name">
+        <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+      </div>
     </div>
   </div>
-    <br>
-  <div class="user-streaming-services">
-    Netflix: <%= @user.netflix? %>
-    <br>
-    Amazon: <%= @user.amazon? %>
-    <br>
-    Disney Plus: <%= @user.disney_plus? %>
+</div>
+<div class="container">
+  <div class="user-info">
+    <div class="user-streaming-services">
+      Netflix: <%= @user.netflix? %>
+      <br>
+      Amazon: <%= @user.amazon? %>
+      <br>
+      Disney Plus: <%= @user.disney_plus? %>
+    </div>
   </div>
 </div>
 
-<%= link_to "Edit details", edit_user_path(current_user) %>
+
+<div class="container">
+  <input type="radio" name="tabs" id="tab1" checked />
+  <label for="tab1">Bookmarked</label>
+  <input type="radio" name="tabs" id="tab2" />
+  <label for="tab2">Watched</label>
+  <input type="radio" name="tabs" id="tab3" />
+  <label for="tab3">Excluded</label>
+  <div class="tab content1">
+    <div class="container">
+      <div class="bookmarked-list">
+        <h2>Your bookmarked list</h2>
+        <%= render "media_user/bookmarked_index" %>
+      </div>
+    </div>
+  </div>
+  <div class="tab content2">
+    <div class="container">
+      <div class="watched-list">
+        <h2>Your watch list</h2>
+        <%= render "media_user/watched_index" %>
+      </div>
+    </div>
+  </div>
+  <div class="tab content3">
+    <div class="container">
+      <div class="excluded-list">
+        <h2>Your excluded list</h2>
+        <%= render "media_user/excluded_index" %>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="previous-recommendations">
+      <h2>Your previous recommendations</h2>
+    </div>
+  </div>
+</div>
+
+
+<div class="edit-user-link">
+  <%= link_to "Edit details", edit_user_path(current_user), class: "btn" %>
+</div>

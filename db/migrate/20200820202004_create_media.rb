@@ -9,7 +9,7 @@ class CreateMedia < ActiveRecord::Migration[6.0]
       t.string :poster
       t.string :media_type
       t.string :streaming_service
-
+      
       t.timestamps
     end
   end

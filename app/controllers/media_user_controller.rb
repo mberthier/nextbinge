@@ -40,15 +40,6 @@ class MediaUserController < ApplicationController
     end
   end
 
-  def bookmarked_index
-  end
-
-  def excluded_index
-  end
-
-  def watched_index
-  end
-
   private
 
   def find_user

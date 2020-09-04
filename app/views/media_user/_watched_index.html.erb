@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="watched-carousel">
+    <% @watched_index.each do |item| %>
+      <% media = @media.where(id: item.media_id) %>
+      <div class="media-info-container">
+        <% media.each do |e| %>
+          <div class="card-category-home" style="background-image: url(<%= e.poster %>)"></div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
