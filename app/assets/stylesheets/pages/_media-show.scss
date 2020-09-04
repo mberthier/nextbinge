@@ -53,6 +53,14 @@ li {
     margin-left: 0;
     }
   }
+  #imdb {
+    color: #E1B516;
+    font-size: 40px;
+    margin: 0 8px 0 40px;
+    @media (min-width:0px) and (max-width:380px) {
+    margin-left: 0;
+    }
+  }
 }
 
 h1 {
@@ -84,6 +92,11 @@ h1 {
 }
 
 #close-btn {
+  transition: 0.5s;
+  &:hover {
+    transform: rotate(0.5turn);
+    cursor: pointer;
+  }
   @media (min-width:0px) and (max-width:380px) {
     display: none;
   }

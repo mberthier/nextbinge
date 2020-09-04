@@ -14,7 +14,7 @@
       with <span style= "font-weight: bold;"><%= @survey.ratings %></span> rating and doesn’t have to be recent.
     </p>
 </div>
-<div id="medias-gallery" class=" desktop container">
+<div id="medias-gallery" class="desktop container">
   <div class="d-flex justify-content-around align-items-center flex-wrap">
     <% @reco_movies.each do |media| %>
       <%= link_to media_path(media) do %>
