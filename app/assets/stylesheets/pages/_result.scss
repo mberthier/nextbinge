@@ -11,10 +11,10 @@
 
 #bookmark {
   transition: 0.3s;
-  font-size: 40px;
+  font-size: 35px;
   color: #bbbbbb;
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.125);
     color: #FCBF1E;
   }
 }
@@ -27,9 +27,9 @@
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 16px 0px;
-  transition: 1s;
+  transition: 0.3s;
   &:hover {
-    transform: scale(1.025);
+    transform: scale(1.0125);
   }
 }
 
