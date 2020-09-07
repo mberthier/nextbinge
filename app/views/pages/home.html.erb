@@ -47,17 +47,17 @@
     <h2>Find your favorites in no time</h2>
     <%= form_with url: search_page_get_path, local: true, method: :post do %>
     <div class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
-      <div class="search-field d-flex">
+      <div class="search-field d-flex align-items-center">
         <div><%= text_field_tag :search_term %></div>
-        <div><%= submit_tag 'Watch', class: "btn-default"  %></div>
+        <div><%= submit_tag 'Watch', class: "btn-search"  %></div>
       </div>
       <div class="streaming-services">
         <%= check_box_tag(:netflix, "Netflix") %>
-        <label for="netflix" id="netflix">Netflix</label>
+        <label for="netflix" id="netflix"></label>
         <%= check_box_tag(:amazon, "Amazon Prime Video") %>
-        <label for="amazon" id="amazon">Amazon</label>
+        <label for="amazon" id="amazon"></label>
         <%= check_box_tag(:disney_plus, "Disney+") %>
-        <label for="disney_plus" id="disney_plus">Disney Plus</label>
+        <label for="disney_plus" id="disney_plus"></label>
       </div>
     </div>
     <% end %>
