@@ -1,19 +1,19 @@
 <div class="cover-media"></div>
 <div class="container d-flex">
   <div class="media-card">
-<!--  <div>
-        <i class="far fa-bookmark"></i>
-        <i class="fas fa-check"></i>
-        <i class="fas fa-ban"></i>
-      </div> -->
     <div class="poster" style="background-image: url(<%= @media.poster %>);">
-
+      <%= link_to root_path do %>
+        <i id="bookmark" class="fas fa-bookmark" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
+      <% end %>
+      <!--    <i class="fas fa-check"></i>
+        <i class="fas fa-ban"></i> -->
     </div>
     <div class= "description">
       <div id="title">
         <h1><%= @media.title %></h1>
         <i id="close-btn" class="far fa-times-circle" onclick="history.go(-1)" style="color: black; font-size: 32px;"></i>
       </div>
+
       <div>
         <li id="plot" class="mb-4"><%= @media.plot %></li>
         <div id="lower-descr">
@@ -24,7 +24,6 @@
               <i id="imdb" class="fab fa-imdb"></i>
               <p><%= @media.ratings %>/10</p>
             </div>
-
           </div>
           <div class="streaming">
             <% if  %>

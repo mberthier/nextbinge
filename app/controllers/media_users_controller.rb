@@ -1,4 +1,4 @@
-class MediaUserController < ApplicationController
+class MediaUsersController < ApplicationController
   before_action :find_user, only: [:new, :create, :update, :destroy, :bookmarked_index, :excluded_index, :watched_index]
 
   def index
@@ -10,18 +10,26 @@ class MediaUserController < ApplicationController
 
   def new
     @user = current_user
+    @media = Media.new
     @media_user = MediaUser.new
   end
 
   def create
     @user = current_user
     @media_user = MediaUser.new(params[:media_user])
-    @media_user.user = @user
+    @media_user.media_id = @media
+    @media_user.user_id = @user
     if @media_user.save
-      redirect_to @media_user
+      redirect_to root_path
     else
       render 'new'
     end
+  end
+
+  def bookmark
+    create
+    @media_user.bookmarked = true
+    @media_user.save
   end
 
   def update
@@ -48,5 +56,5 @@ class MediaUserController < ApplicationController
 
   def media_user_params
     params.require(:media_user).permit(:media_id, :user_id, :bookmarked, :excluded, :watched)
-  end 
+  end
 end
