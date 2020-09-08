@@ -31,7 +31,7 @@ class MediaUsersController < ApplicationController
     @media_user.media = Media.find(params[:media].to_i)
     @media_user.user = current_user
     @media_user.bookmarked = true
-    @media_user.save
+    @media_user.save if MediaUser.where(media: @media_user.media, user: current_user).empty?
   end
 
   def update
