@@ -1,37 +1,59 @@
-<div class="cover-search d-flex flex-column align-items-center justify-content-center">
-  <h3 style="text-align: center">Your search returned the following results:</h3>
-  <div class="search-again" style="text-align: center;">
-    <%= link_to "Search again", root_path %>
+<% if @searchresults["results"].any? %>
+  <% if @searchresults["results"].each do |result| %>
+    <% end %>
+  <% else %>
+    <%# Do something %>
+  <% end %>
+  <%# user specifies the search query %>
+  <%# user specifies the streaming platforms they have (netflix, etc) %>
+  <%# if there are any, show them, if not, show "no results" %>
+    <%# if the results that are given have the streaming platforms that the user specified, show a div saying "Good news...etc" %>
+      <%# go through the results of the search by showing a list with all the information %>
+    <%# if the results that are given do NOT have the streaming platforms that the user specified, show a div saying "Unfortunately" %>
+  <%#  %>
+  <div class="cover-search d-flex flex-column align-items-center justify-content-center">
+    <h3 style="text-align: center">Your search returned the following results:</h3>
+    <div class="search-again" style="text-align: center;">
+      <%= link_to "Search again", root_path %>
+    </div>
   </div>
-</div>
-<div class="container">
-  <div class='m-3'>
-
-    <% @searchresults["results"].each do |item| %>
-      <% item["locations"].each do |location| %>
-        <% if location["display_name"].include?(@netflix || @amazon || @disney || "Amazon Instant Video") %>
-          <ul class="m-4">
-            <div class="d-flex justify-content-between">
-              <div class="description">
-                <li style="list-style: none;"><span style= "font-weight: bold"><%= item["name"] %></span></li>
-                <li style="list-style: none;">
-                  <div>
-                    <ul style="list-style: none;" class="streaming-services">
-                      <% item["locations"].each do |location| %>
-                        <li class="streaming-services">
-                          <a href="<%= location["url"] %>"><%= location["display_name"] %></a>
-                        </li>
-                      <% end %>
-                    </ul>
-                  </div>
-                </li>
+  <div class="container">
+    <div class='m-3'>
+      <% @searchresults["results"].each do |item| %>
+        <% item["locations"].each do |location| %>
+          <% if location["display_name"].include?(@netflix || @amazon || @disney || "Amazon Instant Video") %>
+            <ul class="m-4">
+              <div class="d-flex justify-content-between">
+                <div class="description">
+                  <li style="list-style: none;"><span style= "font-weight: bold"><%= item["name"] %></span></li>
+                  <li style="list-style: none;">
+                    <div>
+                      <ul style="list-style: none;" class="streaming-services">
+                        <% item["locations"].each do |location| %>
+                          <li class="streaming-services">
+                            <a href="<%= location["url"] %>"><%= location["display_name"] %></a>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </li>
+                </div>
+                <img src="https://media.giphy.com/media/21TyGiKxxSpT6fpHIv/giphy.gif" width="200px" class="imdb-poster"
+                  id="<%= item["external_ids"]["imdb"]["id"] %>">
               </div>
-              <img src="https://media.giphy.com/media/21TyGiKxxSpT6fpHIv/giphy.gif" width="200px" class="imdb-poster" id="<%= item["external_ids"]["imdb"]["id"] %>">
-            </div>
-            <hr>
-          </ul>
+              <hr>
+            </ul>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
+  <% else %>
+    <div class="cover-search d-flex flex-column align-items-center justify-content-center">
+      <h3 style="text-align: center">Your search returned no results</h3>
+      <div class="search-again" style="text-align: center;">
+        <%= link_to "Search again", root_path %>
+      </div>
+    </div>
+<% end %>
+
