@@ -18,7 +18,7 @@
   <div class="d-flex justify-content-around align-items-center flex-wrap">
     <% @reco_movies.each do |media| %>
       <div class="d-flex align-items-start">
-        <%= link_to root_path do %>
+        <%= link_to bookmark_path(media:media) do %>
           <i id="bookmark" class="fas fa-bookmark" style="position: relative; position: relative; left: 35px; top: 8px; z-index: 1000"></i>
         <% end %>
         <%= link_to media_path(media) do %>

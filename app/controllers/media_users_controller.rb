@@ -27,7 +27,9 @@ class MediaUsersController < ApplicationController
   end
 
   def bookmark
-    create
+    @media_user = MediaUser.new
+    @media_user.media = Media.find(params[:media].to_i)
+    @media_user.user = current_user
     @media_user.bookmarked = true
     @media_user.save
   end
@@ -52,6 +54,10 @@ class MediaUsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:user_id])
+  end
+
+  def bookmark_params
+    params.permit(:media)
   end
 
   def media_user_params
