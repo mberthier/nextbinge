@@ -1,8 +1,8 @@
 class SurveysController < ApplicationController
-  # before_action :find_user, only: [:new]
+  before_action :find_user, only: :index
 
   def index
-    @survey = Survey.all
+    @surveys = Survey.where(user_id: @user.id)
   end
 
   def show

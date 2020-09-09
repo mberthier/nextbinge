@@ -21,13 +21,46 @@
 }
 
 .user-info {
-  background-color: #7ab3d0;
   font-size: 24px;
-  padding: 10px 30px;
+  padding: 20px 30px;
 }
 
-.edit-user-link {
-  margin: 10px;
+.user-streaming-services {
+  text-align: center;
+  padding: 0px 0px 30px 0px;
+}
+
+.user-netflix-logo-1,
+.user-amazon-logo-1,
+.user-disney-logo-1 {
+  height: 100px;
+  border: 1px solid #000000;
+  background-position: center;
+  background-size: cover;
+  border-radius: 4px 4px 4px 4px;
+  text-align: center;
+}
+
+.user-netflix-logo-2,
+.user-amazon-logo-2,
+.user-disney-logo-2 {
+  height: 100px;
+  opacity: 30%;
+  border: 1px solid #000000;
+  background-position: center;
+  background-size: cover;
+  border-radius: 4px 4px 4px 4px;
+  text-align: center;
+}
+
+.media-user-container {
+  padding: 0px;
+  text-align: center;
+}
+
+.media-user-details-container {
+  padding: 0px;
+  text-align: center;
 }
 
 input#tab1,
@@ -36,7 +69,9 @@ input#tab3 {
   display: none;
 }
 
-input#tab1+label#tab1, input#tab2+label#tab2, input#tab3+label#tab3 {
+input#tab1+label#tab1,
+input#tab2+label#tab2,
+input#tab3+label#tab3 {
   display: inline-block
 }
 
@@ -83,4 +118,21 @@ input#tab2,
 input#tab3~.tab {
   border-top: 1px solid #999;
   padding: 12px;
+}
+
+.edit-user-link {
+  margin: 0px 0px 10px 0px;
+}
+
+.user-edit-btn {
+  font-size: 10px;
+}
+
+.your-services {
+  padding: 0px;
+  margin: 0px;
+}
+
+.previous-recommendations {
+  margin: 10px;
 }

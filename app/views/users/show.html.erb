@@ -12,15 +12,29 @@
 <div class="container">
   <div class="user-info">
     <div class="user-streaming-services">
-      Netflix: <%= @user.netflix? %>
-      <br>
-      Amazon: <%= @user.amazon? %>
-      <br>
-      Disney Plus: <%= @user.disney_plus? %>
+      <h1 class="your-services">Your services</h1>
+      <div class="edit-user-link">
+        <%= link_to "Edit details", edit_user_path(current_user), class: "user-edit-btn" %>
+      </div>
+      <% if @user.netflix? %>
+        <%= image_tag("netflix_logo.png", class: "user-netflix-logo-1") %>
+      <% else %>
+        <%= image_tag("netflix_logo.png", class: "user-netflix-logo-2") %>
+      <% end %>
+      <% if @user.amazon? %>
+        <%= image_tag("amazon_logo.png", class: "user-amazon-logo-1") %>
+      <% else %>
+        <%= image_tag("amazon_logo.png", class: "user-amazon-logo-2") %>
+      <% end %>
+      <% if @user.disney_plus? %>
+        <%= image_tag("disney_logo.png", class: "user-disney-logo-1") %>
+      <% else %>
+        <%= image_tag("disney_logo.png", class: "user-disney-logo-2") %>
+      <% end %>
     </div>
   </div>
 </div>
-<div class="container">
+<div class="media-user-container">
   <input type="radio" name="tabs" id="tab1" checked />
   <label for="tab1" id="tab1">Bookmarked</label>
   <input type="radio" name="tabs" id="tab2" />
@@ -28,7 +42,7 @@
   <input type="radio" name="tabs" id="tab3" />
   <label for="tab3" id="tab3">Excluded</label>
   <div class="tab content1">
-    <div class="container">
+    <div class="media-user-details-container">
       <div class="bookmarked-list">
         <h2>Your bookmarked list</h2>
         <%= render "media_user/bookmarked_index" %>
@@ -36,7 +50,7 @@
     </div>
   </div>
   <div class="tab content2">
-    <div class="container">
+    <div class="media-user-details-container">
       <div class="watched-list">
         <h2>Your watch list</h2>
         <%= render "media_user/watched_index" %>
@@ -44,19 +58,17 @@
     </div>
   </div>
   <div class="tab content3">
-    <div class="container">
+    <div class="media-user-details-container">
       <div class="excluded-list">
         <h2>Your excluded list</h2>
         <%= render "media_user/excluded_index" %>
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="media-user-details-container">
     <div class="previous-recommendations">
       <h2>Your previous recommendations</h2>
+      <%= render "surveys/index" %>
     </div>
   </div>
-</div>
-<div class="edit-user-link">
-  <%= link_to "Edit details", edit_user_path(current_user), class: "btn" %>
 </div>
