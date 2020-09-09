@@ -19,11 +19,17 @@
     <% @reco_movies.each do |media| %>
       <div class="d-flex align-items-start">
         <%= link_to bookmark_path(media:media), method: :post, remote: true do %>
-          <i id="bookmark" class="fas fa-bookmark" style="position: relative; position: relative; left: 35px; top: 8px; z-index: 1000"></i>
+          <i class="fas fa-bookmark bookmark <%= "bookmark-active" if media.class == MediaUser && media.bookmarked %>" style="position: relative; position: relative; left: 35px; top: 8px; z-index: 1000"></i>
         <% end %>
-        <%= link_to media_path(media) do %>
-          <div class="card-category-home" style="background-image: url(<%= media.poster %>)"></div>
-        <% end  %>
+        <% if media.class == Media %>
+          <%= link_to media_path(media) do %>
+            <div class="card-category-home" style="background-image: url(<%= media.poster %>)"></div>
+          <% end  %>
+        <% else %>
+          <%= link_to media_path(media.media.id) do %>
+            <div class="card-category-home" style="background-image: url(<%= media.media.poster %>)"></div>
+          <% end  %>
+        <% end %>
       </div>
     <% end %>
   </div>
@@ -40,20 +46,32 @@
       <% @reco_movies.each_with_index do |media, index| %>
         <% if index == 0 %>
           <div class="carousel-item active">
-            <%= link_to root_path do %>
-              <i id="bookmark" class="fas fa-bookmark" style="position: relative; position: relative; left: 8px; top: 30px; z-index: 1000"></i>
+            <%= link_to bookmark_path(media:media), method: :post, remote: true do %>
+              <i class="fas fa-bookmark bookmark <%= "bookmark-active" if media.class == MediaUser && media.bookmarked %>" style="position: relative; position: relative; left: 8px; top: 30px; z-index: 1000"></i>
             <% end %>
-            <%= link_to media_path(media) do %>
-              <div class="d-block w-100" style="height: 500px; border-radius: 10px; background-image: url(<%= media.poster %>);   background-size: cover; background-position: center;"></div>
+            <% if media.class == Media %>
+              <%= link_to media_path(media) do %>
+                <div class="d-block w-100" style="height: 500px; border-radius: 10px; background-image: url(<%= media.poster %>);   background-size: cover; background-position: center;"></div>
+              <% end %>
+            <% else %>
+              <%= link_to media_path(media.media.id) do %>
+                <div class="d-block w-100" style="height: 500px; border-radius: 10px; background-image: url(<%= media.media.poster %>);   background-size: cover; background-position: center;"></div>
+              <% end %>
             <% end %>
           </div>
         <% else %>
           <div class="carousel-item">
-            <%= link_to root_path do %>
-              <i id="bookmark" class="fas fa-bookmark" style="position: relative; position: relative; left: 8px; top: 30px; z-index: 1000"></i>
+            <%= link_to bookmark_path(media:media), method: :post, remote: true do %>
+              <i class="fas fa-bookmark bookmark <%= "bookmark-active" if media.class == MediaUser && media.bookmarked %>" style="position: relative; position: relative; left: 8px; top: 30px; z-index: 1000"></i>
             <% end %>
-            <%= link_to media_path(media) do %>
-              <div class="d-block w-100" style="height: 500px; border-radius: 10px; background-image: url(<%= media.poster %>); background-size: cover; background-position: center;"></div>
+            <% if media.class == Media %>
+              <%= link_to media_path(media) do %>
+                <div class="d-block w-100" style="height: 500px; border-radius: 10px; background-image: url(<%= media.poster %>);   background-size: cover; background-position: center;"></div>
+              <% end %>
+            <% else %>
+              <%= link_to media_path(media.media.id) do %>
+                <div class="d-block w-100" style="height: 500px; border-radius: 10px; background-image: url(<%= media.media.poster %>);   background-size: cover; background-position: center;"></div>
+              <% end %>
             <% end %>
           </div>
         <% end %>

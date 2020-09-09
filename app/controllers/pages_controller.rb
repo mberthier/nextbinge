@@ -97,18 +97,23 @@ class PagesController < ApplicationController
 
   def find_or_create
     streaming_reco = @movies.map do |movie|
-      Media.where(title: movie).first_or_create do |media|
-        imdb(media.title)
-        media.streaming_service = @platform
-        media.media_type = @media_type.gsub(/[s]/, '').capitalize
-        media.genre = @survey.genre
-        media.release_year = @data.year
-        media.poster = @data.poster
-        media.plot = @data.plot
-        media.ratings = @data.rating
+      if User.last.media_users.where(media: Media.where(title: movie)).exists?
+        User.last.media_users.where(media: Media.where(title: movie))
+      else
+        Media.where(title: movie).first_or_create do |media|
+          imdb(media.title)
+          media.streaming_service = @platform
+          media.media_type = @media_type.gsub(/[s]/, '').capitalize
+          media.genre = @survey.genre
+          media.release_year = @data.year
+          media.poster = @data.poster
+          media.plot = @data.plot
+          media.ratings = @data.rating
+        end
       end
     end
-    streaming_reco.select(&:persisted?)
+    streaming_reco
+    # streaming_reco.select(&:persisted?) need to remove invalid instances
   end
 
   def imdb(movie)
