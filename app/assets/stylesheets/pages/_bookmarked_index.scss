@@ -1,9 +1,15 @@
 .bookmarked-carousel {
   display: flex;
+  justify-content: center;
 }
 
 .media-info-container {
   margin: 0px 10px;
+}
+
+.media-user-details-container {
+  padding: 0px;
+  text-align: center;
 }
 
 .card-category-home {
@@ -15,6 +21,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin: 16px 0px;
   transition: 0.3s;
+
   &:hover {
     transform: scale(1.0125);
   }
