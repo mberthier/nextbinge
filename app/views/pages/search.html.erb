@@ -9,7 +9,7 @@
     <div class='m-3'>
       <% @searchresults["results"].each do |item| %>
         <% if (item["locations"].map { |location| location["display_name"] } & [@netflix, @amazon, @disney]).any? %>
-          <h2>Your search result appears on your chosen platform</h2>
+          <h2 class="does-appear"><i class="fas fa-thumbs-up"></i></h2>
           <ul class="m-4">
             <div class="d-flex justify-content-between">
               <div class="description">
@@ -31,7 +31,7 @@
             <hr>
           </ul>
         <% else %>
-          <h2>Your search result doesn't apear on your chosen platform</h2>
+          <h2 class="does-not-appear"><i class="fas fa-thumbs-down"></i></h2>
           <ul class="m-4">
             <div class="d-flex justify-content-between">
               <div class="description">
