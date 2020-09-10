@@ -97,8 +97,8 @@ class PagesController < ApplicationController
 
   def find_or_create
     streaming_reco = @movies.map do |movie|
-      if User.last.media_users.where(media: Media.where(title: movie)).exists?
-        User.last.media_users.where(media: Media.where(title: movie))
+      if current_user.media_users.where(media: Media.where(title: movie)).exists?
+        current_user.media_users.where(media: Media.where(title: movie))
       else
         Media.where(title: movie).first_or_create do |media|
           imdb(media.title)
@@ -112,7 +112,7 @@ class PagesController < ApplicationController
         end
       end
     end
-    streaming_reco
+    streaming_reco.select(&:persisted?)
     # streaming_reco.select(&:persisted?) need to remove invalid instances
   end
 
