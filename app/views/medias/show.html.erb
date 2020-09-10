@@ -2,8 +2,8 @@
 <div class="container d-flex">
   <div class="media-card">
     <div class="poster" style="background-image: url(<%= @media.poster %>);">
-      <%= link_to root_path do %>
-        <i id="bookmark" class="fas fa-bookmark" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
+      <%= link_to bookmark_path(media:@media), method: :post, remote: true do %>
+        <i class="fas fa-bookmark bookmark <%= "bookmark-active" if current_user.media_users.where(media: @media, bookmarked: true).empty? == false %>" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
       <% end %>
       <!--    <i class="fas fa-check"></i>
         <i class="fas fa-ban"></i> -->

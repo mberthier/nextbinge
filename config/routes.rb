@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
   resources :medias, only: [:create, :show]
   get "result", to: "pages#result"
-  get "bookmark", to: "media_users#bookmark"
+  post "bookmark", to: "media_users#bookmark"
   get '/search', to: 'pages#search', :as => 'search_page_get'
   post '/search', to: 'pages#search', :as => 'search_page_post'
 end

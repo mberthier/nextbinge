@@ -97,15 +97,21 @@ class PagesController < ApplicationController
 
   def find_or_create
     streaming_reco = @movies.map do |movie|
-      Media.where(title: movie).first_or_create do |media|
-        imdb(media.title)
-        media.streaming_service = @platform
-        media.media_type = @media_type.gsub(/[s]/, '').capitalize
-        media.genre = @survey.genre
-        media.release_year = @data.year
-        media.poster = @data.poster
-        media.plot = @data.plot
-        media.ratings = @data.rating
+      if current_user.media_users.find_by(media: Media.where(title: movie))
+        current_user.media_users.find_by(media: Media.where(title: movie))
+      # if MediaUser.find(media: Media.where(title: movie), user: current_user).exists?
+      #   MediaUser.find(media: Media.where(title: movie), user: current_user)
+      else
+        Media.where(title: movie).first_or_create do |media|
+          imdb(media.title)
+          media.streaming_service = @platform
+          media.media_type = @media_type.gsub(/[s]/, '').capitalize
+          media.genre = @survey.genre
+          media.release_year = @data.year
+          media.poster = @data.poster
+          media.plot = @data.plot
+          media.ratings = @data.rating
+        end
       end
     end
     streaming_reco.select(&:persisted?)

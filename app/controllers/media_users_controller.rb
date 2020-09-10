@@ -27,11 +27,15 @@ class MediaUsersController < ApplicationController
   end
 
   def bookmark
-    @media_user = MediaUser.new
-    @media_user.media = Media.find(params[:media].to_i)
-    @media_user.user = current_user
-    @media_user.bookmarked = true
-    @media_user.save
+    @media = Media.find(params[:media])
+    @media_user = MediaUser.where(media: @media, user: current_user).first_or_create
+    if @media_user.bookmarked == false
+      @media_user.bookmarked = true
+      @media_user.save
+    else
+      @media_user.bookmarked = false
+      @media_user.save
+    end
   end
 
   def update

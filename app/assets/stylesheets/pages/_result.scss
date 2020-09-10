@@ -9,7 +9,11 @@
   }
 }
 
-#bookmark {
+.bookmark-active {
+  color: #FCBF1E!important;
+}
+
+.bookmark {
   transition: 0.3s;
   font-size: 35px;
   color: #bbbbbb;
