@@ -1,5 +1,6 @@
 .excluded-carousel {
   display: flex;
+  justify-content: center;
 }
 
 .card-category-home {
@@ -11,6 +12,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin: 16px 0px;
   transition: 0.3s;
+
   &:hover {
     transform: scale(1.0125);
   }
