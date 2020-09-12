@@ -8,7 +8,7 @@ import "bootstrap";
 import getImdbPoster from "../../assets/javascript/imdbApiCall";
 import bookmark from "../components/bookmark";
 import * as THREE from 'three';
-import { formGroupOneAction, formGroupTwoAction, formGroupThreeAction, formGroupFourAction, formGroupFiveAction } from '../plugins/surveyChanger';
+import { formGroupOneAction, formGroupTwoAction, formGroupThreeAction, formGroupFourAction, formGroupFiveAction, myFunction } from '../plugins/surveyChanger';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -23,6 +23,7 @@ document.addEventListener('turbolinks:load', () => {
     formGroupFourAction();
     formGroupFiveAction();
   };
+  myFunction();
   getImdbPoster();
   bookmark();
 
