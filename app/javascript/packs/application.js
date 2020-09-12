@@ -8,13 +8,26 @@ import "bootstrap";
 import getImdbPoster from "../../assets/javascript/imdbApiCall";
 import bookmark from "../components/bookmark";
 import * as THREE from 'three';
+import { formGroupOneAction, formGroupTwoAction, formGroupThreeAction, formGroupFourAction, formGroupFiveAction } from '../plugins/surveyChanger';
 
 
 document.addEventListener('turbolinks:load', () => {
+  if (
+      (document.querySelector("fieldset.form-group-1")) || (document.querySelector("fieldset.form-group-2-hide")) || 
+      (document.querySelector("fieldset.form-group-3-hide")) || (document.querySelector("fieldset.form-group-4-hide")) ||
+      (document.querySelector("fieldset.form-group-5-hide")) 
+      ) {
+    formGroupOneAction();
+    formGroupTwoAction();
+    formGroupThreeAction();
+    formGroupFourAction();
+    formGroupFiveAction();
+  };
   getImdbPoster();
   bookmark();
 
   // Below code is for the spinning cube via three.js
+  // guard clause for if the element with class name "cube" exists, only then will it execute the code
   if (document.querySelector(".cube")) {
     const scene = new THREE.Scene();
     // scene.background = new THREE.Color("rgb(0, 0, 0)", 0);
