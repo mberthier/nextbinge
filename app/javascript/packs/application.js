@@ -7,9 +7,9 @@ require("channels")
 import "bootstrap";
 import getImdbPoster from "../../assets/javascript/imdbApiCall";
 import bookmark from "../components/bookmark";
-import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
 import * as THREE from 'three';
 import { formGroupOneAction, formGroupTwoAction, formGroupThreeAction, formGroupFourAction, formGroupFiveAction } from '../plugins/surveyChanger';
+
 
 document.addEventListener('turbolinks:load', () => {
   if (
@@ -17,7 +17,7 @@ document.addEventListener('turbolinks:load', () => {
       (document.querySelector("fieldset.form-group-2-hide")) ||
       (document.querySelector("fieldset.form-group-3-hide")) ||
       (document.querySelector("fieldset.form-group-4-hide")) ||
-      (document.querySelector("fieldset.form-group-5-hide"))
+      (document.querySelector("fieldset.form-group-5-hide")) 
     ) {
     formGroupOneAction();
     formGroupTwoAction();
@@ -28,33 +28,6 @@ document.addEventListener('turbolinks:load', () => {
   getImdbPoster();
   bookmark();
 
-  const sessionFIlterButtons = document.querySelector(".align-banner")
-  if(sessionFIlterButtons) {
-    const slider = tns({
-    container: '.my-slider',
-    loop: true,
-    items: 1,
-    slideBy: "page",
-    nav: false,
-    autoplayButtonOutput: false,
-    mouseDrag: false,
-    lazyload: true,
-    controlsContainer: "#customize-controls",
-    autoWidth: true,
-    responsive: {
-      640: {
-        items:1
-      },
-      700: {
-        gutter: 30
-      },
-      900: {
-        items: 3,
-      }
-    }
-  });
-  }
-
   // Below code is for the spinning cube via three.js
   // guard clause for if the element with class name "cube" exists, only then will it execute the code
   if (document.querySelector(".cube")) {
@@ -64,7 +37,7 @@ document.addEventListener('turbolinks:load', () => {
     renderer.setClearColor(0x000000, 0)
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.querySelector(".cube").appendChild(renderer.domElement);
-
+  
     const geometry = new THREE.BoxGeometry(2, 2, 2);
     const cubeMaterials =
       [
@@ -78,17 +51,17 @@ document.addEventListener('turbolinks:load', () => {
     const material = new THREE.MeshFaceMaterial(cubeMaterials);
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
-
+  
     camera.position.x = 0;
     camera.position.y = 0;
     camera.position.z = 3;
-
+  
     function animate() {
       requestAnimationFrame(animate);
       cube.rotation.x += 0.01;
       cube.rotation.y += 0.01;
       cube.rotation.z += 0.01;
-
+  
       renderer.render(scene, camera);
     }
     animate();

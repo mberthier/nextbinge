@@ -3,9 +3,9 @@ class UsersController < ApplicationController
 
   def show
     @media = Media.all
-    @bookmarked_index = MediaUser.where(user_id: current_user, bookmarked: true)
-    @watched_index = MediaUser.where(user_id: current_user, watched: true)
-    @excluded_index = MediaUser.where(user_id: current_user, excluded: true)
+    @bookmarked_index = MediaUser.where(user_id: @user.id, bookmarked: true)
+    @watched_index = MediaUser.where(user_id: @user.id, watched: true)
+    @excluded_index = MediaUser.where(user_id: @user.id, excluded: true)
   end
 
   def edit
