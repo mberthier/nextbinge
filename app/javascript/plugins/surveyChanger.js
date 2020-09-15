@@ -15,7 +15,7 @@ const formGroupOneAction = () => {
 
 // Form group two - mood
 const formGroupTwoAction = () => {
-  const formGroupTwo = document.querySelector("fieldset.form-group-2-center");
+  const formGroupTwo = document.querySelector("fieldset.form-group-2-right");
   const radioButtonTwo = formGroupTwo.querySelectorAll(".radio__label");
   const formGroupThree = document.querySelector("fieldset.form-group-3-right");
   radioButtonTwo.forEach(element => {
@@ -30,7 +30,7 @@ const formGroupTwoAction = () => {
 
 // Form group three - media type
 const formGroupThreeAction = () => {
-  const formGroupThree = document.querySelector("fieldset.form-group-3-center");
+  const formGroupThree = document.querySelector("fieldset.form-group-3-right");
   const radioButtonThree = formGroupThree.querySelectorAll(".radio__label");
   const formGroupFour = document.querySelector("fieldset.form-group-4-right");
   radioButtonThree.forEach(element => {
@@ -45,7 +45,7 @@ const formGroupThreeAction = () => {
 
 // Form group four - rating
 const formGroupFourAction = () => {
-  const formGroupFour = document.querySelector("fieldset.form-group-4-center");
+  const formGroupFour = document.querySelector("fieldset.form-group-4-right");
   const radioButtonFour = formGroupFour.querySelectorAll(".radio__label");
   const formGroupFive = document.querySelector("fieldset.form-group-5-right");
   radioButtonFour.forEach(element => {
@@ -60,7 +60,7 @@ const formGroupFourAction = () => {
 
 // Form group five - year
 const formGroupFiveAction = () => {
-  const formGroupFive = document.querySelector("fieldset.form-group-5-center");
+  const formGroupFive = document.querySelector("fieldset.form-group-5-right");
   const radioButtonFive = formGroupFive.querySelectorAll(".radio__label");
   const submitBtn = document.querySelector(".buttonsubmit-right");
   radioButtonFive.forEach(element => {
