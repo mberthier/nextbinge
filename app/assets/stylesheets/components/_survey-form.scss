@@ -7,28 +7,48 @@
   }
 }
 
-fieldset.form-group-1,
-fieldset.form-group-2,
-fieldset.form-group-3,
-fieldset.form-group-4,
-fieldset.form-group-5 {
-  display: block;
+.survey-container {
+  overflow: hidden;
+  min-height: 500px;
 }
 
-fieldset.form-group-1-hidden,
-fieldset.form-group-2-hidden,
-fieldset.form-group-3-hidden,
-fieldset.form-group-4-hidden,
-fieldset.form-group-5-hidden {
-  display: none;
+fieldset.form-group-2-right,
+fieldset.form-group-3-right,
+fieldset.form-group-4-right,
+fieldset.form-group-5-right,
+.buttonsubmit-right {
+  position: absolute;
+  left: 100vw;
+  // display: none;
+  transition: all 0.4s ease !important;
 }
 
-.buttonsubmit {
-  display: block;
+fieldset.form-group-1-center {
+  position: absolute;
+  top: 0px;
+  left: 0vw;
+  transition: all 0.4s ease;
 }
 
-.buttonsubmit-hidden {
-  display: none;
+fieldset.form-group-2-center,
+fieldset.form-group-3-center,
+fieldset.form-group-4-center,
+fieldset.form-group-5-center,
+.buttonsubmit-center {
+  position: absolute;
+  top: 0px;
+  left: 0vw;
+  transition: all 0.4s ease !important;
+}
+
+fieldset.form-group-1-left,
+fieldset.form-group-2-left,
+fieldset.form-group-3-left,
+fieldset.form-group-4-left,
+fieldset.form-group-5-left {
+  position: absolute;
+  left: -100vw;
+  transition: all 0.4s ease;
 }
 
 .category-choices {

@@ -13,11 +13,11 @@ import { formGroupOneAction, formGroupTwoAction, formGroupThreeAction, formGroup
 
 document.addEventListener('turbolinks:load', () => {
   if (
-      (document.querySelector("fieldset.form-group-1")) ||
-      (document.querySelector("fieldset.form-group-2-hide")) ||
-      (document.querySelector("fieldset.form-group-3-hide")) ||
-      (document.querySelector("fieldset.form-group-4-hide")) ||
-      (document.querySelector("fieldset.form-group-5-hide"))
+      (document.querySelector("fieldset.form-group-1-center")) ||
+      (document.querySelector("fieldset.form-group-2-right")) ||
+      (document.querySelector("fieldset.form-group-3-right")) ||
+      (document.querySelector("fieldset.form-group-4-right")) ||
+      (document.querySelector("fieldset.form-group-5-right")) 
     ) {
     formGroupOneAction();
     formGroupTwoAction();
