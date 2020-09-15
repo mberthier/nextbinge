@@ -22,13 +22,31 @@
           <i class="fas fa-bookmark bookmark <%= "bookmark-active" if media.class == MediaUser && media.bookmarked %>" style="position: relative; position: relative; left: 35px; top: 8px; z-index: 1000"></i>
         <% end %>
         <% if media.class == Media %>
-          <%= link_to media_path(media) do %>
-            <div class="card-category-home" style="background-image: url(<%= media.poster %>)"></div>
-          <% end  %>
+            <div class="card-category-home" data-toggle="modal" data-target="#media<%= media.id %>" style="background-image: url(<%= media.poster %>)"></div>
+            <!-- Modal -->
+              <div class="modal fade" id="media<%= media.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <%= render "medias/show", media: media %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         <% else %>
-          <%= link_to media_path(media.media.id) do %>
-            <div class="card-category-home" style="background-image: url(<%= media.media.poster %>)"></div>
-          <% end  %>
+            <div class="card-category-home" data-toggle="modal" data-target="#media<%= media.media.id %>" style="background-image: url(<%= media.media.poster %>)"></div>
+            <!-- Modal -->
+              <div class="modal fade" id="media<%= media.media.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <%= render "medias/show", media: media.media %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         <% end %>
       </div>
     <% end %>
@@ -91,5 +109,3 @@
 <div class="d-flex justify-content-center">
   <a class="btn btn-flat m-2" href="result">Run again</a>
 </div>
-
-
