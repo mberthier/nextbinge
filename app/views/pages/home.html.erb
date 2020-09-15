@@ -4,7 +4,7 @@
     <p> Spend more time watching and less time searching <br> All while discovering the best shows from your streaming libraries</p>
     <% if user_signed_in?%>
       <a class="btn btn-flat" href="/users/<%= current_user.id %>/surveys/new">Start</a>
-      <div class="cube"></div>
+      <%# <div class="cube"></div> %>
     <% else %>
       <a class="btn btn-flat" href="users/sign_up">Start</a>
     <% end %>
