@@ -24,8 +24,8 @@ class PagesController < ApplicationController
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     request = Net::HTTP::Get.new(url)
-    request["x-rapidapi-host"] = 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
-    request["x-rapidapi-key"] = '8ca5dbf3afmsh60ff48690b836fdp169452jsnc257978cfbd8'
+    request["x-rapidapi-host"] = ENV['RAPID_HOST']
+    request["x-rapidapi-key"] = ENV['RAPID_KEY']
     @searchresults = JSON.parse(http.request(request).read_body)
   end
 

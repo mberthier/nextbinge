@@ -1,19 +1,17 @@
-<div class="cover-media"></div>
+<% @media = media  %>
+<!-- <div class="cover-media"></div> -->
 <div class="container d-flex">
   <div class="media-card">
     <div class="poster" style="background-image: url(<%= @media.poster %>);">
       <%= link_to bookmark_path(media:@media), method: :post, remote: true do %>
-        <i class="fas fa-bookmark bookmark <%= "bookmark-active" if current_user.media_users.where(media: @media, bookmarked: true).empty? == false %>" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
+        <i class="fas fa-bookmark modal-bookmark bookmark <%= "bookmark-active" if current_user.media_users.where(media: @media, bookmarked: true).empty? == false %>" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
       <% end %>
-      <!--    <i class="fas fa-check"></i>
-        <i class="fas fa-ban"></i> -->
     </div>
     <div class= "description">
       <div id="title">
         <h1><%= @media.title %></h1>
-        <i id="close-btn" class="far fa-times-circle" onclick="history.go(-1)" style="color: black; font-size: 32px;"></i>
+        <i id="close-btn" class="far fa-times-circle close"data-dismiss="modal" aria-label="Close" style="color: black; font-size: 32px;"></i>
       </div>
-
       <div>
         <li id="plot" class="mb-4"><%= @media.plot %></li>
         <div id="lower-descr">
@@ -48,4 +46,5 @@
     </div>
   </div>
 
-</div>
+<!-- </div> -->
+
