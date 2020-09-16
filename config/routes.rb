@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :medias, only: [:create, :show]
   get "result", to: "pages#result"
   post "bookmark", to: "media_users#bookmark"
+  post "watched", to: "media_users#watched"
+  post "excluded", to: "media_users#excluded"
   get '/search', to: 'pages#search', :as => 'search_page_get'
   post '/search', to: 'pages#search', :as => 'search_page_post'
 end

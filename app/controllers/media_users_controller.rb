@@ -38,6 +38,30 @@ class MediaUsersController < ApplicationController
     end
   end
 
+  def watched
+    @media = Media.find(params[:media])
+    @media_user = MediaUser.where(media: @media, user: current_user).first_or_create
+    if @media_user.watched == false
+      @media_user.watched = true
+      @media_user.save
+    else
+      @media_user.watched = false
+      @media_user.save
+    end
+  end
+
+  def excluded
+    @media = Media.find(params[:media])
+    @media_user = MediaUser.where(media: @media, user: current_user).first_or_create
+    if @media_user.excluded == false
+      @media_user.excluded = true
+      @media_user.save
+    else
+      @media_user.excluded = false
+      @media_user.save
+    end
+  end
+
   def update
     @media_user = MediaUser.find(params[:id])
       if @media_user.update(params[:media_user])

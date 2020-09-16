@@ -7,6 +7,8 @@ require("channels")
 import "bootstrap";
 import getImdbPoster from "../../assets/javascript/imdbApiCall";
 import bookmark from "../components/bookmark";
+import watched from "../components/watched";
+import excluded from "../components/excluded";
 import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
 import * as THREE from 'three';
 import { formGroupOneAction, formGroupTwoAction, formGroupThreeAction, formGroupFourAction, formGroupFiveAction } from '../plugins/surveyChanger';
@@ -17,7 +19,7 @@ document.addEventListener('turbolinks:load', () => {
       (document.querySelector("fieldset.form-group-2-right")) ||
       (document.querySelector("fieldset.form-group-3-right")) ||
       (document.querySelector("fieldset.form-group-4-right")) ||
-      (document.querySelector("fieldset.form-group-5-right")) 
+      (document.querySelector("fieldset.form-group-5-right"))
     ) {
     formGroupOneAction();
     formGroupTwoAction();
@@ -27,6 +29,8 @@ document.addEventListener('turbolinks:load', () => {
   };
   getImdbPoster();
   bookmark();
+  watched();
+  excluded();
 
   const sessionFIlterButtons = document.querySelector(".align-banner")
   if(sessionFIlterButtons) {
