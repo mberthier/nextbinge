@@ -7,7 +7,7 @@ const bookmark = () => {
     if ([...event.currentTarget.classList].includes('modal-bookmark'))  {
       event.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[0].children[0].classList.toggle('bookmark-active');
     } else {
-      event.currentTarget.parentNode.parentNode.children[2].children[0].children[0].children[0].children[0].children[0].children[0].children[0].children[0].classList.toggle('bookmark-active');
+      event.currentTarget.parentNode.parentNode.children[4].children[0].children[0].children[0].children[0].children[0].children[0].children[0].children[0].classList.toggle('bookmark-active');
     }
   };
 

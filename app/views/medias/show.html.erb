@@ -5,8 +5,12 @@
       <%= link_to bookmark_path(media:@media), method: :post, remote: true do %>
         <i class="fas fa-bookmark bookmark <%= "bookmark-active" if current_user.media_users.where(media: @media, bookmarked: true).empty? == false %>" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
       <% end %>
-      <!--    <i class="fas fa-check"></i>
-        <i class="fas fa-ban"></i> -->
+      <%= link_to watched_path(media:@media), method: :post, remote: true do %>
+        <i class="fas fa-check watched <%= "watched-active" if current_user.media_users.where(media: @media, watched: true).empty? == false %>" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
+      <% end %>
+      <%= link_to excluded_path(media:@media), method: :post, remote: true do %>
+        <i class="fas fa-ban excluded <%= "excluded-active" if current_user.media_users.where(media: @media, excluded: true).empty? == false %>" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
+      <% end %>
     </div>
     <div class= "description">
       <div id="title">

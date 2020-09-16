@@ -21,6 +21,12 @@
         <%= link_to bookmark_path(media:media), method: :post, remote: true do %>
           <i class="fas fa-bookmark bookmark <%= "bookmark-active" if media.class == MediaUser && media.bookmarked %>" style="position: relative; position: relative; left: 35px; top: 8px; z-index: 1000"></i>
         <% end %>
+        <%= link_to watched_path(media:media), method: :post, remote: true do %>
+          <i class="fas fa-check watched <%= "watched-active" if media.class == MediaUser && media.watched %>" style="position: relative; position: relative; left: 70px; top: 8px; z-index: 1000"></i>
+        <% end %>
+        <%= link_to excluded_path(media:media), method: :post, remote: true do %>
+          <i class="fas fa-ban excluded <%= "excluded-active" if media.class == MediaUser && media.excluded %>" style="position: relative; position: relative; left: 100px; top: 8px; z-index: 1000"></i>
+        <% end %>
         <% if media.class == Media %>
             <div class="card-category-home" data-toggle="modal" data-target="#media<%= media.id %>" style="background-image: url(<%= media.poster %>)"></div>
             <!-- Modal -->

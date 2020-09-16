@@ -13,7 +13,35 @@
   color: #FCBF1E!important;
 }
 
+.watched-active {
+  color: #FCBF1E!important;
+}
+
+.excluded-active {
+  color: #FCBF1E!important;
+}
+
 .bookmark {
+  transition: 0.3s;
+  font-size: 35px;
+  color: #bbbbbb;
+  &:hover {
+    transform: scale(1.125);
+    color: #FCBF1E;
+  }
+}
+
+.watched {
+  transition: 0.3s;
+  font-size: 35px;
+  color: #bbbbbb;
+  &:hover {
+    transform: scale(1.125);
+    color: #FCBF1E;
+  }
+}
+
+.excluded {
   transition: 0.3s;
   font-size: 35px;
   color: #bbbbbb;
