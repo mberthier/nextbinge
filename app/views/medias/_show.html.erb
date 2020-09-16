@@ -7,10 +7,10 @@
         <i class="fas fa-bookmark modal-bookmark bookmark <%= "bookmark-active" if current_user.media_users.where(media: @media, bookmarked: true).empty? == false %>" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
       <% end %>
       <%= link_to watched_path(media:@media), method: :post, remote: true do %>
-        <i class="fas fa-check modal-watched watched <%= "watched-active" if current_user.media_users.where(media: @media, watched: true).empty? == false %>" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
+        <i class="fas fa-check modal-watched watched <%= "watched-active" if current_user.media_users.where(media: @media, watched: true).empty? == false %>" style="position: relative; position: relative; left: 16px; bottom: 8px; z-index: 1000"></i>
       <% end %>
       <%= link_to excluded_path(media:@media), method: :post, remote: true do %>
-        <i id="excluded" class="fas fa-ban modal-excluded excluded <%= "excluded-active" if current_user.media_users.where(media: @media, excluded: true).empty? == false %>" style="position: relative; position: relative; left: 8px; bottom: 8px; z-index: 1000"></i>
+        <i id="excluded" class="fas fa-ban modal-excluded excluded <%= "excluded-active" if current_user.media_users.where(media: @media, excluded: true).empty? == false %>" style="position: relative; position: relative; left: 24px; bottom: 8px; z-index: 1000"></i>
       <% end %>
     </div>
     <div class= "description">

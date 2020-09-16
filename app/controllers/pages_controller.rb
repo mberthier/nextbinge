@@ -35,8 +35,14 @@ class PagesController < ApplicationController
     reco_movies = services.map do |service|
       scrape_by_service(service)
     end
-
-    @reco_movies = reco_movies.flatten.compact.sample(3)
+    @blocked_reco = []
+    @reco_movies = reco_movies.flatten.compact.each do |reco_movie|
+      if reco_movie.class == MediaUser
+        @blocked_reco << reco_movie if reco_movie.excluded?
+      end
+    end
+    @reco_movies = @reco_movies - @blocked_reco
+    @reco_movies = @reco_movies.sample(3)
   end
 
   private
