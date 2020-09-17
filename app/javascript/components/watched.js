@@ -5,9 +5,9 @@ const watched = () => {
     event.currentTarget.classList.toggle('watched-active');
     console.log(event.currentTarget.classList)
     if ([...event.currentTarget.classList].includes('modal-watched'))  {
-      event.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].children[0].classList.toggle('watched-active');
+      event.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[0].children[1].children[0].classList.toggle('watched-active');
     } else {
-      event.currentTarget.parentNode.parentNode.children[4].children[0].children[0].children[0].children[0].children[0].children[0].children[1].children[0].classList.toggle('watched-active');
+      event.currentTarget.parentNode.parentNode.parentNode.children[2].children[0].children[0].children[0].children[0].children[0].children[0].children[1].children[0].classList.toggle('watched-active');
     }
   };
 
