@@ -1,3 +1,18 @@
+.media-card-test {
+  .btn-media {
+    opacity: 0;
+  }
+  &:hover {
+    .btn-media {
+    opacity: 1;
+    transform: scale(1.0125);
+    }
+  }
+}
+
+
+
+
 .cover-result {
   height: 250px;
   background-color: #7ab3d0;

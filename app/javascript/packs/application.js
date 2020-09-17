@@ -32,10 +32,10 @@ document.addEventListener('turbolinks:load', () => {
   watched();
   excluded();
 
-  const sessionFIlterButtons = document.querySelector(".align-banner")
-  if(sessionFIlterButtons) {
-    const slider = tns({
-    container: '.my-slider',
+  const sessionFIlterButtons1 = document.querySelector(".align-banner1")
+  if(sessionFIlterButtons1) {
+    const slider1 = tns({
+    container: '.my-slider1',
     loop: true,
     items: 1,
     slideBy: "page",
@@ -43,7 +43,62 @@ document.addEventListener('turbolinks:load', () => {
     autoplayButtonOutput: false,
     mouseDrag: false,
     lazyload: true,
-    controlsContainer: "#customize-controls",
+    controlsContainer: "#customize-controls1",
+    autoWidth: true,
+    responsive: {
+      640: {
+        items:1
+      },
+      700: {
+        gutter: 30
+      },
+      900: {
+        items: 3,
+      }
+    }
+  });
+  }
+
+  const sessionFIlterButtons2 = document.querySelector(".align-banner2")
+  if(sessionFIlterButtons2) {
+
+    const slider2 = tns({
+    container: '.my-slider2',
+    loop: true,
+    items: 1,
+    slideBy: "page",
+    nav: false,
+    autoplayButtonOutput: false,
+    mouseDrag: false,
+    lazyload: true,
+    controlsContainer: "#customize-controls2",
+    autoWidth: true,
+    responsive: {
+      640: {
+        items:1
+      },
+      700: {
+        gutter: 30
+      },
+      900: {
+        items: 3,
+      }
+    }
+  });
+  }
+
+  const sessionFIlterButtons3 = document.querySelector(".align-banner3")
+  if(sessionFIlterButtons3) {
+    const slider3 = tns({
+    container: '.my-slider3',
+    loop: true,
+    items: 1,
+    slideBy: "page",
+    nav: false,
+    autoplayButtonOutput: false,
+    mouseDrag: false,
+    lazyload: true,
+    controlsContainer: "#customize-controls3",
     autoWidth: true,
     responsive: {
       640: {
