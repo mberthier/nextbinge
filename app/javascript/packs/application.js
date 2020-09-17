@@ -42,9 +42,9 @@ document.addEventListener('turbolinks:load', () => {
     nav: false,
     autoplayButtonOutput: false,
     mouseDrag: false,
-    lazyload: true,
+    // lazyload: true,
     controlsContainer: "#customize-controls1",
-    autoWidth: true,
+    // autoWidth: true,
     responsive: {
       640: {
         items:1
@@ -53,7 +53,7 @@ document.addEventListener('turbolinks:load', () => {
         gutter: 30
       },
       900: {
-        items: 3,
+        items: 4,
       }
     }
   });
@@ -70,9 +70,9 @@ document.addEventListener('turbolinks:load', () => {
     nav: false,
     autoplayButtonOutput: false,
     mouseDrag: false,
-    lazyload: true,
+    // lazyload: true,
     controlsContainer: "#customize-controls2",
-    autoWidth: true,
+    // autoWidth: true,
     responsive: {
       640: {
         items:1
@@ -81,7 +81,7 @@ document.addEventListener('turbolinks:load', () => {
         gutter: 30
       },
       900: {
-        items: 3,
+        items: 4,
       }
     }
   });
@@ -97,9 +97,9 @@ document.addEventListener('turbolinks:load', () => {
     nav: false,
     autoplayButtonOutput: false,
     mouseDrag: false,
-    lazyload: true,
+    // lazyload: true,
     controlsContainer: "#customize-controls3",
-    autoWidth: true,
+    // autoWidth: true,
     responsive: {
       640: {
         items:1
@@ -108,7 +108,7 @@ document.addEventListener('turbolinks:load', () => {
         gutter: 30
       },
       900: {
-        items: 3,
+        items: 4,
       }
     }
   });
