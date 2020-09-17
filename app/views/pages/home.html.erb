@@ -3,7 +3,7 @@
     <h1>The search is over...<br> Reinvent the way you stream </h1>
     <p> Spend more time watching and less time searching <br> All while discovering the best shows from your streaming libraries</p>
     <% if user_signed_in?%>
-      <a class="btn btn-flat" href="/users/<%= current_user.id %>/surveys/new">Start</a>
+    <%= link_to "Start", new_user_survey_path(current_user), class: "btn btn-flat", data:{turbolinks: false} %>
       <%# <div class="cube"></div> %>
     <% else %>
       <a class="btn btn-flat" href="users/sign_up">Start</a>
@@ -79,7 +79,9 @@
     <div><%= image_tag("youtube_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
   </div>
   <% if user_signed_in?%>
-    <div class="m-5 d-flex justify-content-center"><a class="btn-flat" href="/users/<%= current_user.id %>/surveys/new">Start</a></div>
+    <div class="m-5 d-flex justify-content-center">
+      <%= link_to "Start", new_user_survey_path(current_user), class: "btn btn-flat", data:{turbolinks: false} %>
+    </div>
   <% else %>
     <div class="m-5 d-flex justify-content-center"><a class="btn-flat" href="users/sign_up">Start</a></div>
   <% end %>
