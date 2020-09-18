@@ -1,88 +1,97 @@
-<div class="banner">
-  <div class="container">
-    <h1>The search is over...<br> Reinvent the way you stream </h1>
-    <p> Spend more time watching and less time searching <br> All while discovering the best shows from your streaming libraries</p>
-    <% if user_signed_in?%>
-      <a class="btn btn-flat" href="/users/<%= current_user.id %>/surveys/new">Start</a>
-    <% else %>
-      <a class="btn btn-flat" href="users/sign_up">Start</a>
-    <% end %>
+<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet" />
+
+<div class="backgroundcoverhome">
+  <div class="headercontainer2">
+    <div class="backgroundcoverhome2">
+      <div class="container">
+            <div class="fontheaderhome, fontheaderhome2">The search is over...<br>Reinvent the way you stream</div>
+            <div class="fontheaderhome3, fontheaderhome4">Spend more time watching and less time searching<br> All while discovering the best shows from your streaming libraries</div>
+                <% if user_signed_in?%>
+                <a href="/users/<%= current_user.id %>/surveys/new" class="startbutton">START NOW</a>
+                <% else %>
+                 <a href="users/sign_up" class="startbutton">START NOW</a>
+              <% end %>
+      </div>
+
+     <div class="vector">
+     </div>
+
+      <div class="container flex items-center justify-center min-h-win-h-3/4 py-x-gutter-lg md:min-h-win-h-1/2"">
+        <div class= "container process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2"">
+          <div class="fontsectionhome2">Get relevant recomendations effortlessly</div>
+            <div class= "d-flex justify-content-around align-items-center m-5 flex-wrap">
+                <div class="d-flex flex-column align-items-center justify-content-around">
+                    <div class="gold-circle">
+                    <h3>1</h3>
+                    </div>
+                    <p class="fontsectionhome">Indicate your current <br> subscriptions</p>
+                </div>
+                <div class="d-flex flex-column align-items-center justify-content-around">
+                    <div class="gold-circle">
+                    <h3>2</h3>
+                    </div>
+                    <p class="fontsectionhome">Tell us a bit about <br> your tastes</p>
+                </div>
+                <div class="d-flex flex-column align-items-center justify-content-around">
+                    <div class="gold-circle">
+                    <h3>3</h3>
+                    </div>
+                    <p class="fontsectionhome">Get personnalized <br> recommendations</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="container process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2">
+        <div class="container">
+          <div class="fontsectionhome3">Find your favorites in no time</div>
+            <%= form_with url: search_page_get_path, local: true, method: :post do %>
+            <div class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
+                  <div class="search-field d-flex align-items-center">
+                      <div><%= text_field_tag :search_term,"",placeholder:'SEARCH HERE YOUR FAVORITE MEDIA!', class: 'input3' %></div>
+                    </div>
+                      <div><%= submit_tag 'Watch', class: "startbutton2"  %></div>
+                    </div>
+
+                    <div class="streaming-services">
+                    <%= check_box_tag(:netflix, "Netflix") %>
+                    <label for="netflix" id="netflix"></label>
+                    <%= check_box_tag(:amazon, "Amazon Prime Video") %>
+                    <label for="amazon" id="amazon"></label>
+                    <%= check_box_tag(:disney_plus, "Disney+") %>
+                    <label for="disney_plus" id="disney_plus"></label>
+                  </div>
+            </div>
+            <% end %>
+        </div>
+
+
+      <div class= "container process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2"">
+        <div class="fontsectionhome4"> Streaming platforms we support</div>
+          <div class= "streaming-container">
+            <div><%= image_tag("netflix_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+            <div><%= image_tag("amazon_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+            <div><%= image_tag("disney_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+            <div><%= image_tag("itv_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+            <div><%= image_tag("apple_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+            <div><%= image_tag("now_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+            <div><%= image_tag("hulu_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+            <div><%= image_tag("youtube_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+          </div>
+          <% if user_signed_in?%>
+                <a href="/users/<%= current_user.id %>/surveys/new" class="startbutton">START NOW</a>
+                <% else %>
+                 <a href="users/sign_up" class="startbutton">START NOW</a>
+              <% end %>
+      </div>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
-<div class= "container process">
-  <% require 'time' %>
-  <% a = Time.now %>
-  <% b = Time.parse('2020-09-26 12:00:00 +0100') %>
-  <% c = (a - b) / 3600 %>
-  <% d = c / 24 %>
-<!--   <div  class= "mt-4" style="font-size: 50px; font-family: Arial; text-align: center;">
-    <strong>Days to Demo Day:</strong> <%= (d*-1).to_f.ceil %>
-  </div> -->
-  <h2>Get relevant recomendations effortlessly</h2>
-  <div class= "d-flex justify-content-around align-items-center m-5 flex-wrap">
-    <div class="d-flex flex-column align-items-center justify-content-around">
-      <div class="gold-circle">
-      <h3>1</h3>
-      </div>
-      <p>Indicate your current <br> subscriptions</p>
-    </div>
-    <div class="d-flex flex-column align-items-center justify-content-around">
-      <div class="gold-circle">
-      <h3>2</h3>
-      </div>
-      <p>Tell us a bit about <br> your tastes</p>
-    </div>
-    <div class="d-flex flex-column align-items-center justify-content-around">
-      <div class="gold-circle">
-      <h3>3</h3>
-      </div>
-      <p>Get personnalized <br> recommendations</p>
-    </div>
-  </div>
-</div>
-
-<div class="search">
-  <div class="container">
-    <h2>Find your favorites in no time</h2>
-    <%= form_with url: search_page_get_path, local: true, method: :post do %>
-    <div class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
-      <div class="search-field d-flex align-items-center">
-        <div><%= text_field_tag :search_term %></div>
-        <div><%= submit_tag 'Watch', class: "btn-search"  %></div>
-      </div>
-      <div class="streaming-services">
-        <%= check_box_tag(:netflix, "Netflix") %>
-        <label for="netflix" id="netflix"></label>
-        <%= check_box_tag(:amazon, "Amazon Prime Video") %>
-        <label for="amazon" id="amazon"></label>
-        <%= check_box_tag(:disney_plus, "Disney+") %>
-        <label for="disney_plus" id="disney_plus"></label>
-      </div>
-    </div>
-    <% end %>
-  </div>
-
-</div>
-
-<div class= "container platforms">
-  <h2>Streaming platforms we support</h2>
-  <div class= "streaming-container">
-    <div><%= image_tag("netflix_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
-    <div><%= image_tag("amazon_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
-    <div><%= image_tag("disney_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
-    <div><%= image_tag("itv_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
-    <div><%= image_tag("apple_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
-    <div><%= image_tag("now_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
-    <div><%= image_tag("hulu_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
-    <div><%= image_tag("youtube_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
-  </div>
-  <% if user_signed_in?%>
-    <div class="m-5 d-flex justify-content-center"><a class="btn-flat" href="/users/<%= current_user.id %>/surveys/new">Start</a></div>
-  <% else %>
-    <div class="m-5 d-flex justify-content-center"><a class="btn-flat" href="users/sign_up">Start</a></div>
-  <% end %>
-</div>
 
 
 
