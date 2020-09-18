@@ -1,10 +1,6 @@
-<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet" />
-
 <div class="sign-up-cover"></div>
 <div class="form-ad-container">
   <div class="form-container">
-
-
     <h2>Sign up</h2>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -12,23 +8,14 @@
         <%= f.input :email,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email", style: 'background-color:transparent', class: 'input2' },
-                    placeholder: 'email',
-                    label: false
-                    %>
+                    input_html: { autocomplete: "email" }%>
         <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password", class: 'input2', style: 'background-color:transparent' },
-                    placeholder: 'password',
-                    label: false %>
+                    input_html: { autocomplete: "new-password" } %>
         <%= f.input :password_confirmation,
                     required: true,
-                    input_html: { autocomplete: "new-password", class: 'input2', style: 'background-color:transparent' },
-                    placeholder: 'password confirmation',
-                    label: false %>
-
-
+                    input_html: { autocomplete: "new-password" } %>
         <h5 class="streaming-services-title">Which streaming services do you have a subscription to?</h5>
         <div class="streaming-services">
           <div class="netflix-choice">
@@ -61,32 +48,29 @@
         </div>
       </div>
       <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "c-account-home-button" %>
+        <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>
-
-
-
   <div class="ad-container">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100 pl-md-5" src="https://images.unsplash.com/photo-1505775561242-727b7fba20f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="First slide">
+          <img class="d-block w-100" src="https://images.unsplash.com/photo-1505775561242-727b7fba20f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="First slide">
           <div class="carousel-caption d-none d-md-block carousel-text">
             <h5>Have multiple subscriptions?</h5>
             <p>Want to know where to watch<br> a particular movie? Now you can!</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100 pl-md-5" src="https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80" alt="Second slide">
+          <img class="d-block w-100" src="https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80" alt="Second slide">
           <div class="carousel-caption d-none d-md-block carousel-text">
             <h5>Can't decide what to watch?</h5>
             <p>Want personalised recommendations? Take the movie survey now!</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100 pl-md-5" src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Third slide">
+          <img class="d-block w-100" src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Third slide">
           <div class="carousel-caption d-none d-md-block carousel-text">
             <h5>Sign up now!</h5>
             <p>You'll love our service after the first try!</p>
@@ -96,5 +80,3 @@
     </div>
   </div>
 </div>
-
-
