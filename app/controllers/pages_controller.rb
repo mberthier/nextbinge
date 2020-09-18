@@ -24,8 +24,8 @@ class PagesController < ApplicationController
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     request = Net::HTTP::Get.new(url)
-    request["x-rapidapi-host"] = 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
-    request["x-rapidapi-key"] = '8ca5dbf3afmsh60ff48690b836fdp169452jsnc257978cfbd8'
+    request["x-rapidapi-host"] = ENV['RAPID_HOST']
+    request["x-rapidapi-key"] = ENV['RAPID_KEY']
     @searchresults = JSON.parse(http.request(request).read_body)
   end
 
@@ -35,8 +35,14 @@ class PagesController < ApplicationController
     reco_movies = services.map do |service|
       scrape_by_service(service)
     end
-
-    @reco_movies = reco_movies.flatten.compact.sample(3)
+    @blocked_reco = []
+    @reco_movies = reco_movies.flatten.compact.each do |reco_movie|
+      if reco_movie.class == MediaUser
+        @blocked_reco << reco_movie if reco_movie.excluded?
+      end
+    end
+    @reco_movies = @reco_movies - @blocked_reco
+    @reco_movies = @reco_movies.sample(3)
   end
 
   private

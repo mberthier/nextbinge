@@ -1,3 +1,18 @@
+.media-card-test {
+  .btn-media {
+    opacity: 0;
+  }
+  &:hover {
+    .btn-media {
+    opacity: 1;
+    transform: scale(1.0125);
+    }
+  }
+}
+
+
+
+
 .cover-result {
   height: 250px;
   background-color: #7ab3d0;
@@ -13,7 +28,35 @@
   color: #FCBF1E!important;
 }
 
+.watched-active {
+  color: #FCBF1E!important;
+}
+
+.excluded-active {
+  color: #FCBF1E!important;
+}
+
 .bookmark {
+  transition: 0.3s;
+  font-size: 35px;
+  color: #bbbbbb;
+  &:hover {
+    transform: scale(1.125);
+    color: #FCBF1E;
+  }
+}
+
+.watched {
+  transition: 0.3s;
+  font-size: 35px;
+  color: #bbbbbb;
+  &:hover {
+    transform: scale(1.125);
+    color: #FCBF1E;
+  }
+}
+
+.excluded {
   transition: 0.3s;
   font-size: 35px;
   color: #bbbbbb;
@@ -34,6 +77,7 @@
   transition: 0.3s;
   &:hover {
     transform: scale(1.0125);
+    cursor: pointer;
   }
 }
 

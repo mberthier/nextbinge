@@ -1,5 +1,16 @@
 <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet" />
-
+<div class="banner">
+  <div class="container">
+    <h1>The search is over...<br> Reinvent the way you stream </h1>
+    <p> Spend more time watching and less time searching <br> All while discovering the best shows from your streaming libraries</p>
+    <% if user_signed_in?%>
+    <%= link_to "Start", new_user_survey_path(current_user), class: "btn btn-flat", data:{turbolinks: false} %>
+      <%# <div class="cube"></div> %>
+    <% else %>
+      <a class="btn btn-flat" href="users/sign_up">Start</a>
+    <% end %>
+  </div>
+</div>
 <div class="backgroundcoverhome">
   <div class="headercontainer2">
     <div class="backgroundcoverhome2">
@@ -84,14 +95,28 @@
                  <a href="users/sign_up" class="startbutton">START NOW</a>
               <% end %>
       </div>
-
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
-
-
-
+<div class= "container platforms">
+  <h2>Streaming platforms we support</h2>
+  <div class= "streaming-container">
+    <div><%= image_tag("netflix_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
+    <div><%= image_tag("amazon_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
+    <div><%= image_tag("disney_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
+    <div><%= image_tag("itv_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
+    <div><%= image_tag("apple_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
+    <div><%= image_tag("now_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
+    <div><%= image_tag("hulu_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
+    <div><%= image_tag("youtube_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;"}) %></div>
+  </div>
+  <% if user_signed_in?%>
+    <div class="m-5 d-flex justify-content-center">
+      <%= link_to "Start", new_user_survey_path(current_user), class: "btn btn-flat", data:{turbolinks: false} %>
+    </div>
+  <% else %>
+    <div class="m-5 d-flex justify-content-center"><a class="btn-flat" href="users/sign_up">Start</a></div>
+  <% end %>
+</div>

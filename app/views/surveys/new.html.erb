@@ -1,12 +1,12 @@
 <div class="cover-survey d-flex align-items-center justify-content-center">
   <h1>Find a movie to watch in less than a minute!</h1>
 </div>
-<div class="container pt-5 ">
+<div class="container survey-container pt-5 ">
   <div class="row m-0">
     <div class="survey col-md-8 offset-md-2 col-sm-12">
       <div>
         <%= simple_form_for [current_user, @survey] do |f| %>
-          <fieldset class="form-group radio_buttons required survey_genre category-choices form-control-plaintext">
+          <fieldset class="form-group-1-center radio_buttons required survey_genre category-choices form-control-plaintext">
             <legend class="col-form-label pt-0">Genre <abbr title="required">*</abbr></legend>
             <div class="category-choices">
               <div class="category-choice">
@@ -98,7 +98,7 @@
               </div>
             </div>
           </fieldset>
-          <fieldset class="form-group radio_buttons required survey_mood category-choices form-control-plaintext">
+          <fieldset class="form-group-2-right radio_buttons required survey_mood category-choices form-control-plaintext">
             <legend class="col-form-label pt-0">Mood <abbr title="required">*</abbr></legend>
             <div class="category-choices">
               <div class="category-choice">
@@ -127,7 +127,7 @@
               </div>
             </div>
           </fieldset>
-          <fieldset class="form-group radio_buttons required survey_media_type category-choices form-control-plaintext">
+          <fieldset class="form-group-3-right radio_buttons required survey_media_type category-choices form-control-plaintext">
             <legend class="col-form-label pt-0">Media type <abbr title="required">*</abbr></legend>
             <div class="category-choices">
               <div class="category-choice">
@@ -145,7 +145,7 @@
             </div>
             </div>
           </fieldset>
-          <fieldset class="form-group radio_buttons required survey_ratings category-choices form-control-plaintext">
+          <fieldset class="form-group-4-right radio_buttons required survey_ratings category-choices form-control-plaintext">
             <legend class="col-form-label pt-0">Ratings <abbr title="required">*</abbr></legend>
             <div class="category-choices">
               <div class="category-choice">
@@ -162,7 +162,7 @@
               </div>
             </div>
           </fieldset>
-          <fieldset class="form-group radio_buttons required survey_release_year category-choices form-control-plaintext">
+          <fieldset class="form-group-5-right radio_buttons required survey_release_year category-choices form-control-plaintext">
             <legend class="col-form-label pt-0">Release year <abbr title="required">*</abbr></legend>
             <div class="category-choices">
               <div class="category-choice">
@@ -191,13 +191,9 @@
               </div>
             </div>
           </fieldset>
-          <%= f.button :submit, "Give me recommendations!", class: 'btn btn-block buttonsubmit mb-5 mt-5' %>
+          <%= f.button :submit, "Give me recommendations!", class: 'btn btn-block buttonsubmit-right mb-5 mt-5' %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
