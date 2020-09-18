@@ -5,7 +5,7 @@
 
 .cover-search {
   height: 250px;
-  background-color: #7ab3d0;
+  // background-color: #7ab3d0;
   h1 {
     text-align: center;
   }
@@ -29,7 +29,18 @@
 }
 
 input {
-  height: 40px;
+  height: 60px;
+  background-color:transparent;
+  border: transparent;
+  border-color: transparent;
+  font-weight: 400;
+  height: 60px;
+  width: 100%;
+  font-size: 24px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #0F0F92;
+
 }
 
 input#netflix,
