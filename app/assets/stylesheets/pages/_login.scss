@@ -1,5 +1,142 @@
 .cover {
-  height: 100px;
-  background-color: #7ab3d0;
-  margin-bottom: 48px;
-}
+  background-color: #A3B1F9;
+  padding: 0 10%;
+  display: flex;
+  padding-top: 40px;
+   padding-bottom: 95px;
+   align-items: center;
+ }
+
+  .body{
+   background-color: #A3B1F9;
+ }
+
+  .form-ad-container {
+   // height: 100%;
+   display: flex;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 253px;
+   margin: 0 auto;
+   padding: 0 10%;
+   justify-content: space-between;
+   background-color: #A3B1F9;
+   height: 100%
+ }
+
+  .c-account-home {
+   display: flex;
+   justify-content: space-between;
+   padding: 0 10%;
+   background-color: #A3B1F9;
+ }
+
+  .c-account-home .c-login, .c-account-home .c-login--reset {
+   border-right: 1px solid #0F0F92;
+   padding-right: 50px;
+ }
+
+  .c-account-home > div {
+   width: 50%;
+ }
+
+
+  .c-account-home h4 {
+   font-family: 'Exo';
+   font-weight: 400;
+   font-size: 36px;
+   line-height: 2em;
+   margin-bottom: 20px;
+ }
+
+
+  .input2{
+   font-family: 'Exo';
+   font-weight: 400;
+   height: 60px;
+   width: 100%;
+   font-size: 24px;
+   display: block;
+   border-bottom: 1px solid #0F0F92 !important;
+   border: none;
+   background-color: transparent;
+
+  }
+
+
+  .c-account-home-button2 {
+   cursor: pointer;
+   height: 84px;
+   background-color: #C5CDFF;
+   box-shadow: -5px 5px #0f0f92;
+   border: 2px solid #0F0F92;
+   font-family: 'Exo';
+   font-weight: 700;
+   font-size: 14px;
+   max-width: 274px;
+   margin-top: 50px;
+   margin-bottom: 25px;
+ }
+
+  .c-account-home-button2:hover {
+   cursor: pointer;
+   height: 84px;
+   background-color: #C5CDFF;
+   box-shadow: -5px 5px #0f0f92;
+   border: 2px solid #0F0F92;
+   font-family: 'Exo';
+   font-weight: 700;
+   font-size: 14px;
+   max-width: 274px;
+   margin-top: 50px;
+   margin-bottom: 25px;
+ }
+
+  .c-account-home-button3 {
+   cursor: pointer;
+   height: 84px;
+   background-color: #C5CDFF;
+   box-shadow: -5px 5px #0f0f92;
+   border: 2px solid #0F0F92;
+   font-family: 'Exo';
+   font-weight: 700;
+   font-size: 14px;
+   width: 274px;
+   margin-top: 50px;
+   margin-bottom: 25px;
+   border-radius: 0 !important;
+ }
+
+  .c-account-home-button3:hover {
+   cursor: pointer;
+   height: 84px;
+   background-color: #C5CDFF;
+   box-shadow: -5px 5px #0f0f92;
+   border: 2px solid #0F0F92;
+   font-family: 'Exo';
+   font-weight: 700;
+   font-size: 14px;
+   max-width: 274px;
+   margin-top: 50px;
+   margin-bottom: 25px;
+ }
+ .forgotpassword {
+   font-family: 'Exo';
+   font-weight: 400;
+   font-size: 18px;
+   /* cursor: pointer; */
+ }
+
+  .register {
+   padding-left: 50px;
+ }
+
+  .register p {
+   font-family: 'Exo' !important;
+   font-weight: 400 !important;
+   font-size: 18px !important;
+   line-height: 1.5;
+ }
+
+  .checkboxheight{
+   height: 16px !important;
+ }
