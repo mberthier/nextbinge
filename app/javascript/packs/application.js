@@ -12,6 +12,7 @@ import excluded from "../components/excluded";
 import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
 import * as THREE from 'three';
 import { formGroupOneAction, formGroupTwoAction, formGroupThreeAction, formGroupFourAction, formGroupFiveAction } from '../plugins/surveyChanger';
+import {loadingFunction } from "../plugins/loading.js";
 
 document.addEventListener('turbolinks:load', () => {
   if (
@@ -31,6 +32,7 @@ document.addEventListener('turbolinks:load', () => {
   bookmark();
   watched();
   excluded();
+  loadingFunction();
 
   const sessionFIlterButtons1 = document.querySelector(".align-banner1")
   if(sessionFIlterButtons1) {
