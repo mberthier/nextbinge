@@ -1,17 +1,41 @@
+.arrows-navigation {
+  position: relative;
+  z-index: 1000;
+  top: 300px;
+  font-size: 24px;
+  color: #ced2d9;
+  i:hover {
+    cursor: pointer;
+    color: white;
+  }
+}
+
 .user-cover {
   height: 100px;
-  background-color: #7ab3d0;
+}
+
+.user-container {
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .user-banner {
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
 }
 
 .user-details {
-  color: #ffffff;
+  color: black;
   text-align: center;
+  text-shadow: 2px 2px 0px #ffffff;
+}
+
+h2#welcome-user {
+  font-size: 50px;
+  font-weight: 900;
 }
 
 .user-name {
@@ -22,12 +46,11 @@
 
 .user-info {
   font-size: 24px;
-  padding: 20px 30px;
+  padding: 5px 30px;
 }
 
 .user-streaming-services {
   text-align: center;
-  padding: 0px 0px 30px 0px;
 }
 
 .user-netflix-logo-1,
@@ -92,12 +115,13 @@ input#tab3~.tab {
 input#tab1+label#tab1,
 input#tab2+label#tab2,
 input#tab3+label#tab3 {
-  border: 1px solid #999;
-  background: #EEE;
-  padding: 4px 12px;
-  border-radius: 4px 4px 0 0;
-  position: relative;
-  top: 1px;
+  color: black;
+  padding: 8px;
+  margin: 8px 16px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
 }
 
 input#tab1+label#tab1:hover,
@@ -109,14 +133,13 @@ input#tab3+label#tab3:hover {
 input#tab1:checked+label#tab1,
 input#tab2:checked+label#tab2,
 input#tab3:checked+label#tab3 {
-  background: #FCBF1E;
-  border-bottom: 1px solid transparent;
+  opacity: 1;
+  border-bottom: 3px solid #555555;
 }
 
 input#tab1,
 input#tab2,
 input#tab3~.tab {
-  border-top: 1px solid #999;
   padding: 12px;
 }
 
