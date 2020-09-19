@@ -41,26 +41,26 @@
   display: none;
 }
 
-.radio__label {
-  border: 2px solid #0A0E35;
-  padding: 8px 24px;
-  border-radius: 50px;
-  transition: opacity 0.3s ease;
-   font-family: Exo;
-   font-style: normal;
-   font-weight: bold;
-   font-size: 15px;
-   line-height: 20px;
-   letter-spacing: 0.05em;
-   color: #868DD8;
+// .radio__label {
+//   border: 2px solid #0A0E35;
+//   padding: 8px 24px;
+//   border-radius: 50px;
+//   transition: opacity 0.3s ease;
+//    font-family: Exo;
+//    font-style: normal;
+//    font-weight: bold;
+//    font-size: 15px;
+//    line-height: 20px;
+//    letter-spacing: 0.05em;
+//    color: #868DD8;
 
-  &:hover {
-    cursor: pointer;
-    opacity: 1;
-     background-color: #0A0E35;
-     color: #868DD8;
-  }
-}
+//   &:hover {
+//     cursor: pointer;
+//     opacity: 1;
+//      background-color: #0A0E35;
+//      color: #868DD8;
+//   }
+// }
 
 .radio__input:checked+.radio__label {
   background: #0A0E35;
