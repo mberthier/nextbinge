@@ -94,3 +94,71 @@ fieldset.form-group-5-left {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   opacity: 1;
 }
+
+
+// loading starts here
+
+.background-holder {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F7C496;
+}
+
+.central-box {
+  background-color: #ffffff00;
+  border-radius: 8px;
+  width: 40vw;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+@media (max-width: 576px) {
+  .central-box {
+    width: 80vw;
+  }
+}
+
+.spin {
+  text-align: center;
+
+  h3 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: semi-bold;
+    padding-bottom: 30px;
+    margin: auto;
+
+    background-color: #00000000;
+    padding: 2px 15px 4px;
+    color: #fff;
+    border-radius: 4px;
+  }
+}
+
+.loader {
+  animation: spin 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  border: 10px solid #fff;
+  border-top: 10px solid #f6407e;
+  border-radius: 50%;
+  height: 160px;
+  width: 160px;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    border-top-color: #ec407a;
+    transform: rotate(360deg);
+  }
+}
