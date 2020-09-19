@@ -32,7 +32,9 @@ document.addEventListener('turbolinks:load', () => {
   bookmark();
   watched();
   excluded();
-  loadingFunction();
+  if (document.querySelector(".buttonsubmit-right")) {
+    loadingFunction();
+  }
 
   const sessionFIlterButtons1 = document.querySelector(".align-banner1")
   if(sessionFIlterButtons1) {
