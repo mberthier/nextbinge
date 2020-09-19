@@ -1,15 +1,15 @@
 <div class="user-cover"></div>
 <div class="user-banner">
   <div class="user-details">
-    <h2>Welcome back <%= @user.first_name %>!</h2>
+    <h2 id="welcome-user">Welcome back <%= @user.first_name %>!</h2>
   </div>
 </div>
-<div class="container">
+<div class="user-container">
   <div class="user-info">
     <div class="user-streaming-services">
       <h2 class="your-services">Your services</h2>
       <div class="edit-user-link">
-        <%= link_to "Edit details", edit_user_path(current_user), class: "user-edit-btn" %>
+        <%= link_to "Edit", edit_user_path(current_user), class: "user-edit-btn" %>
       </div>
       <% if @user.netflix? %>
         <%= image_tag("netflix_logo.png", class: "user-netflix-logo-1") %>
