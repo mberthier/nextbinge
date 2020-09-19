@@ -1,18 +1,13 @@
 <div class="user-cover"></div>
-<div class="user-banner" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+<div class="user-banner">
   <div class="user-details">
-    <div class="user-account-info">
-    <h1>Welcome back</h1>
-      <div class="user-name">
-        <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-      </div>
-    </div>
+    <h2>Welcome back <%= @user.first_name %>!</h2>
   </div>
 </div>
 <div class="container">
   <div class="user-info">
     <div class="user-streaming-services">
-      <h1 class="your-services">Your services</h1>
+      <h2 class="your-services">Your services</h2>
       <div class="edit-user-link">
         <%= link_to "Edit details", edit_user_path(current_user), class: "user-edit-btn" %>
       </div>
@@ -35,8 +30,6 @@
   </div>
 </div>
 
-
-
 <div class="media-user-container">
   <input type="radio" name="tabs" id="tab1" checked />
   <label for="tab1" id="tab1">Bookmarked</label>
@@ -47,7 +40,6 @@
   <div class="tab content1">
     <div class="media-user-details-container">
       <div class="bookmarked-list">
-        <h2>Your bookmarked list</h2>
         <%= render "media_user/bookmarked_index" %>
       </div>
     </div>
@@ -55,7 +47,6 @@
   <div class="tab content2">
     <div class="media-user-details-container">
       <div class="watched-list">
-        <h2>Your watch list</h2>
         <%= render "media_user/watched_index" %>
       </div>
     </div>
@@ -63,15 +54,8 @@
   <div class="tab content3">
     <div class="media-user-details-container">
       <div class="excluded-list">
-        <h2>Your excluded list</h2>
         <%= render "media_user/excluded_index" %>
       </div>
-    </div>
-  </div>
-  <div class="media-user-details-container">
-    <div class="previous-recommendations">
-      <h2>Your previous recommendations</h2>
-      <%= render "surveys/index" %>
     </div>
   </div>
 </div>
