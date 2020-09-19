@@ -1,9 +1,9 @@
 <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet" />
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-   <div class="v140_40">NEXTBINGE</div>
-<!--     <%= image_tag "logo2.png" %> -->
-    <% end %>
+<!--    <div class="v140_40">NEXTBINGE</div> -->
+    <%= image_tag "logo2.png" %>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item d-flex">
+        <li class="nav-item d-flex align-items-center">
           <div>
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </div>
