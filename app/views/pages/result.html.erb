@@ -19,7 +19,7 @@
     <% @reco_movies.each do |media| %>
       <div class="media-card-test">
 
-        <div class='btn-media d-flex justify-content-around' style="background-color: white; position: relative; top: 32px; z-index: 1000;">
+        <div class='btn-media d-flex justify-content-around' style="background-color: black; position: relative; top: 32px; z-index: 1000; padding: 8px 0px;">
           <%= link_to bookmark_path(media:media), method: :post, remote: true do %>
             <i class="fas fa-bookmark bookmark <%= "bookmark-active" if media.class == MediaUser && media.bookmarked %>"></i>
           <% end %>
