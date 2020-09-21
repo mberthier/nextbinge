@@ -3,20 +3,20 @@
   <div class="backgroundcoverhome">
   <div class="headercontainer2">
   <div class="backgroundcoverhome2">
-  <div class="container">
+  <div class="container container-cover">
   <div class="fontheaderhome, fontheaderhome2">The search is over...<br>Reinvent the way you stream</div>
   <div class="fontheaderhome3, fontheaderhome4">Spend more time watching and less time searching<br> All while discovering the best shows from your streaming libraries</div>
   <% if user_signed_in?%>
-    <a href="/users/<%= current_user.id %>/surveys/new" class="startbutton">START NOW</a>
+    <%= link_to "START NOW", new_user_survey_path(current_user), class: "startbutton", data:{turbolinks: false} %>
     <% else %>
   <a href="users/sign_up" class="startbutton">START NOW</a>
  <% end %>
  </div>
 
 
-   <div class="vector">
-   </div>
-  <div class="container flex items-center justify-center min-h-win-h-3/4 py-x-gutter-lg md:min-h-win-h-1/2">
+<!--    <div class="vector">
+   </div> -->
+  <div class="container container-home flex items-center justify-center min-h-win-h-3/4 py-x-gutter-lg md:min-h-win-h-1/2">
   <div class= "container process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2">
    <div class="fontsectionhome2">Get relevant recomendations effortlessly</div>
   <div class= "d-flex justify-content-around align-items-center m-5 flex-wrap">
@@ -42,31 +42,32 @@
            </div>
          </div>
 
-        <div class="container process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2">
-         <div class="container">
-           <div class="fontsectionhome3">Find your favorites in no time</div>
-             <%= form_with url: search_page_get_path, local: true, method: :post do %>
-             <div class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
-                   <div class="search-field d-flex align-items-center">
-                       <div><%= text_field_tag :search_term,"",placeholder:'SEARCH HERE YOUR FAVORITE MEDIA!', class: 'input3' %></div>
-                     </div>
-                       <div><%= submit_tag 'Watch', class: "startbutton2"  %></div>
-                     </div>
-
-                      <div class="streaming-services">
+        <div class="container container-home process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2">
+          <div class="container">
+            <div class="fontsectionhome3">Find your favorites in no time</div>
+              <%= form_with url: search_page_get_path, local: true, method: :post do %>
+                <div class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
+                  <div class="search-field d-flex align-items-center">
+                    <div><%= text_field_tag :search_term,"",placeholder:'SEARCH HERE YOUR FAVORITE SHOW!', class: 'input3' %>
+                    </div>
+                  </div>
+                  <div class="streaming-services mt-4">
                      <%= check_box_tag(:netflix, "Netflix") %>
                      <label for="netflix" id="netflix"></label>
                      <%= check_box_tag(:amazon, "Amazon Prime Video") %>
                      <label for="amazon" id="amazon"></label>
                      <%= check_box_tag(:disney_plus, "Disney+") %>
                      <label for="disney_plus" id="disney_plus"></label>
-                   </div>
-             </div>
-             <% end %>
-         </div>
+                  </div>
+                  <div><%= submit_tag 'Watch Now', class: "startbutton2"  %>
+                  </div>
+                </div>
+              <% end %>
+          </div>
+        </div>
 
 
-        <div class= "container process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2"">
+        <div class= "container container-home process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2"">
          <div class="fontsectionhome4"> Streaming platforms we support</div>
            <div class= "streaming-container">
              <div><%= image_tag("netflix_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
@@ -79,11 +80,11 @@
              <div><%= image_tag("youtube_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
            </div>
            <% if user_signed_in?%>
-                 <a href="/users/<%= current_user.id %>/surveys/new" class="startbutton">START NOW</a>
-                 <% else %>
-                  <a href="users/sign_up" class="startbutton">START NOW</a>
-               <% end %>
-  </div>
+            <%= link_to "START NOW", new_user_survey_path(current_user), class: "startbutton", data:{turbolinks: false} %>
+           <% else %>
+            <a href="users/sign_up" class="startbutton">START NOW</a>
+           <% end %>
+        </div>
 </div>
 
 
