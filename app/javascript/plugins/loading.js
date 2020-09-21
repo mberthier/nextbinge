@@ -3,9 +3,11 @@ const loadingFunction = () => {
   submitButton.addEventListener('click', function() {
     let body = document.querySelector("body")
 
-    let texts = ["Crunching numbers",
-      "Sipping coffee",
-      "Preparing some stuff",
+    let texts = ["Adjusting flux capacitor...",
+      "Asking Chewie to punch it",
+      "Checking database",
+      "Convicing AI not to turn evil",
+      "It's almost done I swear",
       "Your movies are coming!"]
 
     let index = 0;
