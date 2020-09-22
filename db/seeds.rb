@@ -37,7 +37,7 @@ Media.create!(
   genre: "Drama",
   poster: "https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SY1000_CR0,0,671,1000_AL_.jpg",
   media_type: "Movie",
-  streaming_service: "Amazon")
+  streaming_service: "amazon")
 
 Media.create!(
   title: 'Batman Begins',
@@ -47,7 +47,7 @@ Media.create!(
   genre: "Action & Adventure",
   poster: "https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
   media_type: "Movie",
-  streaming_service: "Netflix")
+  streaming_service: "netflix")
 
 Media.create!(
   title: "The Shawshank Redemption",
@@ -57,7 +57,7 @@ Media.create!(
   genre: "Drama",
   poster: "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
   media_type: "Movie",
-  streaming_service: "Netflix")
+  streaming_service: "netflix")
 
 Media.create!(
   title: "The Godfather",
@@ -67,7 +67,7 @@ Media.create!(
   genre: "Crime",
   poster: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,704,1000_AL_.jpg",
   media_type: "Movie",
-  streaming_service: "Amazon")
+  streaming_service: "amazon")
 
 Media.create!(
   title: "The Godfather: Part II",
@@ -77,7 +77,7 @@ Media.create!(
   genre: "Crime",
   poster: "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,701,1000_AL_.jpg",
   media_type: "Movie",
-  streaming_service: "Netflix")
+  streaming_service: "netflix")
 
 Media.create!(
   title: "The Dark Knight",
@@ -87,7 +87,7 @@ Media.create!(
   genre: "Action & Adventure",
   poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
   media_type: "Movie",
-  streaming_service: "Amazon")
+  streaming_service: "amazon")
 
 Media.create!(
   title: "12 Angry Men",
@@ -97,7 +97,7 @@ Media.create!(
   genre: "Crime",
   poster: "https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SY1000_CR0,0,649,1000_AL_.jpg",
   media_type: "Movie",
-  streaming_service: "Disney")
+  streaming_service: "disney_plus")
 
 Media.create!(
   title: "Schindler's List",
@@ -107,7 +107,7 @@ Media.create!(
   genre: "Biography",
   poster: "https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,666,1000_AL_.jpg",
   media_type: "Movie",
-  streaming_service: "Amazon")
+  streaming_service: "amazon")
 
 Media.create!(
   title: "The Lord of the Rings: The Return of the King",
@@ -117,7 +117,7 @@ Media.create!(
   genre: "Action & Adventure",
   poster: "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
   media_type: "Movie",
-  streaming_service: "Netflix")
+  streaming_service: "netflix")
 
 Media.create!(
   title: "Pulp Fiction",
@@ -127,7 +127,7 @@ Media.create!(
   genre: "Drama",
   poster: "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,686,1000_AL_.jpg",
   media_type: "Movie",
-  streaming_service: "Disney")
+  streaming_service: "disney_plus")
 puts "Media created"
 
 
