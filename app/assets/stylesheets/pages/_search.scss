@@ -1,6 +1,14 @@
-.streaming-services {
+.search-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: white;
+  border-radius: 5px;
+}
+
+
+.streaming-links {
   display: flex;
   padding: 10px;
+  justify-content: space-between;
 }
 
 .cover-search {
