@@ -11,7 +11,9 @@
       <% @watched_index.each do |item| %>
         <% media = @media.where(id: item.media_id) %>
         <% media.each do |e| %>
-          <div class="card-category-home" style="background-image: url(<%= e.poster %>)"></div>
+          <%= link_to media_path(e.id) do  %>
+            <div class="card-category-home" style="background-image: url(<%= e.poster %>)"></div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
