@@ -1,11 +1,9 @@
-<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet" />
-
   <div class="backgroundcoverhome">
   <div class="headercontainer2">
   <div class="backgroundcoverhome2">
   <div class="container container-cover">
   <div class="fontheaderhome, fontheaderhome2">The search is over...<br>Reinvent the way you stream</div>
-  <div class="fontheaderhome3, fontheaderhome4">Spend more time watching and less time searching<br> All while discovering the best shows from your streaming libraries</div>
+  <div class="fontheaderhome3, fontheaderhome4">Spend more time watching and less time searching<br> All while discovering the best shows from your streaming services</div>
   <% if user_signed_in?%>
     <%= link_to "START NOW", new_user_survey_path(current_user), class: "startbutton", data:{turbolinks: false} %>
     <% else %>
@@ -68,22 +66,15 @@
 
 
         <div class= "container container-home process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2"">
-         <div class="fontsectionhome4"> Streaming platforms we support</div>
-           <div class= "streaming-container">
-             <div><%= image_tag("netflix_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("amazon_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("disney_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("itv_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("apple_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("now_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("hulu_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("youtube_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-           </div>
-           <% if user_signed_in?%>
-            <%= link_to "START NOW", new_user_survey_path(current_user), class: "startbutton", data:{turbolinks: false} %>
-           <% else %>
-            <a href="users/sign_up" class="startbutton">START NOW</a>
-           <% end %>
+          <div class="fontsectionhome4"> Streaming platforms we support</div>
+          <div class="cube-and-start-btn">
+            <div class="cube"></div>
+            <% if user_signed_in?%>
+              <%= link_to "START NOW", new_user_survey_path(current_user), class: "startbutton", data:{turbolinks: false} %>
+            <% else %>
+              <a href="users/sign_up" class="startbutton">START NOW</a>
+            <% end %>
+          </div>
         </div>
 </div>
 
