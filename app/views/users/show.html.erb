@@ -4,31 +4,7 @@
     <h2 id="welcome-user">Welcome back <%= @user.first_name %>!</h2>
   </div>
 </div>
-<div class="user-container">
-  <div class="user-info">
-    <div class="user-streaming-services">
-      <h2 class="your-services">Your services</h2>
-      <div class="edit-user-link">
-        <%= link_to "Edit", edit_user_path(current_user), class: "user-edit-btn" %>
-      </div>
-      <% if @user.netflix? %>
-        <%= image_tag("netflix_logo.png", class: "user-netflix-logo-1") %>
-      <% else %>
-        <%= image_tag("netflix_logo.png", class: "user-netflix-logo-2") %>
-      <% end %>
-      <% if @user.amazon? %>
-        <%= image_tag("amazon_logo.png", class: "user-amazon-logo-1") %>
-      <% else %>
-        <%= image_tag("amazon_logo.png", class: "user-amazon-logo-2") %>
-      <% end %>
-      <% if @user.disney_plus? %>
-        <%= image_tag("disney_logo.png", class: "user-disney-logo-1") %>
-      <% else %>
-        <%= image_tag("disney_logo.png", class: "user-disney-logo-2") %>
-      <% end %>
-    </div>
-  </div>
-</div>
+
 
 <div class="media-user-container">
   <input type="radio" name="tabs" id="tab1" checked />
@@ -56,6 +32,32 @@
       <div class="excluded-list">
         <%= render "media_user/excluded_index" %>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="user-container mb-5">
+  <div class="user-info">
+    <div class="user-streaming-services">
+      <h2 class="your-services">Your services</h2>
+      <div class="edit-user-link">
+        <%= link_to "Edit", edit_user_path(current_user), class: "user-edit-btn" %>
+      </div>
+      <% if @user.netflix? %>
+        <%= image_tag("netflix_logo.png", class: "user-netflix-logo-1") %>
+      <% else %>
+        <%= image_tag("netflix_logo.png", class: "user-netflix-logo-2") %>
+      <% end %>
+      <% if @user.amazon? %>
+        <%= image_tag("amazon_logo.png", class: "user-amazon-logo-1") %>
+      <% else %>
+        <%= image_tag("amazon_logo.png", class: "user-amazon-logo-2") %>
+      <% end %>
+      <% if @user.disney_plus? %>
+        <%= image_tag("disney_logo.png", class: "user-disney-logo-1") %>
+      <% else %>
+        <%= image_tag("disney_logo.png", class: "user-disney-logo-2") %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -32,23 +32,28 @@
           <div class="streaming">
             <% if  %>
               <% @media.streaming_service == "netflix" %>
-<!--               <p>Available on</p> -->
               <%= image_tag("netflix_logo.png", {:style => "width: 95px; border-radius: 5px;"}) %>
-            <% end %>
-            <% if  %>
-              <% @media.streaming_service == "amazon" %>
-<!--               <p>Available on</p> -->
-              <%= image_tag("amazon_logo.png", {:style => "width: 95px; border-radius: 5px; border: 1px solid black;"}) %>
-            <% end %>
-            <% if  %>
-              <% @media.streaming_service == "disney_plus" %>
-<!--               <p>Available on</p> -->
-              <%= image_tag("disney_logo.jpg", {:style => "width: 95px; border-radius: 5px;"}) %>
-            <% end %>
           </div>
         </div>
       </div>
-      <button class="btn-gold btn-block"><a href="#">Watch</a></button>
+      <a class="btn-gold btn-block" target="blank" href="https://www.netflix.com/browse">Watch</a>
+            <% end %>
+            <% if  %>
+              <% @media.streaming_service == "amazon" %>
+              <%= image_tag("amazon_logo.png", {:style => "width: 95px; border-radius: 5px; border: 1px solid black;"}) %>
+          </div>
+        </div>
+      </div>
+      <a class="btn-gold btn-block" target="blank" href="https://www.amazon.co.uk/Amazon-Video/b/?ie=UTF8&node=3010085031&ref_=nav_cs_prime_video">Watch</a>
+            <% end %>
+            <% if  %>
+              <% @media.streaming_service == "disney_plus" %>
+              <%= image_tag("disney_logo.jpg", {:style => "width: 95px; border-radius: 5px;"}) %>
+          </div>
+        </div>
+      </div>
+      <a class="btn-gold btn-block" target="blank" href="https://www.disneyplus.com/eu/en-gb/home">Watch</a>
+            <% end %>
     </div>
   </div>
 
