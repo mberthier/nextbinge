@@ -124,9 +124,10 @@ fieldset.form-group-5-left {
 .central-box {
   background-color: #ffffff00;
   border-radius: 8px;
-  width: 40vw;
-  height: 50vh;
+  width: 70vw;
+  height: 70vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -143,7 +144,6 @@ fieldset.form-group-5-left {
   text-align: center;
 
   h3 {
-    color: #fff;
     font-size: 40px;
     font-weight: semi-bold;
     padding-bottom: 30px;
@@ -151,7 +151,6 @@ fieldset.form-group-5-left {
 
     background-color: #00000000;
     padding: 2px 15px 4px;
-    color: #fff;
     border-radius: 4px;
   }
 }
