@@ -1,41 +1,50 @@
 <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet" />
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-<!--    <div class="v140_40">NEXTBINGE</div> -->
-      <%= image_tag "logo2.png" %>
+    <%= image_tag "logo2.png" %>
   <% end %>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Take the Survey", new_user_survey_path(current_user), class: "nav-link", data:{turbolinks: false} %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "man.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Test Reco Engine", result_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
+        <div id="navBar">
+          <input type="checkbox" class="check" id="checked">
+          <label class="menu-btn" for="checked">
+            <span class="bar top"></span>
+            <span class="bar middle"></span>
+            <span class="bar bottom"></span>
+            <span class="menu-btn__text"></span>
+          </label>
+          <label class="close-menu" for="checked"></label>
+          <nav class="drawer-menu">
+            <ul>
+              <li><%= link_to "Home", root_path, id: "home-page" %></li>
+              <li><%= link_to "My Profile", user_path(current_user), id: "my-profile" %></li>
+              <li><%= link_to "Take the Survey", new_user_survey_path(current_user), id: "take-survey", data:{turbolinks: false} %></li>
+              <li><%= link_to "Log out", destroy_user_session_path, method: :delete, id: "log-out" %></li>
+            </ul>
+          </nav>
+        </div>
+        <%# <%= image_tag "man.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% else %>
-        <li class="nav-item d-flex align-items-center">
-          <div>
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </div>
-          <div class= "purple">
-            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
-          </div>
-        </li>
+        <div id="navBar">
+          <input type="checkbox" class="check" id="checked">
+          <label class="menu-btn" for="checked">
+            <span class="bar top"></span>
+            <span class="bar middle"></span>
+            <span class="bar bottom"></span>
+            <span class="menu-btn__text"></span>
+          </label>
+          <label class="close-menu" for="checked"></label>
+          <nav class="drawer-menu">
+            <ul>
+              <li><%= link_to "Login", new_user_session_path, id: "log-in" %></li>
+              <li><%= link_to "Sign Up", new_user_registration_path, id: "sign-up" %></li>
+            </ul>
+          </nav>
+        </div>
       <% end %>
     </ul>
   </div>
