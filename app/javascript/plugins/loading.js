@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 const loadingFunction = () => {
   const submitButton = document.querySelector(".buttonsubmit-right")
-  // submitButton.addEventListener('click', function() {
+  submitButton.addEventListener('click', function() {
     let body = document.querySelector("body")
 
     let texts = ["Adjusting flux capacitor...",
@@ -61,7 +61,7 @@ const loadingFunction = () => {
       renderer.render(scene, camera);
     }
     animate();
-  // });
+  });
 };
 
 export { loadingFunction };
