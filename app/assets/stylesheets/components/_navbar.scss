@@ -151,59 +151,19 @@ ul {
 .menu-btn {
   position: fixed;
   display: block;
-  top: 28px;
-  right: 40px;
+  top: 10px;
+  right: 30px;
   display: block;
-  width: 20px;
+  width: 59px;
   height: 40px;
   font-size: 10px;
   text-align: center;
   cursor: pointer;
   z-index: 3;
-
 }
 
-.bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: #000000;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-  -webkit-transform-origin: left top;
-  -ms-transform-origin: left top;
-  transform-origin: left top;
-}
-
-.bar.middle {
-  background: #000000;
-  top: 12px;
-  opacity: 1;
-}
-
-.bar.bottom {
-  top: 24px;
-  background: #000000;
-  -webkit-transform-origin: left bottom;
-  -ms-transform-origin: left bottom;
-  transform-origin: left bottom;
-}
-
-.menu-btn__text {
-  position: absolute;
-  bottom: -15px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  color: #fff;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-  display: block;
-  visibility: visible;
-  opacity: 1;
+#man-logo {
+ width: 60px;
 }
 
 

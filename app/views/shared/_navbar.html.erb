@@ -12,10 +12,7 @@
         <div id="navBar">
           <input type="checkbox" class="check" id="checked">
           <label class="menu-btn" for="checked">
-            <span class="bar top"></span>
-            <span class="bar middle"></span>
-            <span class="bar bottom"></span>
-            <span class="menu-btn__text"></span>
+            <%= image_tag "man.svg", id: "man-logo" %>
           </label>
           <label class="close-menu" for="checked"></label>
           <nav class="drawer-menu">
@@ -27,15 +24,11 @@
             </ul>
           </nav>
         </div>
-        <%# <%= image_tag "man.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% else %>
         <div id="navBar">
           <input type="checkbox" class="check" id="checked">
           <label class="menu-btn" for="checked">
-            <span class="bar top"></span>
-            <span class="bar middle"></span>
-            <span class="bar bottom"></span>
-            <span class="menu-btn__text"></span>
+            <%= image_tag "man.svg", id: "man-logo" %>
           </label>
           <label class="close-menu" for="checked"></label>
           <nav class="drawer-menu">
