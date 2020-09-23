@@ -1,25 +1,18 @@
 <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet" />
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-<!--    <div class="v140_40">NEXTBINGE</div> -->
-      <%= image_tag "logo2.png" %>
+    <%= image_tag "logo2.png" %>
   <% end %>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <div id="navBar">
           <input type="checkbox" class="check" id="checked">
           <label class="menu-btn" for="checked">
-            <span class="bar top"></span>
-            <span class="bar middle"></span>
-            <span class="bar bottom"></span>
-            <span class="menu-btn__text"></span>
+            <%= image_tag "man.svg", id: "man-logo" %>
           </label>
           <label class="close-menu" for="checked"></label>
           <nav class="drawer-menu">
@@ -40,14 +33,19 @@
           </nav>
         </div>
       <% else %>
-        <li class="nav-item d-flex align-items-center">
-          <div>
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </div>
-          <div class="purple">
-            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
-          </div>
-        </li>
+        <div id="navBar">
+          <input type="checkbox" class="check" id="checked">
+          <label class="menu-btn" for="checked">
+            <%= image_tag "man.svg", id: "man-logo" %>
+          </label>
+          <label class="close-menu" for="checked"></label>
+          <nav class="drawer-menu">
+            <ul>
+              <li><%= link_to "Login", new_user_session_path, id: "log-in" %></li>
+              <li><%= link_to "Sign Up", new_user_registration_path, id: "sign-up" %></li>
+            </ul>
+          </nav>
+        </div>
       <% end %>
     </ul>
   </div>
