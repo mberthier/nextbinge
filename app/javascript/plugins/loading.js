@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 const loadingFunction = () => {
   const submitButton = document.querySelector(".buttonsubmit-right")
-  submitButton.addEventListener('click', function() {
+  // submitButton.addEventListener('click', function() {
     let body = document.querySelector("body")
 
     let texts = ["Adjusting flux capacitor...",
@@ -25,9 +25,11 @@ const loadingFunction = () => {
     };
     const navbar = document.querySelector(".navbar");
     navbar.style.display = "none";
+
+    // THREE.JS code
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.5, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setClearColor(0x000000, 0)
     renderer.setSize(window.innerWidth/1.5, window.innerHeight/1.5);
     document.querySelector(".cube").appendChild(renderer.domElement);
@@ -48,7 +50,7 @@ const loadingFunction = () => {
 
     camera.position.x = 0;
     camera.position.y = 0;
-    camera.position.z = 3;
+    camera.position.z = 4;
 
     function animate() {
       requestAnimationFrame(animate);
@@ -59,7 +61,7 @@ const loadingFunction = () => {
       renderer.render(scene, camera);
     }
     animate();
-  });
+  // });
 };
 
 export { loadingFunction };
