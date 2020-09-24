@@ -2,26 +2,31 @@ import * as THREE from 'three';
 
 const loadingFunction = () => {
   const submitButton = document.querySelector(".buttonsubmit-right")
-  submitButton.addEventListener('click', function() {
+  // submitButton.addEventListener('click', function() {
     let body = document.querySelector("body")
-
+    
     let texts = ["Adjusting flux capacitor...",
-      "Asking Chewie to punch it",
-      "Checking database",
-      "Convicing AI not to turn evil",
-      "It's almost done I swear",
-      "Your movies are coming!"]
-
+    "Asking Chewie to punch it",
+    "Checking database",
+    "Convicing AI not to turn evil",
+    "It's almost done I swear",
+    "Your movies are coming!"]
+    
     let index = 0;
-
+    
     const newSentence = () => {
       document.querySelector(".sentence").innerHTML = texts[index];
       index < 3 ? index++ : index = 0;
     };
     if (body) {
       body.style.overflow = "hidden";
-      body.insertAdjacentHTML("beforebegin", `<div class="background-holder"><div class="central-box"><div class="cube"></div><div class="spin"><h3 class="sentence">Adjusting flux capacitor...</h3></div</div></div>`);
+      body.insertAdjacentHTML("beforebegin", `<div class="background-holder"><div class="central-box"><div class="cube-start"></div><div class="spin"><h3 class="sentence">Adjusting flux capacitor...</h3></div</div></div>`);
+      const cubeStart = document.querySelector("div.cube-start");
       setInterval(newSentence, 1000);
+      setTimeout(function () {
+        cubeStart.classList.remove("cube-start");
+        cubeStart.classList.add("cube-end"); 
+      }, 100);
     };
     const navbar = document.querySelector(".navbar");
     navbar.style.display = "none";
@@ -32,7 +37,7 @@ const loadingFunction = () => {
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setClearColor(0x000000, 0)
     renderer.setSize(window.innerWidth/1.5, window.innerHeight/1.5);
-    document.querySelector(".cube").appendChild(renderer.domElement);
+    document.querySelector(".cube-start").appendChild(renderer.domElement);
 
     const geometry = new THREE.BoxGeometry(2, 2, 2);
     const cubeMaterials =
@@ -61,7 +66,7 @@ const loadingFunction = () => {
       renderer.render(scene, camera);
     }
     animate();
-  });
+  // });
 };
 
 export { loadingFunction };

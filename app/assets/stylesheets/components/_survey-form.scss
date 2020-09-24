@@ -4,31 +4,34 @@
 
   h1 {
     position: absolute;
-// width: 432px;
-// height: 106px;
-left: 142px;
-font-family: Exo;
-font-style: normal;
-font-weight: bold !important;
-font-size: 40px;
-line-height: 106px;
-letter-spacing: 0.05em;
-color: #090E35;
-// text-border: 300px solid #090E35;
+    // width: 432px;
+    // height: 106px;
+    left: 142px;
+    font-family: Exo;
+    font-style: normal;
+    font-weight: bold !important;
+    font-size: 40px;
+    line-height: 106px;
+    letter-spacing: 0.05em;
+    color: #090E35;
+    // text-border: 300px solid #090E35;
   }
 
 }
-  body {
+
+body {
   background-color: #A3B1F9;
-  }
+}
+
 .container2 {
   padding: 0px;
-      // display: flex;
-   flex-wrap: wrap;
-   justify-content: space-evenly;
-   align-items: center;
-   margin-top: 70px;
+  // display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 70px;
 }
+
 .survey-container {
   overflow: hidden;
   height: 400px;
@@ -171,16 +174,25 @@ fieldset.form-group-5-left {
     transform: rotate(360deg);
   }
 }
-.label{
-left: 157px;
-font-family: Exo;
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 27px;
-text-align: center;
-letter-spacing: 0.1em;
-color: #090E35;
+
+.cube-start {
+  transform: scale(0.01, 0.01);
+}
+
+.cube-end {
+  transition: all 1s ease-out;
+}
+
+.label {
+  left: 157px;
+  font-family: Exo;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #090E35;
 }
 
 .surveymoodbutton {
@@ -195,7 +207,8 @@ color: #090E35;
   padding:32px 32px;
   text-decoration:none;
   background-size: cover;
-    &:hover {
+
+  &:hover {
     // background-image: #4A4A4A;
     cursor: pointer;
     opacity: 1;
@@ -223,35 +236,35 @@ color: #090E35;
 // background-image: url(sad.jpg);
 // }
 
-  .c-account-home-button4 {
-   cursor: pointer;
-   height: 84px;
-   background-color: #C5CDFF !important;
-   box-shadow: -5px 5px #0f0f92 !important;
-   border: 2px solid #0F0F92 !important;
-   font-family: 'Exo' !important;
-   font-weight: 700 !important;
-   font-size: 14px !important;
-   width: 274px !important ;
-   margin-top: 50px !important;
-   margin-bottom: 25px !important;
-   border-radius: 0 !important;
- }
+.c-account-home-button4 {
+  cursor: pointer;
+  height: 84px;
+  background-color: #C5CDFF !important;
+  box-shadow: -5px 5px #0f0f92 !important;
+  border: 2px solid #0F0F92 !important;
+  font-family: 'Exo' !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  width: 274px !important;
+  margin-top: 50px !important;
+  margin-bottom: 25px !important;
+  border-radius: 0 !important;
+}
 
- //  .c-account-home-button4:hover {
- //   cursor: pointer;
- //   height: 84px;
- //   background-color: #C5CDFF;
- //   box-shadow: -5px 5px #0f0f92;
- //   border: 2px solid #0F0F92;
- //   font-family: 'Exo';
- //   font-weight: 700;
- //   font-size: 14px;
- //   max-width: 274px;
- //   margin-top: 50px;
- //   margin-bottom: 25px;
- // }
- .radio__label2 {
+//  .c-account-home-button4:hover {
+//   cursor: pointer;
+//   height: 84px;
+//   background-color: #C5CDFF;
+//   box-shadow: -5px 5px #0f0f92;
+//   border: 2px solid #0F0F92;
+//   font-family: 'Exo';
+//   font-weight: 700;
+//   font-size: 14px;
+//   max-width: 274px;
+//   margin-top: 50px;
+//   margin-bottom: 25px;
+// }
+.radio__label2 {
   color: #4A4A4A;
   border: 1px solid #090E35;
   padding: 8px 24px;
@@ -268,3 +281,4 @@ color: #090E35;
     color: white !important;
   }
 }
+
