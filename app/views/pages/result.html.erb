@@ -1,6 +1,6 @@
-<div class="cover-result d-flex flex-column align-items-center justify-content-center">
+<div class="cover-result d-flex flex-column align-items-center justify-content-end">
     <h3 class= 'mb-3 mt-5'>Here is our selection for you</h3>
-    <p class="pl-2 pr-2 pb-0">
+    <p class="container pl-2 pr-2 pb-0">
       You want to watch <span style= "font-weight: bold;"><%= @survey.genre %> <%= @survey.media_type %></span> that are available on
       <% if User.last.netflix%>
         <span style= "font-weight: bold;">Netflix</span>
@@ -11,7 +11,7 @@
       <% if User.last.disney_plus %>
         <span style= "font-weight: bold;">Disney +</span>
       <% end %>
-      with <span style= "font-weight: bold;"><%= @survey.ratings %></span> rating and doesn’t have to be recent.
+      with <span style= "font-weight: bold;"><%= @survey.ratings %></span> ratings and the release year is <span style= "font-weight: bold;">All time</span>.
     </p>
 </div>
 <div id="medias-gallery" class="desktop container">
