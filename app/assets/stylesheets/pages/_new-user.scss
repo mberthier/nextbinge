@@ -10,10 +10,10 @@
   grid-gap: 253px;
   margin: 0 auto;
   padding: 81px 101px;
-// background-image: linear-gradient(90deg, #dbdbdbe3 0 50%, #ffffff 50% 100%);
-   background-color: #A3B1F9;
-   height: 100%
- }
+  // background-image: linear-gradient(90deg, #dbdbdbe3 0 50%, #ffffff 50% 100%);
+  background-color: #A3B1F9;
+  height: 100%
+}
 
 .form-container {
   width: 706px;
@@ -86,82 +86,78 @@
   text-shadow: 2px 3px 5px #000000;
 }
 
+.c-account-home {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+}
 
-  .c-account-home {
-   display: flex;
-   justify-content: space-between;
-   padding: 0 10%;
- }
+.c-account-home .c-register {
+  padding-left: 50px;
+}
 
-  .c-account-home .c-register {
-   padding-left: 50px;
- }
- .c-account-home > div {
-   width: 50%;
- }
+.c-account-home > div {
+  width: 50%;
+}
 
-  .disclaimer {
-   margin-bottom: 20px !important;
-   font-weight: 400 !important;
-   font-size: 14px !important;
- }
+.disclaimer {
+  margin-bottom: 20px !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}
 
-  .c-account-home form {
-   display: flex;
-   flex-direction: column;
- }
+.c-account-home form {
+  display: flex;
+  flex-direction: column;
+}
 
-  .c-account-home> form input {
-   font-weight: 400;
-   height: 60px;
-   width: 100%;
-   font-size: 24px;
-   display: block;
-   border: none;
-   border-bottom: 1px solid #0F0F92;
- }
+.c-account-home> form input {
+  font-weight: 400;
+  height: 60px;
+  width: 100%;
+  font-size: 24px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #0F0F92;
+}
 
+.input {
+  background-color: transparent;
+    font-weight: 400;
+  height: 60px;
+  width: 100%;
+  font-size: 24px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #0F0F92;
+  border-color:transparent;
+}
 
+.c-account-home-button {
+  cursor: pointer;
+  height: 84px;
+  background-color: #C5CDFF;
+  box-shadow: -5px 5px #0f0f92;
+  border: 2px solid #0F0F92;
+  font-family: 'Exo';
+  font-weight: 700;
+  font-size: 14px !important;
+max-width: 274px;
+  min-width: 274px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
 
-  .input {
-   background-color: transparent;
-     font-weight: 400;
-   height: 60px;
-   width: 100%;
-   font-size: 24px;
-   display: block;
-   border: none;
-   border-bottom: 1px solid #0F0F92;
-   border-color:transparent;
-
-  }
-
-  .c-account-home-button {
-   cursor: pointer;
-   height: 84px;
-   background-color: #C5CDFF;
-   box-shadow: -5px 5px #0f0f92;
-   border: 2px solid #0F0F92;
-   font-family: 'Exo';
-   font-weight: 700;
-   font-size: 14px !important;
-  max-width: 274px;
-   min-width: 274px;
-   margin-top: 50px;
-   margin-bottom: 25px;
- }
-
-
-  .c-account-home-button:hover {
-   cursor: pointer;
-   height: 84px;
-   background-color: #C5CDFF;
-   box-shadow: -5px 5px #0f0f92;
-   border: 2px solid #0F0F92;
-   font-family: 'Exo';
-   font-weight: 700;
-   font-size: 14px !important;
-  width: 274px;
-   margin-top: 50px;
-   margin-bottom: 25px;
- }
+.c-account-home-button:hover {
+  cursor: pointer;
+  height: 84px;
+  background-color: #C5CDFF;
+  box-shadow: -5px 5px #0f0f92;
+  border: 2px solid #0F0F92;
+  font-family: 'Exo';
+  font-weight: 700;
+  font-size: 14px !important;
+width: 274px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}

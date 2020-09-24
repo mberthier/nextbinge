@@ -34,10 +34,10 @@
         </div>
       <% else %>
         <li class="nav-item d-flex align-items-center">
-          <div>
+          <div class="navbar-login-button">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </div>
-          <div class="purple">
+          <div class="navbar-logout-button">
             <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
           </div>
         </li>
