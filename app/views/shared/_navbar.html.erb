@@ -16,7 +16,7 @@
           </label>
           <label class="close-menu" for="checked"></label>
           <nav class="drawer-menu">
-            <ul>
+            <ul id="logged-in-links">
               <li>
                 <%= link_to "Home", root_path, id: "home-page" %>
               </li>
@@ -33,19 +33,14 @@
           </nav>
         </div>
       <% else %>
-        <div id="navBar">
-          <input type="checkbox" class="check" id="checked">
-          <label class="menu-btn" for="checked">
-            <%= image_tag "man.svg", id: "man-logo" %>
-          </label>
-          <label class="close-menu" for="checked"></label>
-          <nav class="drawer-menu">
-            <ul>
-              <li><%= link_to "Login", new_user_session_path, id: "log-in" %></li>
-              <li><%= link_to "Sign Up", new_user_registration_path, id: "sign-up" %></li>
-            </ul>
-          </nav>
-        </div>
+        <li class="nav-item d-flex align-items-center">
+          <div class="navbar-login-button">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </div>
+          <div class="navbar-logout-button">
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+          </div>
+        </li>
       <% end %>
     </ul>
   </div>
