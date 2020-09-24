@@ -65,33 +65,20 @@ header #bg-photo {
 
 /* Name on Nav Bar */
 
-h1 {
-  display: inline-block;
-  color: whitesmoke;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 1.5em;
-  margin: 0;
-  font-weight: lighter;
-  padding: 1em 0 0 1em;
-}
-
-a {
+a#home-page, a#take-survey, a#my-profile, a#log-out {
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 7em;
+  font-size: 20px;
   font-family: arial;
   letter-spacing: .3em;
 }
 
-ul {
+#logged-in-links {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
 }
-
 
 /* drawer menu */
 
@@ -273,27 +260,4 @@ ul {
 
 .navbar-lewagon .navbar-brand img {
   width: 200px;
-}
-
-.navbar-login-button {
-  font-size: 2px;
-}
-
-.navbar-logout-button {
-  background-color: #919eff;
-  border: 1px solid #1c2948;
-  color: #FFFFFF;
-  font-family: Exo;
-  font-weight: bold;
-  text-align: center;
-  text-align: center;
-  font-size: 2px;
-  padding: 5px 10px;
-  text-decoration: none;
-}
-
-.navbar-logout-button:hover {
-  background-color: #919eff;
-  text-decoration: none;
-  color: #FFFFFF;
 }
