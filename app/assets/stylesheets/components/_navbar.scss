@@ -65,33 +65,20 @@ header #bg-photo {
 
 /* Name on Nav Bar */
 
-h1 {
-  display: inline-block;
-  color: whitesmoke;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 1.5em;
-  margin: 0;
-  font-weight: lighter;
-  padding: 1em 0 0 1em;
-}
-
-a {
+a#home-page, a#take-survey, a#my-profile, a#log-out {
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 7em;
+  font-size: 20px;
   font-family: arial;
   letter-spacing: .3em;
 }
 
-ul {
+#logged-in-links {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
 }
-
 
 /* drawer menu */
 
@@ -149,7 +136,7 @@ ul {
 /* menu button - label tag */
 
 .menu-btn {
-  position: fixed;
+  position: sticky;
   display: block;
   top: 10px;
   right: 30px;
@@ -163,7 +150,7 @@ ul {
 }
 
 #man-logo {
- width: 60px;
+  width: 60px;
 }
 
 
@@ -249,4 +236,28 @@ ul {
   opacity: 1;
   z-index: 3;
 }
+
 /* End Navigation */
+
+// logged out user view of navbar
+.navbar-lewagon {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width:0px) and (max-width:415px) {
+    ul {
+      background-color: white;
+    }
+  }
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 200px;
+}
