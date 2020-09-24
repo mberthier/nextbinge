@@ -14,13 +14,16 @@
 
 body {
     background-color: #A3B1F9;
+    // background: url('frame.png');
+    // background-size: cover;
+    // background-repeat: no-repeat;
 }
 
 a {
   color: black;
   :hover {
     text-decoration: none;
-    color: #0F0F92;
+    color: black;
   }
 }
 
