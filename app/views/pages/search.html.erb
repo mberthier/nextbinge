@@ -1,56 +1,40 @@
 <% if @searchresults["results"].any? %>
   <div class="cover-search d-flex flex-column align-items-center justify-content-center">
-    <h3 style="text-align: center">Here's what we found for <strong><%= params[:search_term] %></strong></h3>
+    <h3 style="text-align: center">You searched for <strong><%= params[:search_term] %></strong> which returned the following results:</h3>
     <div class="search-again" style="text-align: center;">
       <%= link_to "Search again", root_path %>
     </div>
   </div>
-  <div class="container">
-    <div class='m-3'>
+  <div class="container search-grid">
       <% @searchresults["results"].each do |item| %>
-        <% if (item["locations"].map { |location| location["display_name"] } & [@netflix, @amazon, @disney]).any? %>
-          <h2 class="does-appear"><i class="fas fa-thumbs-up"></i></h2>
-          <ul class="m-4">
-            <div class="search-card d-flex justify-content-between">
-              <div class="description">
-                <li style="list-style: none;"><span style= "font-weight: bold"><%= item["name"] %></span></li>
-                  <li style="list-style: none;">
-                    <div>
-                      <div style="list-style: none;" class="streaming-links">
-                        <% item["locations"].each do |location| %>
-                            <a class="startbutton" href="<%= location["url"] %>"><%= location["display_name"] %></a>
-                        <% end %>
-                      </div>
-                    </div>
-                  </li>
-                </div>
-              <img src="https://media.giphy.com/media/21TyGiKxxSpT6fpHIv/giphy.gif" width="200px" class="imdb-poster" id="<%= item["external_ids"]["imdb"]["id"] %>">
+        <% if (item["locations"].map { |location| location["display_name"] } && [@netflix, @amazon, @disney]).any? %>
+            <div class="card-trip">
+            <h2 class="does-appear thumb"><i class="fas fa-thumbs-up"></i></h2>
+            <img src="https://media.giphy.com/media/21TyGiKxxSpT6fpHIv/giphy.gif" width="200px" class="imdb-poster card-tripimage" id="<%= item["external_ids"]["imdb"]["id"] %>">
+            <div class="card-trip-infos">
+              <h2><%= item["name"] %></h2>
+              <div class="streaming-links">
+                <% item["locations"].each do |location| %>
+                    <a class="" href="<%= location["url"] %>"><i class="fas fa-link"></i>  <%= location["display_name"] %></a>
+                <% end %>
+              </div>
             </div>
-          </ul>
+          </div>
         <% else %>
-          <h2 class="does-not-appear"><i class="fas fa-thumbs-down"></i></h2>
-          <ul class="m-4">
-            <div class="search-card d-flex justify-content-between">
-              <div class="description">
-                <li style="list-style: none;"><span style= "font-weight: bold"><%= item["name"] %></span></li>
-                  <li style="list-style: none;">
-                    <div>
-                      <ul style="list-style: none;" class="streaming-services">
-                        <% item["locations"].each do |location| %>
-                          <li class="streaming-services">
-                            <a href="<%= location["url"] %>"><%= location["display_name"] %></a>
-                          </li>
-                        <% end %>
-                      </ul>
-                    </div>
-                  </li>
-                </div>
-              <img src="https://media.giphy.com/media/21TyGiKxxSpT6fpHIv/giphy.gif" width="200px" class="imdb-poster" id="<%= item["external_ids"]["imdb"]["id"] %>">
+          <div class="card-trip">
+            <h2 class="does-not-appear thumb"><i class="fas fa-thumbs-down"></i></h2>
+            <img src="https://media.giphy.com/media/21TyGiKxxSpT6fpHIv/giphy.gif" width="200px" class="imdb-poster card-tripimage" id="<%= item["external_ids"]["imdb"]["id"] %>">
+            <div class="card-trip-infos">
+              <h2><%= item["name"] %></h2>
+              <div class="streaming-links">
+                <% item["locations"].each do |location| %>
+                    <a class="" href="<%= location["url"] %>"><i class="fas fa-link"></i>  <%= location["display_name"] %></a>
+                <% end %>
+              </div>
             </div>
-          </ul>
+          </div>
         <% end %>
       <% end %>
-    </div>
   </div>
 <% else %>
   <div class="cover-search d-flex flex-column align-items-center justify-content-center">
@@ -60,3 +44,5 @@
     </div>
   </div>
 <% end %>
+
+

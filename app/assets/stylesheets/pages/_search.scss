@@ -6,9 +6,12 @@
 
 
 .streaming-links {
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
+  // display: ;
+  // padding: 10px;
+  // justify-content: space-between;
+  margin-top: 16px;
+  display:flex;
+  flex-direction: column;
 }
 
 .cover-search {
@@ -134,4 +137,66 @@ h2.does-not-appear {
 h2.does-appear {
   color: #06ad1c;
   font-size: 50px;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//    width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+.card-tripimage {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+ .card-trip-user2 {
+  position: absolute;
+  right: 100px;
+  top: -20px;
+  width: 70px;
+}
+
+ .card-trip-user3 {
+  position: absolute;
+  right: 180px;
+  top: -20px;
+  width: 70px;
+}
+
+.search-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.thumb{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  i {
+    font-size: 24px;
+  }
 }
