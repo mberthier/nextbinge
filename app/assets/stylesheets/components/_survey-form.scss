@@ -253,13 +253,13 @@ color: #090E35;
  // }
  .radio__label2 {
   color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  border: 1px solid #090E35;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
+  font-weight: normal;
+  opacity: 1;
   transition: opacity 0.3s ease;
-   color: #4A4A4A !important;
+  color: #090E35 !important;
 
   &:hover {
     cursor: pointer;
