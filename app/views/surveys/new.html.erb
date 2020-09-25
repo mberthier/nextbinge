@@ -7,7 +7,36 @@
     <div class="survey col-md-8 offset-md-2 col-sm-12">
       <div>
         <%= simple_form_for [current_user, @survey] do |f| %>
-          <fieldset class="form-group-1-center radio_buttons required survey_genre category-choices form-control-plaintext">
+          <fieldset class="form-group-1-center radio_buttons required survey_mood category-choices-img form-control-plaintext ">
+            <legend class="col-form-label pt-2 label ">Mood <abbr title="required"></abbr></legend>
+            <div class="category-choices-img">
+              <div class="category-choice-img">
+                <input class="radio__input" type="radio" value="Sad" name="survey[mood]" id="survey_mood_sad">
+                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'sad.jpg' %>);"  for="survey_mood_sad">Sad</label>
+              </div>
+              <div class="category-choice-img">
+                <input class="radio__input" type="radio" value="Neutral" name="survey[mood]" id="survey_mood_neutral">
+                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'neutral.jpg' %>);" for="survey_mood_neutral">Neutral</label>
+              </div>
+              <div class="category-choice-img">
+                <input class="radio__input" type="radio" value="Happy" name="survey[mood]" id="survey_mood_happy">
+                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'happy.jpg' %>);" for="survey_mood_happy">Happy</label>
+              </div>
+              <div class="category-choice-img">
+                <input class="radio__input" type="radio" value="Sick" name="survey[mood]" id="survey_mood_sick">
+                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'sick.jpg' %>);" for="survey_mood_sick">Sick</label>
+              </div>
+              <div class="category-choice-img">
+                <input class="radio__input" type="radio" value="Angry" name="survey[mood]" id="survey_mood_angry">
+                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'angry.jpg' %>);" for="survey_mood_angry">Angry</label>
+              </div>
+              <div class="category-choice-img">
+                <input class="radio__input" type="radio" value="Tired" name="survey[mood]" id="survey_mood_tired">
+                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'tired.jpg' %>);" for="survey_mood_tired">Tired</label>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form-group-2-right radio_buttons required survey_genre category-choices form-control-plaintext">
             <legend class="col-form-label pt-0 label">Genre <abbr title="required"></abbr></legend>
             <div class="category-choices">
               <div class="category-choice">
@@ -97,36 +126,6 @@
                 <input class="radio__input" type="radio" value="Thriller" name="survey[genre]" id="survey_genre_thriller">
                 <label class="radio__label2 radio__label" style="background-color: #EC7C74;" for="survey_genre_thriller">Thriller</label>
               </div>
-            </div>
-          </fieldset>
-          <fieldset class="form-group-2-right radio_buttons required survey_mood category-choices-img form-control-plaintext ">
-            <legend class="col-form-label pt-2 label ">Mood <abbr title="required"></abbr></legend>
-            <div class="category-choices-img">
-              <div class="category-choice-img">
-                <input class="radio__input" type="radio" value="Sad" name="survey[mood]" id="survey_mood_sad">
-                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'sad.jpg' %>);"  for="survey_mood_sad">Sad</label>
-              </div>
-              <div class="category-choice-img">
-                <input class="radio__input" type="radio" value="Neutral" name="survey[mood]" id="survey_mood_neutral">
-                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'neutral.jpg' %>);" for="survey_mood_neutral">Neutral</label>
-              </div>
-              <div class="category-choice-img">
-                <input class="radio__input" type="radio" value="Happy" name="survey[mood]" id="survey_mood_happy">
-                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'happy.jpg' %>);" for="survey_mood_happy">Happy</label>
-              </div>
-              <div class="category-choice-img">
-                <input class="radio__input" type="radio" value="Sick" name="survey[mood]" id="survey_mood_sick">
-                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'sick.jpg' %>);" for="survey_mood_sick">Sick</label>
-              </div>
-              <div class="category-choice-img">
-                <input class="radio__input" type="radio" value="Angry" name="survey[mood]" id="survey_mood_angry">
-                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'angry.jpg' %>);" for="survey_mood_angry">Angry</label>
-              </div>
-              <div class="category-choice-img">
-                <input class="radio__input" type="radio" value="Tired" name="survey[mood]" id="survey_mood_tired">
-                <label class="radio__label surveymoodbutton" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= asset_path 'tired.jpg' %>);" for="survey_mood_tired">Tired</label>
-              </div>
-
             </div>
           </fieldset>
           <fieldset class="form-group-3-right radio_buttons required survey_media_type category-choices form-control-plaintext">
