@@ -2,4 +2,4 @@ meta_product_name: "NextBinge"
 meta_title: "NextBinge - Find your next binge in no time!"
 meta_description: "Know what to watch, but not where to watch it? Don't know what to watch, but want to watch something now?
   NextBinge can take the hassle of choosing from hundreds of titles out of your evening, and let's you enjoy more of your time."
-meta_image: "nextbinge-meta.jpg" # should exist in `app/assets/images/`
+meta_image: "nextbinge-meta.png" # should exist in `app/assets/images/`
