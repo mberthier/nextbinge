@@ -1,96 +1,95 @@
-  <div class="backgroundcoverhome">
-    <div class="headercontainer2" style="background-image: url(<%= asset_path 'frame.png' %>);">
-      <div class="backgroundcoverhome2">
-        <div class="container container-cover">
-          <div class="fontheaderhome, fontheaderhome2">
-            The search is over...<br>Reinvent the way you stream
-          </div>
-          <div class="fontheaderhome3, fontheaderhome4">
-            Spend more time watching and less time searching<br> all while discovering the best shows from <br> your streaming platforms
-          </div>
-          <% if user_signed_in?%>
-            <%= link_to "START NOW", new_user_survey_path(current_user), class: "startbutton", data:{turbolinks: false} %>
-          <% else %>
-            <a href="users/sign_up" class="startbutton">START NOW</a>
-          <% end %>
-          <%= image_tag("tvs.svg", {:style => "width: 425px; position: absolute; right: 30px; top: 40px"}) %>
-       </div>
+<div class="background-gradient" style="background-image: url(<%= asset_path 'frame.png' %>);">
 
+  <div class="banner">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="banner-text mt-5">
+        <h1>The search is over...<br>Reinvent the way you stream</h1>
+        <p>
+          Spend more time watching and less time searching<br> all while discovering the best shows from <br> your streaming platforms
+        </p>
+      </div>
+      <div id="tvs">
+        <%= image_tag("tvs.svg", {:style => "width: 425px;"}) %>
+      </div>
+    </div>
+    <% if user_signed_in?%>
+      <%= link_to "START NOW", new_user_survey_path(current_user), class: "startbutton", data:{turbolinks: false} %>
+    <% else %>
+      <a href="users/sign_up" class="startbutton">START NOW</a>
+    <% end %>
+  </div>
 
-<!--    <div class="vector">
-   </div> -->
-  <div class="container container-home flex items-center justify-center min-h-win-h-3/4 py-x-gutter-lg md:min-h-win-h-1/2">
-  <div class= "container process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2">
-   <div class="fontsectionhome2">Get relevant recomendations effortlessly</div>
-  <div class= "d-flex justify-content-around align-items-center m-5 flex-wrap">
-<div class="d-flex flex-column align-items-center justify-content-around">
-              <div class="gold-circle">
-                     <h3>1</h3>
-                     </div>
-                     <p class="fontsectionhome">Indicate your current <br> subscriptions</p>
-                 </div>
-                 <div class="d-flex flex-column align-items-center justify-content-around">
-                     <div class="gold-circle">
-                     <h3>2</h3>
-                     </div>
-                     <p class="fontsectionhome">Tell us a bit about <br> your tastes</p>
-                 </div>
-                 <div class="d-flex flex-column align-items-center justify-content-around">
-                     <div class="gold-circle">
-                     <h3>3</h3>
-                     </div>
-                     <p class="fontsectionhome">Get personnalized <br> recommendations</p>
-                 </div>
-             </div>
-           </div>
-         </div>
-
-        <div class="container container-home process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2">
-          <div class="container">
-            <div class="fontsectionhome3">Find your favorites in no time</div>
-              <%= form_with url: search_page_get_path, local: true, method: :post do %>
-                <div class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
-                  <div class="search-field d-flex align-items-center">
-                    <div><%= text_field_tag :search_term,"",placeholder:'SEARCH HERE YOUR FAVORITE SHOWS', class: 'input3' %>
-                    </div>
-                  </div>
-                  <div class="streaming-services mt-4">
-                     <%= check_box_tag(:netflix, "Netflix") %>
-                     <label for="netflix" id="netflix"></label>
-                     <%= check_box_tag(:amazon, "Amazon Prime Video") %>
-                     <label for="amazon" id="amazon"></label>
-                     <%= check_box_tag(:disney_plus, "Disney+") %>
-                     <label for="disney_plus" id="disney_plus"></label>
-                  </div>
-                  <div><%= submit_tag 'Watch Now', class: "startbutton2"  %>
-                  </div>
-                </div>
-              <% end %>
+  <div class="container container-home flex items-center justify-center">
+    <div class= "process">
+      <h2>Get relevant recomendations effortlessly</h2>
+      <div class= "d-flex justify-content-around align-items-center m-5 flex-wrap">
+        <div class="d-flex flex-column align-items-center justify-content-around">
+          <div class="gold-circle">
+            <h3>1</h3>
           </div>
+            <p>Indicate your current <br> subscriptions</p>
         </div>
-
-        <div class= "container container-home process flex-initial relative xs:w-3/4 xs:mx-auto 2xl:w-2/3 4xl:w-1/2"">
-          <div class="fontsectionhome4"> Streaming platforms we support</div>
-          <div class= "streaming-container">
-             <div><%= image_tag("netflix_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px;   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("amazon_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("disney_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("itv_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("apple_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("now_logo.png", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("hulu_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-             <div><%= image_tag("youtube_logo.jpg", {:style => "width: 215px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
-           </div>
-            <% if user_signed_in?%>
-              <%= link_to "START NOW", new_user_survey_path(current_user), class: "startbutton", data:{turbolinks: false} %>
-            <% else %>
-              <a href="users/sign_up" class="startbutton">START NOW</a>
-            <% end %>
-          </div>
+        <div class="d-flex flex-column align-items-center justify-content-around">
+            <div class="gold-circle">
+              <h3>2</h3>
+            </div>
+              <p>Tell us a bit about <br> your tastes</p>
         </div>
+        <div class="d-flex flex-column align-items-center justify-content-around">
+            <div class="gold-circle">
+              <h3>3</h3>
+            </div>
+            <p>Get personnalized <br> recommendations</p>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="container-home search">
+    <div class="container">
+      <h2>Find your favorites in no time</h2>
+        <%= form_with url: search_page_get_path, local: true, method: :post do %>
+          <div class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
+            <div class="search-field d-flex align-items-center">
+              <div><%= text_field_tag :search_term,"",placeholder:'SEARCH HERE YOUR FAVORITE SHOWS', class: 'search-input' %>
+              </div>
+            </div>
+            <div class="streaming-services mt-4">
+               <%= check_box_tag(:netflix, "Netflix") %>
+               <label for="netflix" id="netflix"></label>
+               <%= check_box_tag(:amazon, "Amazon Prime Video") %>
+               <label for="amazon" id="amazon"></label>
+               <%= check_box_tag(:disney_plus, "Disney+") %>
+               <label for="disney_plus" id="disney_plus"></label>
+            </div>
+            <div><%= submit_tag 'Watch Now', class: "startbutton2"  %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+
+  <div class= "container container-home platforms">
+    <h2>Streaming platforms we support</h2>
+    <div class= "streaming-container">
+       <div><%= image_tag("netflix_logo.png", {:style => "width: 215px; height: 125px; border-radius: 10px; margin-top: 20px;   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+       <div><%= image_tag("amazon_logo.png", {:style => "width: 215px; height: 125px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+       <div><%= image_tag("disney_logo.png", {:style => "width: 215px; height: 125px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+       <div><%= image_tag("itv_logo.jpg", {:style => "width: 215px; height: 125px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+       <div><%= image_tag("apple_logo.jpg", {:style => "width: 215px; height: 125px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+       <div><%= image_tag("now_logo.png", {:style => "width: 215px; height: 125px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+       <div><%= image_tag("hulu_logo.jpg", {:style => "width: 215px; height: 125px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+       <div><%= image_tag("youtube_logo.jpg", {:style => "width: 215px; height: 125px; border-radius: 10px; margin-top: 20px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"}) %></div>
+    </div>
+    <% if user_signed_in?%>
+      <%= link_to "START NOW", new_user_survey_path(current_user), class: "startbutton mb-5", data:{turbolinks: false} %>
+    <% else %>
+      <a class="mb-5" href="users/sign_up" class="startbutton">START NOW</a>
+    <% end %>
+  </div>
+
 </div>
+
 
 
 
