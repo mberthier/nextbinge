@@ -10,9 +10,6 @@
   }
 }
 
-
-
-
 .cover-result {
   height: 300px;
   color: #283858;
@@ -23,7 +20,15 @@
   p {
     text-align: center;
     font-size: 30px;
-
+  }
+  @media (min-width:0px) and (max-width:1055px) {
+    padding: 100px 8px 16px 8px;
+    h3 {
+      font-size: 40px;
+      }
+    p {
+      font-size: 20px;
+      }
   }
 }
 
