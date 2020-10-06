@@ -35,6 +35,9 @@ h2#welcome-user {
   font-size: 50px;
   font-weight: 900;
   color: #283858;
+  @media (min-width:0px) and (max-width:1055px) {
+    font-size: 40px;
+  }
 }
 
 .user-name {
@@ -51,29 +54,38 @@ h2#welcome-user {
 .user-streaming-services {
   text-align: center;
   color: #283858;
+  @media (min-width:0px) and (max-width:1055px) {
+  h2 {
+    font-size: 40px;
+    }
+  }
 }
 
 .user-netflix-logo-1,
 .user-amazon-logo-1,
 .user-disney-logo-1 {
-  height: 100px;
+  width: 215px;
+  height: 125px;
   border: 1px solid #000000;
   background-position: center;
   background-size: cover;
   border-radius: 4px 4px 4px 4px;
   text-align: center;
+  margin-bottom: 8px;
 }
 
 .user-netflix-logo-2,
 .user-amazon-logo-2,
 .user-disney-logo-2 {
-  height: 100px;
+  width: 215px;
+  height: 125px;
   opacity: 30%;
   border: 1px solid #000000;
   background-position: center;
   background-size: cover;
   border-radius: 4px 4px 4px 4px;
   text-align: center;
+  margin-bottom: 8px;
 }
 
 .media-user-container {
