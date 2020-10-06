@@ -27,18 +27,19 @@
 .c-account-home {
   display: flex;
   justify-content: space-between;
-  padding: 0 10%;
+  padding: 0;
+  flex-wrap: wrap;
   background-color: #A3B1F9;
-  padding-bottom: 300px;
 }
 
 .c-account-home .c-login, .c-account-home .c-login--reset {
   border-right: 1px solid #0F0F92;
-  padding-right: 50px;
-}
-
-.c-account-home > div {
-  width: 50%;
+  padding-right: 25%;
+  flex-grow: 1;
+  @media (min-width:0px) and (max-width:1055px) {
+  border-right: none;
+  padding: 0px 25px;
+  }
 }
 
 .c-account-home h4 {
@@ -54,7 +55,7 @@
   font-weight: 400;
   height: 60px;
   width: 100%;
-  font-size: 24px;
+  font-size: 20px;
   display: block;
   border-bottom: 1px solid #0F0F92 !important;
   border: none;
@@ -99,7 +100,7 @@
   font-weight: 700;
   font-size: 14px;
   width: 274px;
-  margin-top: 50px;
+  margin-top: 25px;
   margin-bottom: 25px;
   border-radius: 0 !important;
 }
@@ -114,7 +115,7 @@
   font-weight: 700;
   font-size: 14px;
   max-width: 274px;
-  margin-top: 50px;
+  margin-top: 25px;
   margin-bottom: 25px;
 }
 
@@ -127,17 +128,26 @@
 
 .register {
   padding-left: 50px;
-  margin-top: 215px;
+  p {
+    font-family: 'Exo' !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 1.5;
+  }
+  @media (min-width:0px) and (max-width:1055px) {
+  padding: 0 25px;
+   p {
+    margin: 50px 0 0 0;
+    }
+  }
 }
 
-.register p {
-  font-family: 'Exo' !important;
-  font-weight: 400 !important;
-  font-size: 18px !important;
-  line-height: 1.5;
-}
+
 
 .checkboxheight{
   height: 16px !important;
   margin-left: -125px;
+  @media (min-width:0px) and (max-width:1055px) {
+    margin-left: -25px;
+  }
 }

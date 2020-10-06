@@ -1,67 +1,69 @@
 <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet" />
 
 <div class="sign-up-cover"></div>
-<div class="form-ad-container">
-  <div class="form-container">
-    <h2>Sign up</h2>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email", style: 'background-color:transparent', class: 'input2' },
-                    placeholder: 'email',
-                    label: false
-                     %>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                     input_html: { autocomplete: "new-password", class: 'input2', style: 'background-color:transparent' },
-                     placeholder: 'password',
-                     label: false %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password", class: 'input2', style: 'background-color:transparent' },
-                    placeholder: 'password confirmation',
-                    label: false %>
-        <h5 class="streaming-services-title">Which streaming services do you have a subscription to?</h5>
-        <div class="streaming-services">
-          <div class="netflix-choice">
-            <fieldset class="form-group boolean optional user_netflix">
-              <div class="form-check">
-                <input name="user[netflix]" type="hidden" value="0">
-                <input class="radio__input" type="checkbox" value="1" name="user[netflix]" id="user_netflix">
-                <label class="radio__label2" for="user_netflix" id="netflix_check_label">Netflix</label>
+  <div class="">
+    <div class="form-container col-xs-12 col-sm-4 offset-md-4">
+        <h2>Sign up</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email", style: 'background-color:transparent', class: 'input2' },
+                        placeholder: 'email',
+                        label: false
+                         %>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                         input_html: { autocomplete: "new-password", class: 'input2', style: 'background-color:transparent' },
+                         placeholder: 'password',
+                         label: false %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password", class: 'input2', style: 'background-color:transparent' },
+                        placeholder: 'password confirmation',
+                        label: false %>
+            <p class="streaming-services-title">Which streaming services do you have?</p>
+            <div class="streaming-services">
+              <div class="netflix-choice">
+                <fieldset class="form-group boolean optional user_netflix">
+                  <div class="form-check" style="padding-left: 0">
+                    <input name="user[netflix]" type="hidden" value="0">
+                    <input class="radio__input" type="checkbox" value="1" name="user[netflix]" id="user_netflix">
+                    <label class="radio__label2" for="user_netflix" id="netflix_check_label">Netflix</label>
+                  </div>
+                </fieldset>
               </div>
-            </fieldset>
-          </div>
-          <div class="amazon-choice">
-            <fieldset class="form-group boolean optional user_amazon">
-              <div class="form-check">
-                <input name="user[amazon]" type="hidden" value="0">
-                <input class="radio__input" type="checkbox" value="1" name="user[amazon]" id="user_amazon">
-                <label class="radio__label2" for="user_amazon" id="amazon_check_label">Prime</label>
+              <div class="amazon-choice">
+                <fieldset class="form-group boolean optional user_amazon">
+                  <div class="form-check" style="padding-left: 0">
+                    <input name="user[amazon]" type="hidden" value="0">
+                    <input class="radio__input" type="checkbox" value="1" name="user[amazon]" id="user_amazon">
+                    <label class="radio__label2" for="user_amazon" id="amazon_check_label">Prime</label>
+                  </div>
+                </fieldset>
               </div>
-            </fieldset>
-          </div>
-          <div class="disney-plus-choice">
-            <fieldset class="form-group boolean optional user_disney_plus">
-              <div class="form-check">
-                <input name="user[disney_plus]" type="hidden" value="0">
-                <input class="radio__input" type="checkbox" value="1" name="user[disney_plus]" id="user_disney_plus">
-                <label class="radio__label2" for="user_disney_plus" id="disney_check_label">Disney+</label>
+              <div class="disney-plus-choice">
+                <fieldset class="form-group boolean optional user_disney_plus">
+                  <div class="form-check" style="padding-left: 0">
+                    <input name="user[disney_plus]" type="hidden" value="0">
+                    <input class="radio__input" type="checkbox" value="1" name="user[disney_plus]" id="user_disney_plus">
+                    <label class="radio__label2" for="user_disney_plus" id="disney_check_label">Disney+</label>
+                  </div>
+                </fieldset>
               </div>
-            </fieldset>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "c-account-home-button" %>
-      </div>
-    <% end %>
+          <div class="form-actions" style="text-align: center;">
+            <%= f.button :submit, "Sign up", class: "c-account-home-button" %>
+          </div>
+        <% end %>
+    </div>
   </div>
-  <div class="ad-container">
+
+<!--   <div class="ad-container">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -87,5 +89,4 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </div> -->

@@ -16,7 +16,18 @@
 }
 
 .form-container {
-  width: 706px;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  // width: 100%;
+  h2 {
+    font-size: 40px;
+  }
+  @media (min-width:0px) and (max-width:1055px) {
+    background-color: transparent;
+    box-shadow: none;
+  }
 }
 
 .streaming-services-title {
@@ -27,14 +38,14 @@
 
 .streaming-services {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .netflix-choice,
 .amazon-choice,
 .disney-plus-choice {
-  margin: 0px 10px 0px 5px;
+  margin: 0px 0px 0px 0px;
 }
 
 .radio__input {
@@ -96,10 +107,6 @@
   padding-left: 50px;
 }
 
-.c-account-home > div {
-  width: 50%;
-}
-
 .disclaimer {
   margin-bottom: 20px !important;
   font-weight: 400 !important;
@@ -142,7 +149,7 @@
   font-family: 'Exo';
   font-weight: 700;
   font-size: 14px !important;
-max-width: 274px;
+  max-width: 274px;
   min-width: 274px;
   margin-top: 50px;
   margin-bottom: 25px;
@@ -157,7 +164,7 @@ max-width: 274px;
   font-family: 'Exo';
   font-weight: 700;
   font-size: 14px !important;
-width: 274px;
+  width: 274px;
   margin-top: 50px;
   margin-bottom: 25px;
 }

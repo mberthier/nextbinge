@@ -53,6 +53,11 @@ h2 {
   font-weight: Regular;
   font-size: 60px;
   color: rgba(40,56,88,1);
+  @media (min-width:0px) and (max-width:1055px) {
+    h2 {
+      margin-top: 0px;
+    }
+  }
 }
 
 .container-home {

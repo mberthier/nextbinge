@@ -1,12 +1,12 @@
 <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet" />
 
 <div class="cover"></div>
-  <div class="c-account-home">
-   <div class="c-login">
-     <h4>log in</h4>
-     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-       <div class="form-inputs">
-         <%= f.input :email,
+  <div class="container c-account-home">
+    <div class="c-login">
+      <h4>log in</h4>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
                      required: false,
                      autofocus: true,
                      input_html: { autocomplete: "email", class: 'input2', style: 'background-color:transparent' },
@@ -20,24 +20,20 @@
                      placeholder: 'password',
                      label: false
                      %>
-         <%= f.input :remember_me, input_html: {style: ' top: 0px', class: 'checkboxheight'}, as: :boolean if devise_mapping.rememberable?%>
-       </div>
-       <div class="form-actions">
-         <%= f.button :submit, "Log in", class: "c-account-home-button3"  %>
-       </div>
-       <% end %>
-
+          <%= f.input :remember_me, input_html: {style: ' top: 0px', class: 'checkboxheight'}, as: :boolean if devise_mapping.rememberable?%>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", class: "c-account-home-button3"  %>
+        </div>
+      <% end %>
 
       <div id="CustomerLoginForm" class="login-form">
        <a href="/users/password/new" class="forgot-password">Forgot your password?</a>
-
       </div>
-   </div>
+    </div>
 
-
-        <div class="register">
-               <p>didn't make an account yet? <br> Sign up now!</p>
-       <button class="c-account-home-button3" onclick="window.location.href='/users/sign_up';"> Sign up</button>
- <!--       <a class="c-account-home-button2" href="/users/sign_up">SIGN UP</a> -->
-       </div>
- </div>    </div>
+    <div class="register">
+      <p>Don't have an account yet?</p>
+      <button class="c-account-home-button3" onclick="window.location.href='/users/sign_up';"> Sign up</button>
+    </div>
+  </div>
