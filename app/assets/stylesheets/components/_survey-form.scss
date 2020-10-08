@@ -1,6 +1,9 @@
 
 .row-survey {
-  margin: 0px 275px;
+  margin: 0 20%;
+  @media (min-width:0px) and (max-width:1055px){
+    margin: 0 10%;
+  }
 }
 
 
@@ -10,17 +13,17 @@
 
   h1 {
     position: absolute;
-    // width: 432px;
-    // height: 106px;
     font-family: Exo;
     text-align: center;
     font-style: normal;
     font-weight: bold !important;
     font-size: 50px;
-    line-height: 106px;
     letter-spacing: 0.05em;
     color: #283858;
-    // text-border: 300px solid #090E35;
+    @media (min-width:0px) and (max-width:1055px){
+      font-size: 40px;
+      margin: 0 24px;
+    }
   }
 
 }
@@ -39,7 +42,7 @@ body {
 }
 
 .survey-container {
-  //overflow: hidden;
+  overflow: hidden;
   height: 400px;
   background-color: #A3B1F9;
   margin-top: 0px;
