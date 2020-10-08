@@ -4,28 +4,28 @@ const loadingFunction = () => {
   const submitButton = document.querySelector(".buttonsubmit-right")
   submitButton.addEventListener('click', function() {
     let body = document.querySelector("body")
-    
-    let texts = ["Adjusting flux capacitor...",
+
+    let texts = ["Your movies are coming",
+    "Adjusting flux capacitor...",
     "Asking Chewie to punch it",
     "Checking database",
     "Convicing AI not to turn evil",
-    "It's almost done I swear",
-    "Your movies are coming!"]
-    
+    "It's almost done I swear"]
+
     let index = 0;
-    
+
     const newSentence = () => {
       document.querySelector(".sentence").innerHTML = texts[index];
       index < 3 ? index++ : index = 0;
     };
     if (body) {
-      body.style.overflow = "hidden";
+      // body.style.overflow = "hidden";
       body.insertAdjacentHTML("beforebegin", `<div class="background-holder"><div class="central-box"><div class="cube-start"></div><div class="spin"><h3 class="sentence">Adjusting flux capacitor...</h3></div</div></div>`);
       const cubeStart = document.querySelector("div.cube-start");
       setInterval(newSentence, 1000);
       setTimeout(function () {
         cubeStart.classList.remove("cube-start");
-        cubeStart.classList.add("cube-end"); 
+        cubeStart.classList.add("cube-end");
       }, 100);
     };
     const navbar = document.querySelector(".navbar");
