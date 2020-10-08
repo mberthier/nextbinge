@@ -58,14 +58,14 @@ fieldset.form-group-5-right,
   position: absolute;
   left: 100vw;
   display: none;
-  transition: all 0.4s ease !important;
+  // transition: all 0.4s ease !important;
 }
 
 fieldset.form-group-1-center {
   position: absolute;
   top: 0px;
   left: 0vw;
-  transition: all 0.4s ease;
+  // transition: all 0.4s ease;
 }
 
 fieldset.form-group-2-center,
@@ -76,7 +76,7 @@ fieldset.form-group-5-center,
   // position: absolute;
   top: 0px;
   left: 0vw;
-  transition: all 0.4s ease !important;
+  // transition: all 0.4s ease !important;
 }
 
 fieldset.form-group-1-left,
@@ -86,7 +86,7 @@ fieldset.form-group-4-left,
 fieldset.form-group-5-left {
   position: absolute;
   left: -100vw;
-  transition: all 0.4s ease;
+  // transition: all 0.4s ease;
 }
 
 .category-choices {
