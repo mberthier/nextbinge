@@ -15,7 +15,7 @@
     <% if user_signed_in?%>
       <%= link_to "START NOW", new_user_survey_path(current_user), class: "btn-start", data:{turbolinks: false} %>
     <% else %>
-      <a href="users/sign_up" class="btn-start">START NOW</a>
+      <a href="users/sign_in" class="btn-start">START NOW</a>
     <% end %>
   </div>
 
@@ -84,7 +84,7 @@
     <% if user_signed_in?%>
       <%= link_to "START NOW", new_user_survey_path(current_user), class: "btn-start mb-5", data:{turbolinks: false} %>
     <% else %>
-      <a class="btn-start mb-5" href="users/sign_up">START NOW</a>
+      <a class="btn-start mb-5" href="users/sign_in">START NOW</a>
     <% end %>
   </div>
 
