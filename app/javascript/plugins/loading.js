@@ -16,13 +16,13 @@ const loadingFunction = () => {
 
     const newSentence = () => {
       document.querySelector(".sentence").innerHTML = texts[index];
-      index < 3 ? index++ : index = 0;
+      index < 5 ? index++ : index = 0;
     };
     if (body) {
-      // body.style.overflow = "hidden";
+      body.style.overflow = "hidden";
       body.insertAdjacentHTML("beforebegin", `<div class="background-holder"><div class="central-box"><div class="cube-start"></div><div class="spin"><h3 class="sentence">Adjusting flux capacitor...</h3></div</div></div>`);
       const cubeStart = document.querySelector("div.cube-start");
-      setInterval(newSentence, 1000);
+      setInterval(newSentence, 2000);
       setTimeout(function () {
         cubeStart.classList.remove("cube-start");
         cubeStart.classList.add("cube-end");
