@@ -25,6 +25,12 @@
   p {
     text-align: center;
   }
+  @media (min-width:0px) and (max-width:400px) {
+    height: 300px;
+    h3 {
+      font-size: 40px;
+    }
+  }
 }
 
 .btn-search {
@@ -192,6 +198,9 @@ h2.does-appear {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
+  @media (min-width:0px) and (max-width:400px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .thumb{
