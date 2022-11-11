@@ -8,10 +8,12 @@
     "@rails/webpacker": "4.3.0",
     "bootstrap": "^4.5.2",
     "jquery": "^3.5.1",
+    "node-sass": "^4.14.0",
     "popper.js": "^1.16.1",
-    "tiny-slider": "^2.9.3",
     "three": "^0.120.1",
-    "turbolinks": "^5.2.0"
+    "tiny-slider": "^2.9.3",
+    "turbolinks": "^5.2.0",
+    "yarn": "^1.22.19"
   },
   "version": "0.1.0",
   "devDependencies": {
